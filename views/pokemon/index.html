@@ -1,0 +1,1432 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Archive Pokedex</title>
+
+    <link rel="shortcut icon" href="../../img/favicon.ico" type="image/x-icon">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <!-- Owl carousel CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+        integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g=="
+        crossorigin="anonymous" />
+    <!-- Owl carousel theme CSS -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+        integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
+        crossorigin="anonymous" />
+    <!-- Select 2 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="../../fonts/fontawesome-free-5.15.3-web/css/all.min.css">
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+
+<body>
+    <div class="navigation">
+        <div class="container">
+            <div class="navigation__wrap">
+                <div class="row align-items-center">
+                    <div class="col-md-1">
+                        <div class="navigation__brand">
+                            <div class="logo">
+                                <a href="../../index.html">
+                                    <div class="logo__img">
+                                        <img src="../../img/logo.png" alt="">
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-9">
+                        <form action="" class="form-search">
+                            <input type="text" class="form-control navigation__search"
+                                placeholder="Enter name or id pokemon...">
+                            <select name="search_type" id="search_type" class="form__select">
+                                <option value="pkm">Pokemon</option>
+                                <option value="pkmtcg">Pokemon TCG</option>
+                            </select>
+                        </form>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="navigation__action">
+                            <div class="navigation_menu">
+                                <ul class="navigation__list">
+                                    <li class="navigation__link">
+                                        <a href="#"><i class="fas fa-bookmark"></i></a>
+                                    </li>
+                                    <li class="navigation__link">
+                                        <a href="#"><i class="fas fa-newspaper"></i></a>
+                                    </li>
+                                    <li class="navigation__link">
+                                        <a href="#"><i class="fas fa-comments"></i></a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="navigation__account">
+                                <div class="dropdown">
+                                    <div class="account__ava">
+                                        <a href="#">
+                                            <img src="../../img/ava.png" alt="ava">
+                                        </a>
+                                    </div>
+                                    <button class="account__btn btn btn-secondary dropdown-toggle" type="button"
+                                        id="dropdownMenuAccount" data-bs-toggle="dropdown" aria-expanded="false">
+                                    </button>
+                                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuAccount">
+                                        <li><a class="dropdown-item" href="#">Login</a></li>
+                                        <li><a class="dropdown-item" href="#">Register</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <main>
+        <div class="container">
+            <div class="block block__ticker">
+                <div class="ticker__label">
+                    Live
+                </div>
+                <div class="ticker__content">
+                    <a href="#" class="ticker__link">
+                        Pokémon Players Cup III Pokémon TCG Global Finals Preview
+                    </a>
+                </div>
+            </div>
+
+            <div class="block block__header">
+                <div class="block__title">
+                    <h2>Poke dex</h2>
+                </div>
+            </div>
+
+            <div class="block__content archivePoke">
+                <div class="archivePoke__fillter">
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle w-100" type="button"
+                            id="dropdownPokemonFillter" data-bs-toggle="dropdown" aria-expanded="false">
+                            Advanced Filtter
+                        </button>
+                        <div class="dropdown-menu w-100 dropdownPokemonFillter__content"
+                            aria-labelledby="dropdownPokemonFillter">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="fillter fillter__type">
+                                        <div class="fillter__title">
+                                            Type
+                                        </div>
+                                        <div class="fillter__value">
+                                            <button class="btn fillter__typeItem type--bug" data-value="bug">
+                                                Bug
+                                            </button>
+                                            <button class="btn fillter__typeItem type--dragon" data-value="dragon">
+                                                Dragon
+                                            </button>
+                                            <button class="btn fillter__typeItem type--fairy" data-value="fairy">
+                                                Fairy
+                                            </button>
+                                            <button class="btn fillter__typeItem type--fire" data-value="fire">
+                                                Fire
+                                            </button>
+                                            <button class="btn fillter__typeItem type--ghost" data-value="ghost">
+                                                Ghost
+                                            </button>
+                                            <button class="btn fillter__typeItem type--ground" data-value="ground">
+                                                Ground
+                                            </button>
+                                            <button class="btn fillter__typeItem type--normal" data-value="normal">
+                                                Normal
+                                            </button>
+                                            <button class="btn fillter__typeItem type--psychic" data-value="psychic">
+                                                Psychic
+                                            </button>
+                                            <button class="btn fillter__typeItem type--steel" data-value="steel">
+                                                Steel
+                                            </button>
+                                            <button class="btn fillter__typeItem type--dark" data-value="dark">
+                                                Dark
+                                            </button>
+                                            <button class="btn fillter__typeItem type--electric" data-value="electric">
+                                                Electric
+                                            </button>
+                                            <button class="btn fillter__typeItem type--fighting" data-value="fighting">
+                                                Fighting
+                                            </button>
+                                            <button class="btn fillter__typeItem type--flying" data-value="flying">
+                                                Flying
+                                            </button>
+                                            <button class="btn fillter__typeItem type--grass" data-value="grass">
+                                                Grass
+                                            </button>
+                                            <button class="btn fillter__typeItem type--ice" data-value="ice">
+                                                Ice
+                                            </button>
+                                            <button class="btn fillter__typeItem type--poison" data-value="poison">
+                                                Poison
+                                            </button>
+                                            <button class="btn fillter__typeItem type--rock" data-value="rock">
+                                                Rock
+                                            </button>
+                                            <button class="btn fillter__typeItem type--water" data-value="water">
+                                                Water
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="fillter fillter__ability">
+                                        <div class="fillter__title">
+                                            Ability
+                                        </div>
+                                        <div class="fillter__value d-block">
+                                            <div class="abilitySelect__wrap">
+                                                <select class="abilitySelect" style="width: 100%;" name="ability">
+                                                    <option data-option-value="All" class="selected">All</option>
+                                                    <option data-option-value="Adaptability" class="">Adaptability
+                                                    </option>
+                                                    <option data-option-value="Aerilate" class="">Aerilate</option>
+                                                    <option data-option-value="Aftermath" class="">Aftermath</option>
+                                                    <option data-option-value="Air Lock" class="">Air Lock</option>
+                                                    <option data-option-value="Analytic" class="">Analytic</option>
+                                                    <option data-option-value="Anger Point" class="">Anger Point
+                                                    </option>
+                                                    <option data-option-value="Anticipation" class="">Anticipation
+                                                    </option>
+                                                    <option data-option-value="Arena Trap" class="">Arena Trap</option>
+                                                    <option data-option-value="Aroma Veil" class="">Aroma Veil</option>
+                                                    <option data-option-value="As One" class="">As One</option>
+                                                    <option data-option-value="Aura Break" class="">Aura Break</option>
+                                                    <option data-option-value="Bad Dreams" class="">Bad Dreams</option>
+                                                    <option data-option-value="Ball Fetch" class="">Ball Fetch</option>
+                                                    <option data-option-value="Battery" class="">Battery</option>
+                                                    <option data-option-value="Battle Armor" class="">Battle Armor
+                                                    </option>
+                                                    <option data-option-value="Battle Bond" class="">Battle Bond
+                                                    </option>
+                                                    <option data-option-value="Beast Boost" class="">Beast Boost
+                                                    </option>
+                                                    <option data-option-value="Berserk" class="">Berserk</option>
+                                                    <option data-option-value="Big Pecks" class="">Big Pecks</option>
+                                                    <option data-option-value="Blaze" class="">Blaze</option>
+                                                    <option data-option-value="Bulletproof" class="">Bulletproof
+                                                    </option>
+                                                    <option data-option-value="Cheek Pouch" class="">Cheek Pouch
+                                                    </option>
+                                                    <option data-option-value="Chilling Neigh" class="">Chilling Neigh
+                                                    </option>
+                                                    <option data-option-value="Chlorophyll" class="">Chlorophyll
+                                                    </option>
+                                                    <option data-option-value="Clear Body" class="">Clear Body</option>
+                                                    <option data-option-value="Cloud Nine" class="">Cloud Nine</option>
+                                                    <option data-option-value="Color Change" class="">Color Change
+                                                    </option>
+                                                    <option data-option-value="Comatose" class="">Comatose</option>
+                                                    <option data-option-value="Competitive" class="">Competitive
+                                                    </option>
+                                                    <option data-option-value="Compound Eyes" class="">Compound Eyes
+                                                    </option>
+                                                    <option data-option-value="Contrary" class="">Contrary</option>
+                                                    <option data-option-value="Corrosion" class="">Corrosion</option>
+                                                    <option data-option-value="Cotton Down" class="">Cotton Down
+                                                    </option>
+                                                    <option data-option-value="Curious Medicine" class="">Curious
+                                                        Medicine</option>
+                                                    <option data-option-value="Cursed Body" class="">Cursed Body
+                                                    </option>
+                                                    <option data-option-value="Cute Charm" class="">Cute Charm</option>
+                                                    <option data-option-value="Damp" class="">Damp</option>
+                                                    <option data-option-value="Dancer" class="">Dancer</option>
+                                                    <option data-option-value="Dark Aura" class="">Dark Aura</option>
+                                                    <option data-option-value="Dauntless Shield" class="">Dauntless
+                                                        Shield</option>
+                                                    <option data-option-value="Dazzling" class="">Dazzling</option>
+                                                    <option data-option-value="Defeatist" class="">Defeatist</option>
+                                                    <option data-option-value="Defiant" class="">Defiant</option>
+                                                    <option data-option-value="Delta Stream" class="">Delta Stream
+                                                    </option>
+                                                    <option data-option-value="Desolate Land" class="">Desolate Land
+                                                    </option>
+                                                    <option data-option-value="Disguise" class="">Disguise</option>
+                                                    <option data-option-value="Download" class="">Download</option>
+                                                    <option data-option-value="Dragon's Maw" class="">Dragon's Maw
+                                                    </option>
+                                                    <option data-option-value="Drizzle" class="">Drizzle</option>
+                                                    <option data-option-value="Drought" class="">Drought</option>
+                                                    <option data-option-value="Dry Skin" class="">Dry Skin</option>
+                                                    <option data-option-value="Early Bird" class="">Early Bird</option>
+                                                    <option data-option-value="Effect Spore" class="">Effect Spore
+                                                    </option>
+                                                    <option data-option-value="Electric Surge" class="">Electric Surge
+                                                    </option>
+                                                    <option data-option-value="Emergency Exit" class="">Emergency Exit
+                                                    </option>
+                                                    <option data-option-value="Fairy Aura" class="">Fairy Aura</option>
+                                                    <option data-option-value="Filter" class="">Filter</option>
+                                                    <option data-option-value="Flame Body" class="">Flame Body</option>
+                                                    <option data-option-value="Flare Boost" class="">Flare Boost
+                                                    </option>
+                                                    <option data-option-value="Flash Fire" class="">Flash Fire</option>
+                                                    <option data-option-value="Flower Gift" class="">Flower Gift
+                                                    </option>
+                                                    <option data-option-value="Flower Veil" class="">Flower Veil
+                                                    </option>
+                                                    <option data-option-value="Fluffy" class="">Fluffy</option>
+                                                    <option data-option-value="Forecast" class="">Forecast</option>
+                                                    <option data-option-value="Forewarn" class="">Forewarn</option>
+                                                    <option data-option-value="Friend Guard" class="">Friend Guard
+                                                    </option>
+                                                    <option data-option-value="Frisk" class="">Frisk</option>
+                                                    <option data-option-value="Full Metal Body" class="">Full Metal Body
+                                                    </option>
+                                                    <option data-option-value="Fur Coat" class="">Fur Coat</option>
+                                                    <option data-option-value="Gale Wings" class="">Gale Wings</option>
+                                                    <option data-option-value="Galvanize" class="">Galvanize</option>
+                                                    <option data-option-value="Gluttony" class="">Gluttony</option>
+                                                    <option data-option-value="Gooey" class="">Gooey</option>
+                                                    <option data-option-value="Gorilla Tactics" class="">Gorilla Tactics
+                                                    </option>
+                                                    <option data-option-value="Grass Pelt" class="">Grass Pelt</option>
+                                                    <option data-option-value="Grassy Surge" class="">Grassy Surge
+                                                    </option>
+                                                    <option data-option-value="Grim Neigh" class="">Grim Neigh</option>
+                                                    <option data-option-value="Gulp Missile" class="">Gulp Missile
+                                                    </option>
+                                                    <option data-option-value="Guts" class="">Guts</option>
+                                                    <option data-option-value="Harvest" class="">Harvest</option>
+                                                    <option data-option-value="Healer" class="">Healer</option>
+                                                    <option data-option-value="Heatproof" class="">Heatproof</option>
+                                                    <option data-option-value="Heavy Metal" class="">Heavy Metal
+                                                    </option>
+                                                    <option data-option-value="Honey Gather" class="">Honey Gather
+                                                    </option>
+                                                    <option data-option-value="Huge Power" class="">Huge Power</option>
+                                                    <option data-option-value="Hunger Switch" class="">Hunger Switch
+                                                    </option>
+                                                    <option data-option-value="Hustle" class="">Hustle</option>
+                                                    <option data-option-value="Hydration" class="">Hydration</option>
+                                                    <option data-option-value="Hyper Cutter" class="">Hyper Cutter
+                                                    </option>
+                                                    <option data-option-value="Ice Body" class="">Ice Body</option>
+                                                    <option data-option-value="Ice Face" class="">Ice Face</option>
+                                                    <option data-option-value="Ice Scales" class="">Ice Scales</option>
+                                                    <option data-option-value="Illuminate" class="">Illuminate</option>
+                                                    <option data-option-value="Illusion" class="">Illusion</option>
+                                                    <option data-option-value="Immunity" class="">Immunity</option>
+                                                    <option data-option-value="Imposter" class="">Imposter</option>
+                                                    <option data-option-value="Infiltrator" class="">Infiltrator
+                                                    </option>
+                                                    <option data-option-value="Innards Out" class="">Innards Out
+                                                    </option>
+                                                    <option data-option-value="Inner Focus" class="">Inner Focus
+                                                    </option>
+                                                    <option data-option-value="Insomnia" class="">Insomnia</option>
+                                                    <option data-option-value="Intimidate" class="">Intimidate</option>
+                                                    <option data-option-value="Intrepid Sword" class="">Intrepid Sword
+                                                    </option>
+                                                    <option data-option-value="Iron Barbs" class="">Iron Barbs</option>
+                                                    <option data-option-value="Iron Fist" class="">Iron Fist</option>
+                                                    <option data-option-value="Justified" class="">Justified</option>
+                                                    <option data-option-value="Keen Eye" class="">Keen Eye</option>
+                                                    <option data-option-value="Klutz" class="">Klutz</option>
+                                                    <option data-option-value="Leaf Guard" class="">Leaf Guard</option>
+                                                    <option data-option-value="Levitate" class="">Levitate</option>
+                                                    <option data-option-value="Libero" class="">Libero</option>
+                                                    <option data-option-value="Light Metal" class="">Light Metal
+                                                    </option>
+                                                    <option data-option-value="Lightning Rod" class="">Lightning Rod
+                                                    </option>
+                                                    <option data-option-value="Limber" class="">Limber</option>
+                                                    <option data-option-value="Liquid Ooze" class="">Liquid Ooze
+                                                    </option>
+                                                    <option data-option-value="Liquid Voice" class="">Liquid Voice
+                                                    </option>
+                                                    <option data-option-value="Long Reach" class="">Long Reach</option>
+                                                    <option data-option-value="Magic Bounce" class="">Magic Bounce
+                                                    </option>
+                                                    <option data-option-value="Magic Guard" class="">Magic Guard
+                                                    </option>
+                                                    <option data-option-value="Magician" class="">Magician</option>
+                                                    <option data-option-value="Magma Armor" class="">Magma Armor
+                                                    </option>
+                                                    <option data-option-value="Magnet Pull" class="">Magnet Pull
+                                                    </option>
+                                                    <option data-option-value="Marvel Scale" class="">Marvel Scale
+                                                    </option>
+                                                    <option data-option-value="Mega Launcher" class="">Mega Launcher
+                                                    </option>
+                                                    <option data-option-value="Merciless" class="">Merciless</option>
+                                                    <option data-option-value="Mimicry" class="">Mimicry</option>
+                                                    <option data-option-value="Minus" class="">Minus</option>
+                                                    <option data-option-value="Mirror Armor" class="">Mirror Armor
+                                                    </option>
+                                                    <option data-option-value="Misty Surge" class="">Misty Surge
+                                                    </option>
+                                                    <option data-option-value="Mold Breaker" class="">Mold Breaker
+                                                    </option>
+                                                    <option data-option-value="Moody" class="">Moody</option>
+                                                    <option data-option-value="Motor Drive" class="">Motor Drive
+                                                    </option>
+                                                    <option data-option-value="Moxie" class="">Moxie</option>
+                                                    <option data-option-value="Multiscale" class="">Multiscale</option>
+                                                    <option data-option-value="Multitype" class="">Multitype</option>
+                                                    <option data-option-value="Mummy" class="">Mummy</option>
+                                                    <option data-option-value="Natural Cure" class="">Natural Cure
+                                                    </option>
+                                                    <option data-option-value="Neuroforce" class="">Neuroforce</option>
+                                                    <option data-option-value="Neutralizing Gas" class="">Neutralizing
+                                                        Gas</option>
+                                                    <option data-option-value="No Guard" class="">No Guard</option>
+                                                    <option data-option-value="Normalize" class="">Normalize</option>
+                                                    <option data-option-value="Oblivious" class="">Oblivious</option>
+                                                    <option data-option-value="Overcoat" class="">Overcoat</option>
+                                                    <option data-option-value="Overgrow" class="">Overgrow</option>
+                                                    <option data-option-value="Own Tempo" class="">Own Tempo</option>
+                                                    <option data-option-value="Parental Bond" class="">Parental Bond
+                                                    </option>
+                                                    <option data-option-value="Pastel Veil" class="">Pastel Veil
+                                                    </option>
+                                                    <option data-option-value="Perish Body" class="">Perish Body
+                                                    </option>
+                                                    <option data-option-value="Pickpocket" class="">Pickpocket</option>
+                                                    <option data-option-value="Pickup" class="">Pickup</option>
+                                                    <option data-option-value="Pixilate" class="">Pixilate</option>
+                                                    <option data-option-value="Plus" class="">Plus</option>
+                                                    <option data-option-value="Poison Heal" class="">Poison Heal
+                                                    </option>
+                                                    <option data-option-value="Poison Point" class="">Poison Point
+                                                    </option>
+                                                    <option data-option-value="Poison Touch" class="">Poison Touch
+                                                    </option>
+                                                    <option data-option-value="Power Construct" class="">Power Construct
+                                                    </option>
+                                                    <option data-option-value="Power Spot" class="">Power Spot</option>
+                                                    <option data-option-value="Power of Alchemy" class="">Power of
+                                                        Alchemy</option>
+                                                    <option data-option-value="Prankster" class="">Prankster</option>
+                                                    <option data-option-value="Pressure" class="">Pressure</option>
+                                                    <option data-option-value="Primordial Sea" class="">Primordial Sea
+                                                    </option>
+                                                    <option data-option-value="Prism Armor" class="">Prism Armor
+                                                    </option>
+                                                    <option data-option-value="Propeller Tail" class="">Propeller Tail
+                                                    </option>
+                                                    <option data-option-value="Protean" class="">Protean</option>
+                                                    <option data-option-value="Psychic Surge" class="">Psychic Surge
+                                                    </option>
+                                                    <option data-option-value="Punk Rock" class="">Punk Rock</option>
+                                                    <option data-option-value="Pure Power" class="">Pure Power</option>
+                                                    <option data-option-value="Queenly Majesty" class="">Queenly Majesty
+                                                    </option>
+                                                    <option data-option-value="Quick Draw" class="">Quick Draw</option>
+                                                    <option data-option-value="Quick Feet" class="">Quick Feet</option>
+                                                    <option data-option-value="RKS System" class="">RKS System</option>
+                                                    <option data-option-value="Rain Dish" class="">Rain Dish</option>
+                                                    <option data-option-value="Rattled" class="">Rattled</option>
+                                                    <option data-option-value="Receiver" class="">Receiver</option>
+                                                    <option data-option-value="Reckless" class="">Reckless</option>
+                                                    <option data-option-value="Refrigerate" class="">Refrigerate
+                                                    </option>
+                                                    <option data-option-value="Regenerator" class="">Regenerator
+                                                    </option>
+                                                    <option data-option-value="Ripen" class="">Ripen</option>
+                                                    <option data-option-value="Rivalry" class="">Rivalry</option>
+                                                    <option data-option-value="Rock Head" class="">Rock Head</option>
+                                                    <option data-option-value="Rough Skin" class="">Rough Skin</option>
+                                                    <option data-option-value="Run Away" class="">Run Away</option>
+                                                    <option data-option-value="Sand Force" class="">Sand Force</option>
+                                                    <option data-option-value="Sand Rush" class="">Sand Rush</option>
+                                                    <option data-option-value="Sand Spit" class="">Sand Spit</option>
+                                                    <option data-option-value="Sand Stream" class="">Sand Stream
+                                                    </option>
+                                                    <option data-option-value="Sand Veil" class="">Sand Veil</option>
+                                                    <option data-option-value="Sap Sipper" class="">Sap Sipper</option>
+                                                    <option data-option-value="Schooling" class="">Schooling</option>
+                                                    <option data-option-value="Scrappy" class="">Scrappy</option>
+                                                    <option data-option-value="Screen Cleaner" class="">Screen Cleaner
+                                                    </option>
+                                                    <option data-option-value="Serene Grace" class="">Serene Grace
+                                                    </option>
+                                                    <option data-option-value="Shadow Shield" class="">Shadow Shield
+                                                    </option>
+                                                    <option data-option-value="Shadow Tag" class="">Shadow Tag</option>
+                                                    <option data-option-value="Shed Skin" class="">Shed Skin</option>
+                                                    <option data-option-value="Sheer Force" class="">Sheer Force
+                                                    </option>
+                                                    <option data-option-value="Shell Armor" class="">Shell Armor
+                                                    </option>
+                                                    <option data-option-value="Shield Dust" class="">Shield Dust
+                                                    </option>
+                                                    <option data-option-value="Shields Down" class="">Shields Down
+                                                    </option>
+                                                    <option data-option-value="Simple" class="">Simple</option>
+                                                    <option data-option-value="Skill Link" class="">Skill Link</option>
+                                                    <option data-option-value="Slow Start" class="">Slow Start</option>
+                                                    <option data-option-value="Slush Rush" class="">Slush Rush</option>
+                                                    <option data-option-value="Sniper" class="">Sniper</option>
+                                                    <option data-option-value="Snow Cloak" class="">Snow Cloak</option>
+                                                    <option data-option-value="Snow Warning" class="">Snow Warning
+                                                    </option>
+                                                    <option data-option-value="Solar Power" class="">Solar Power
+                                                    </option>
+                                                    <option data-option-value="Solid Rock" class="">Solid Rock</option>
+                                                    <option data-option-value="Soul-Heart" class="">Soul-Heart</option>
+                                                    <option data-option-value="Soundproof" class="">Soundproof</option>
+                                                    <option data-option-value="Speed Boost" class="">Speed Boost
+                                                    </option>
+                                                    <option data-option-value="Stakeout" class="">Stakeout</option>
+                                                    <option data-option-value="Stall" class="">Stall</option>
+                                                    <option data-option-value="Stalwart" class="">Stalwart</option>
+                                                    <option data-option-value="Stamina" class="">Stamina</option>
+                                                    <option data-option-value="Stance Change" class="">Stance Change
+                                                    </option>
+                                                    <option data-option-value="Static" class="">Static</option>
+                                                    <option data-option-value="Steadfast" class="">Steadfast</option>
+                                                    <option data-option-value="Steam Engine" class="">Steam Engine
+                                                    </option>
+                                                    <option data-option-value="Steelworker" class="">Steelworker
+                                                    </option>
+                                                    <option data-option-value="Steely Spirit" class="">Steely Spirit
+                                                    </option>
+                                                    <option data-option-value="Stench" class="">Stench</option>
+                                                    <option data-option-value="Sticky Hold" class="">Sticky Hold
+                                                    </option>
+                                                    <option data-option-value="Storm Drain" class="">Storm Drain
+                                                    </option>
+                                                    <option data-option-value="Strong Jaw" class="">Strong Jaw</option>
+                                                    <option data-option-value="Sturdy" class="">Sturdy</option>
+                                                    <option data-option-value="Suction Cups" class="">Suction Cups
+                                                    </option>
+                                                    <option data-option-value="Super Luck" class="">Super Luck</option>
+                                                    <option data-option-value="Surge Surfer" class="">Surge Surfer
+                                                    </option>
+                                                    <option data-option-value="Swarm" class="">Swarm</option>
+                                                    <option data-option-value="Sweet Veil" class="">Sweet Veil</option>
+                                                    <option data-option-value="Swift Swim" class="">Swift Swim</option>
+                                                    <option data-option-value="Symbiosis" class="">Symbiosis</option>
+                                                    <option data-option-value="Synchronize" class="">Synchronize
+                                                    </option>
+                                                    <option data-option-value="Tangled Feet" class="">Tangled Feet
+                                                    </option>
+                                                    <option data-option-value="Tangling Hair" class="">Tangling Hair
+                                                    </option>
+                                                    <option data-option-value="Technician" class="">Technician</option>
+                                                    <option data-option-value="Telepathy" class="">Telepathy</option>
+                                                    <option data-option-value="Teravolt" class="">Teravolt</option>
+                                                    <option data-option-value="Thick Fat" class="">Thick Fat</option>
+                                                    <option data-option-value="Tinted Lens" class="">Tinted Lens
+                                                    </option>
+                                                    <option data-option-value="Torrent" class="">Torrent</option>
+                                                    <option data-option-value="Tough Claws" class="">Tough Claws
+                                                    </option>
+                                                    <option data-option-value="Toxic Boost" class="">Toxic Boost
+                                                    </option>
+                                                    <option data-option-value="Trace" class="">Trace</option>
+                                                    <option data-option-value="Transistor" class="">Transistor</option>
+                                                    <option data-option-value="Triage" class="">Triage</option>
+                                                    <option data-option-value="Truant" class="">Truant</option>
+                                                    <option data-option-value="Turboblaze" class="">Turboblaze</option>
+                                                    <option data-option-value="Unaware" class="">Unaware</option>
+                                                    <option data-option-value="Unburden" class="">Unburden</option>
+                                                    <option data-option-value="Unnerve" class="">Unnerve</option>
+                                                    <option data-option-value="Unseen Fist" class="">Unseen Fist
+                                                    </option>
+                                                    <option data-option-value="Victory Star" class="">Victory Star
+                                                    </option>
+                                                    <option data-option-value="Vital Spirit" class="">Vital Spirit
+                                                    </option>
+                                                    <option data-option-value="Volt Absorb" class="">Volt Absorb
+                                                    </option>
+                                                    <option data-option-value="Wandering Spirit" class="">Wandering
+                                                        Spirit</option>
+                                                    <option data-option-value="Water Absorb" class="">Water Absorb
+                                                    </option>
+                                                    <option data-option-value="Water Bubble" class="">Water Bubble
+                                                    </option>
+                                                    <option data-option-value="Water Compaction" class="">Water
+                                                        Compaction</option>
+                                                    <option data-option-value="Water Veil" class="">Water Veil</option>
+                                                    <option data-option-value="Weak Armor" class="">Weak Armor</option>
+                                                    <option data-option-value="White Smoke" class="">White Smoke
+                                                    </option>
+                                                    <option data-option-value="Wimp Out" class="">Wimp Out</option>
+                                                    <option data-option-value="Wonder Guard" class="">Wonder Guard
+                                                    </option>
+                                                    <option data-option-value="Wonder Skin" class="">Wonder Skin
+                                                    </option>
+                                                    <option data-option-value="Zen Mode" class="">Zen Mode</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="fillter fillter__height">
+                                        <div class="fillter__title">
+                                            Height
+                                        </div>
+                                        <div class="fillter__value">
+                                            <button class="btn btnFillterHeight"
+                                                data-value="height_lte=6">Small</button>
+                                            <button class="btn btnFillterHeight"
+                                                data-value="height_gte=6">Medium</button>
+                                            <button class="btn btnFillterHeight"
+                                                data-value="height_gte=10">Large</button>
+                                        </div>
+                                    </div>
+                                    <div class="fillter fillter__weight">
+                                        <div class="fillter__title">
+                                            Weight
+                                        </div>
+                                        <div class="fillter__value">
+                                            <button class="btn btnFillterWeight"
+                                                data-value="weight_lte=200">Small</button>
+                                            <button class="btn btnFillterWeight"
+                                                data-value="weight_gte=200">Medium</button>
+                                            <button class="btn btnFillterWeight"
+                                                data-value="weight_gte=500">Large</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="dropdownPokemonFillter__action">
+                                    <button class="btn btnPokeFillter btnPokeFillterReset">Reset</button>
+                                    <button class="btn btnPokeFillter btnPokeFillterSearch">
+                                        <i class="fas fa-search"></i> Search
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="dropdownPokemonFillter__close">
+                                <button class="btn">
+                                    <i class="fas fa-chevron-up"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="archivePoke__action">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <button class="btn btn__randomPoke">
+                                <i class="fas fa-sync-alt"></i> Suprise me !
+                            </button>
+                        </div>
+                        <div class="col-md-6 text-end">
+                            <div class="dropdown">
+                                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownPokeSort"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    Sort results by
+                                </button>
+                                <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end"
+                                    aria-labelledby="dropdownPokemonFillter">
+                                    <li><a class="dropdown-item" href="#">Action</a></li>
+                                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="archivePoke__list">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="pokedex__item">
+                                <img src="../../img/pokedex-bg.png" alt="pokedex__bg" class="pokedex__bg">
+                                <div class="pokedex__content">
+                                    <div class="pokedex__id">#007</div>
+                                    <div class="pokedex__info">
+                                        <div class="pokedex__media">
+                                            <div class="pokedex__ava">
+                                                <img src="../../img/pokemon.png" alt="pokedex_ava">
+                                            </div>
+                                            <div class="pokedex__stats">
+                                                <div class="stats">
+                                                    <div class="stat__item">
+                                                        <img src="../../img/stat_hp.png" alt="hp" class="stat__icon">
+                                                        <div class="stat__value">
+                                                            <div class="stat__percent"></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="stat__item">
+                                                        <img src="../../img/stat_atk.png" alt="atk" class="stat__icon">
+                                                        <div class="stat__value">
+                                                            <div class="stat__percent"></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="stat__item">
+                                                        <img src="../../img/stat_def.png" alt="def" class="stat__icon">
+                                                        <div class="stat__value">
+                                                            <div class="stat__percent"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="pokedex__meta">
+                                            <div class="pokedex__header">
+                                                <h3 class="pokedex__name">
+                                                    Pikachu
+                                                </h3>
+                                                <h3 class="pokedex__ids">
+                                                    #007
+                                                </h3>
+                                            </div>
+                                            <div class="pokedex__body">
+                                                <div class="pokedex__text">
+                                                    <div class="pokedex__label">
+                                                        Type
+                                                    </div>
+                                                    <div class="pokedex__value">
+                                                        <span class="pokedex__type pokedex__type--bug">Bug</span>
+                                                        <span class="pokedex__type pokedex__type--steel">Steel</span>
+                                                    </div>
+                                                </div>
+                                                <div class="pokedex__text">
+                                                    <div class="pokedex__label">
+                                                        Abilities
+                                                    </div>
+                                                    <div class="pokedex__value">
+                                                        Swarm / Technician
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="pokedex__bg2"></div>
+                                    </div>
+                                    <div class="pokedex__overlay">
+                                        <button class="btn pokedex__btn pokedex__view">
+                                            <i class="fas fa-eye"></i> Viewmore
+                                        </button>
+                                        <button class="btn pokedex__btn pokedex__bookmark">
+                                            <i class="fas fa-bookmark"></i> Bookmark
+                                        </button>
+                                        <button class="btn pokedex__btn pokedex__compare">
+                                            <i class="fas fa-table"></i> Add compare
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="pokedex__item">
+                                <img src="../../img/pokedex-bg.png" alt="pokedex__bg" class="pokedex__bg">
+                                <div class="pokedex__content">
+                                    <div class="pokedex__id">#007</div>
+                                    <div class="pokedex__info">
+                                        <div class="pokedex__media">
+                                            <div class="pokedex__ava">
+                                                <img src="../../img/pokemon.png" alt="pokedex_ava">
+                                            </div>
+                                            <div class="pokedex__stats">
+                                                <div class="stats">
+                                                    <div class="stat__item">
+                                                        <img src="../../img/stat_hp.png" alt="hp" class="stat__icon">
+                                                        <div class="stat__value">
+                                                            <div class="stat__percent"></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="stat__item">
+                                                        <img src="../../img/stat_atk.png" alt="atk" class="stat__icon">
+                                                        <div class="stat__value">
+                                                            <div class="stat__percent"></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="stat__item">
+                                                        <img src="../../img/stat_def.png" alt="def" class="stat__icon">
+                                                        <div class="stat__value">
+                                                            <div class="stat__percent"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="pokedex__meta">
+                                            <div class="pokedex__header">
+                                                <h3 class="pokedex__name">
+                                                    Pikachu
+                                                </h3>
+                                                <h3 class="pokedex__ids">
+                                                    #007
+                                                </h3>
+                                            </div>
+                                            <div class="pokedex__body">
+                                                <div class="pokedex__text">
+                                                    <div class="pokedex__label">
+                                                        Type
+                                                    </div>
+                                                    <div class="pokedex__value">
+                                                        <span class="pokedex__type pokedex__type--bug">Bug</span>
+                                                        <span class="pokedex__type pokedex__type--steel">Steel</span>
+                                                    </div>
+                                                </div>
+                                                <div class="pokedex__text">
+                                                    <div class="pokedex__label">
+                                                        Abilities
+                                                    </div>
+                                                    <div class="pokedex__value">
+                                                        Swarm / Technician
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="pokedex__bg2"></div>
+                                    </div>
+                                    <div class="pokedex__overlay">
+                                        <button class="btn pokedex__btn pokedex__view">
+                                            <i class="fas fa-eye"></i> Viewmore
+                                        </button>
+                                        <button class="btn pokedex__btn pokedex__bookmark">
+                                            <i class="fas fa-bookmark"></i> Bookmark
+                                        </button>
+                                        <button class="btn pokedex__btn pokedex__compare">
+                                            <i class="fas fa-table"></i> Add compare
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="pokedex__item">
+                                <img src="../../img/pokedex-bg.png" alt="pokedex__bg" class="pokedex__bg">
+                                <div class="pokedex__content">
+                                    <div class="pokedex__id">#007</div>
+                                    <div class="pokedex__info">
+                                        <div class="pokedex__media">
+                                            <div class="pokedex__ava">
+                                                <img src="../../img/pokemon.png" alt="pokedex_ava">
+                                            </div>
+                                            <div class="pokedex__stats">
+                                                <div class="stats">
+                                                    <div class="stat__item">
+                                                        <img src="../../img/stat_hp.png" alt="hp" class="stat__icon">
+                                                        <div class="stat__value">
+                                                            <div class="stat__percent"></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="stat__item">
+                                                        <img src="../../img/stat_atk.png" alt="atk" class="stat__icon">
+                                                        <div class="stat__value">
+                                                            <div class="stat__percent"></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="stat__item">
+                                                        <img src="../../img/stat_def.png" alt="def" class="stat__icon">
+                                                        <div class="stat__value">
+                                                            <div class="stat__percent"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="pokedex__meta">
+                                            <div class="pokedex__header">
+                                                <h3 class="pokedex__name">
+                                                    Pikachu
+                                                </h3>
+                                                <h3 class="pokedex__ids">
+                                                    #007
+                                                </h3>
+                                            </div>
+                                            <div class="pokedex__body">
+                                                <div class="pokedex__text">
+                                                    <div class="pokedex__label">
+                                                        Type
+                                                    </div>
+                                                    <div class="pokedex__value">
+                                                        <span class="pokedex__type pokedex__type--bug">Bug</span>
+                                                        <span class="pokedex__type pokedex__type--steel">Steel</span>
+                                                    </div>
+                                                </div>
+                                                <div class="pokedex__text">
+                                                    <div class="pokedex__label">
+                                                        Abilities
+                                                    </div>
+                                                    <div class="pokedex__value">
+                                                        Swarm / Technician
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="pokedex__bg2"></div>
+                                    </div>
+                                    <div class="pokedex__overlay">
+                                        <button class="btn pokedex__btn pokedex__view">
+                                            <i class="fas fa-eye"></i> Viewmore
+                                        </button>
+                                        <button class="btn pokedex__btn pokedex__bookmark">
+                                            <i class="fas fa-bookmark"></i> Bookmark
+                                        </button>
+                                        <button class="btn pokedex__btn pokedex__compare">
+                                            <i class="fas fa-table"></i> Add compare
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="pokedex__item">
+                                <img src="../../img/pokedex-bg.png" alt="pokedex__bg" class="pokedex__bg">
+                                <div class="pokedex__content">
+                                    <div class="pokedex__id">#007</div>
+                                    <div class="pokedex__info">
+                                        <div class="pokedex__media">
+                                            <div class="pokedex__ava">
+                                                <img src="../../img/pokemon.png" alt="pokedex_ava">
+                                            </div>
+                                            <div class="pokedex__stats">
+                                                <div class="stats">
+                                                    <div class="stat__item">
+                                                        <img src="../../img/stat_hp.png" alt="hp" class="stat__icon">
+                                                        <div class="stat__value">
+                                                            <div class="stat__percent"></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="stat__item">
+                                                        <img src="../../img/stat_atk.png" alt="atk" class="stat__icon">
+                                                        <div class="stat__value">
+                                                            <div class="stat__percent"></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="stat__item">
+                                                        <img src="../../img/stat_def.png" alt="def" class="stat__icon">
+                                                        <div class="stat__value">
+                                                            <div class="stat__percent"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="pokedex__meta">
+                                            <div class="pokedex__header">
+                                                <h3 class="pokedex__name">
+                                                    Pikachu
+                                                </h3>
+                                                <h3 class="pokedex__ids">
+                                                    #007
+                                                </h3>
+                                            </div>
+                                            <div class="pokedex__body">
+                                                <div class="pokedex__text">
+                                                    <div class="pokedex__label">
+                                                        Type
+                                                    </div>
+                                                    <div class="pokedex__value">
+                                                        <span class="pokedex__type pokedex__type--bug">Bug</span>
+                                                        <span class="pokedex__type pokedex__type--steel">Steel</span>
+                                                    </div>
+                                                </div>
+                                                <div class="pokedex__text">
+                                                    <div class="pokedex__label">
+                                                        Abilities
+                                                    </div>
+                                                    <div class="pokedex__value">
+                                                        Swarm / Technician
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="pokedex__bg2"></div>
+                                    </div>
+                                    <div class="pokedex__overlay">
+                                        <button class="btn pokedex__btn pokedex__view">
+                                            <i class="fas fa-eye"></i> Viewmore
+                                        </button>
+                                        <button class="btn pokedex__btn pokedex__bookmark">
+                                            <i class="fas fa-bookmark"></i> Bookmark
+                                        </button>
+                                        <button class="btn pokedex__btn pokedex__compare">
+                                            <i class="fas fa-table"></i> Add compare
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="pokedex__item">
+                                <img src="../../img/pokedex-bg.png" alt="pokedex__bg" class="pokedex__bg">
+                                <div class="pokedex__content">
+                                    <div class="pokedex__id">#007</div>
+                                    <div class="pokedex__info">
+                                        <div class="pokedex__media">
+                                            <div class="pokedex__ava">
+                                                <img src="../../img/pokemon.png" alt="pokedex_ava">
+                                            </div>
+                                            <div class="pokedex__stats">
+                                                <div class="stats">
+                                                    <div class="stat__item">
+                                                        <img src="../../img/stat_hp.png" alt="hp" class="stat__icon">
+                                                        <div class="stat__value">
+                                                            <div class="stat__percent"></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="stat__item">
+                                                        <img src="../../img/stat_atk.png" alt="atk" class="stat__icon">
+                                                        <div class="stat__value">
+                                                            <div class="stat__percent"></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="stat__item">
+                                                        <img src="../../img/stat_def.png" alt="def" class="stat__icon">
+                                                        <div class="stat__value">
+                                                            <div class="stat__percent"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="pokedex__meta">
+                                            <div class="pokedex__header">
+                                                <h3 class="pokedex__name">
+                                                    Pikachu
+                                                </h3>
+                                                <h3 class="pokedex__ids">
+                                                    #007
+                                                </h3>
+                                            </div>
+                                            <div class="pokedex__body">
+                                                <div class="pokedex__text">
+                                                    <div class="pokedex__label">
+                                                        Type
+                                                    </div>
+                                                    <div class="pokedex__value">
+                                                        <span class="pokedex__type pokedex__type--bug">Bug</span>
+                                                        <span class="pokedex__type pokedex__type--steel">Steel</span>
+                                                    </div>
+                                                </div>
+                                                <div class="pokedex__text">
+                                                    <div class="pokedex__label">
+                                                        Abilities
+                                                    </div>
+                                                    <div class="pokedex__value">
+                                                        Swarm / Technician
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="pokedex__bg2"></div>
+                                    </div>
+                                    <div class="pokedex__overlay">
+                                        <button class="btn pokedex__btn pokedex__view">
+                                            <i class="fas fa-eye"></i> Viewmore
+                                        </button>
+                                        <button class="btn pokedex__btn pokedex__bookmark">
+                                            <i class="fas fa-bookmark"></i> Bookmark
+                                        </button>
+                                        <button class="btn pokedex__btn pokedex__compare">
+                                            <i class="fas fa-table"></i> Add compare
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="pokedex__item">
+                                <img src="../../img/pokedex-bg.png" alt="pokedex__bg" class="pokedex__bg">
+                                <div class="pokedex__content">
+                                    <div class="pokedex__id">#007</div>
+                                    <div class="pokedex__info">
+                                        <div class="pokedex__media">
+                                            <div class="pokedex__ava">
+                                                <img src="../../img/pokemon.png" alt="pokedex_ava">
+                                            </div>
+                                            <div class="pokedex__stats">
+                                                <div class="stats">
+                                                    <div class="stat__item">
+                                                        <img src="../../img/stat_hp.png" alt="hp" class="stat__icon">
+                                                        <div class="stat__value">
+                                                            <div class="stat__percent"></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="stat__item">
+                                                        <img src="../../img/stat_atk.png" alt="atk" class="stat__icon">
+                                                        <div class="stat__value">
+                                                            <div class="stat__percent"></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="stat__item">
+                                                        <img src="../../img/stat_def.png" alt="def" class="stat__icon">
+                                                        <div class="stat__value">
+                                                            <div class="stat__percent"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="pokedex__meta">
+                                            <div class="pokedex__header">
+                                                <h3 class="pokedex__name">
+                                                    Pikachu
+                                                </h3>
+                                                <h3 class="pokedex__ids">
+                                                    #007
+                                                </h3>
+                                            </div>
+                                            <div class="pokedex__body">
+                                                <div class="pokedex__text">
+                                                    <div class="pokedex__label">
+                                                        Type
+                                                    </div>
+                                                    <div class="pokedex__value">
+                                                        <span class="pokedex__type pokedex__type--bug">Bug</span>
+                                                        <span class="pokedex__type pokedex__type--steel">Steel</span>
+                                                    </div>
+                                                </div>
+                                                <div class="pokedex__text">
+                                                    <div class="pokedex__label">
+                                                        Abilities
+                                                    </div>
+                                                    <div class="pokedex__value">
+                                                        Swarm / Technician
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="pokedex__bg2"></div>
+                                    </div>
+                                    <div class="pokedex__overlay">
+                                        <button class="btn pokedex__btn pokedex__view">
+                                            <i class="fas fa-eye"></i> Viewmore
+                                        </button>
+                                        <button class="btn pokedex__btn pokedex__bookmark">
+                                            <i class="fas fa-bookmark"></i> Bookmark
+                                        </button>
+                                        <button class="btn pokedex__btn pokedex__compare">
+                                            <i class="fas fa-table"></i> Add compare
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="pokedex__item">
+                                <img src="../../img/pokedex-bg.png" alt="pokedex__bg" class="pokedex__bg">
+                                <div class="pokedex__content">
+                                    <div class="pokedex__id">#007</div>
+                                    <div class="pokedex__info">
+                                        <div class="pokedex__media">
+                                            <div class="pokedex__ava">
+                                                <img src="../../img/pokemon.png" alt="pokedex_ava">
+                                            </div>
+                                            <div class="pokedex__stats">
+                                                <div class="stats">
+                                                    <div class="stat__item">
+                                                        <img src="../../img/stat_hp.png" alt="hp" class="stat__icon">
+                                                        <div class="stat__value">
+                                                            <div class="stat__percent"></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="stat__item">
+                                                        <img src="../../img/stat_atk.png" alt="atk" class="stat__icon">
+                                                        <div class="stat__value">
+                                                            <div class="stat__percent"></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="stat__item">
+                                                        <img src="../../img/stat_def.png" alt="def" class="stat__icon">
+                                                        <div class="stat__value">
+                                                            <div class="stat__percent"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="pokedex__meta">
+                                            <div class="pokedex__header">
+                                                <h3 class="pokedex__name">
+                                                    Pikachu
+                                                </h3>
+                                                <h3 class="pokedex__ids">
+                                                    #007
+                                                </h3>
+                                            </div>
+                                            <div class="pokedex__body">
+                                                <div class="pokedex__text">
+                                                    <div class="pokedex__label">
+                                                        Type
+                                                    </div>
+                                                    <div class="pokedex__value">
+                                                        <span class="pokedex__type pokedex__type--bug">Bug</span>
+                                                        <span class="pokedex__type pokedex__type--steel">Steel</span>
+                                                    </div>
+                                                </div>
+                                                <div class="pokedex__text">
+                                                    <div class="pokedex__label">
+                                                        Abilities
+                                                    </div>
+                                                    <div class="pokedex__value">
+                                                        Swarm / Technician
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="pokedex__bg2"></div>
+                                    </div>
+                                    <div class="pokedex__overlay">
+                                        <button class="btn pokedex__btn pokedex__view">
+                                            <i class="fas fa-eye"></i> Viewmore
+                                        </button>
+                                        <button class="btn pokedex__btn pokedex__bookmark">
+                                            <i class="fas fa-bookmark"></i> Bookmark
+                                        </button>
+                                        <button class="btn pokedex__btn pokedex__compare">
+                                            <i class="fas fa-table"></i> Add compare
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="pokedex__item">
+                                <img src="../../img/pokedex-bg.png" alt="pokedex__bg" class="pokedex__bg">
+                                <div class="pokedex__content">
+                                    <div class="pokedex__id">#007</div>
+                                    <div class="pokedex__info">
+                                        <div class="pokedex__media">
+                                            <div class="pokedex__ava">
+                                                <img src="../../img/pokemon.png" alt="pokedex_ava">
+                                            </div>
+                                            <div class="pokedex__stats">
+                                                <div class="stats">
+                                                    <div class="stat__item">
+                                                        <img src="../../img/stat_hp.png" alt="hp" class="stat__icon">
+                                                        <div class="stat__value">
+                                                            <div class="stat__percent"></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="stat__item">
+                                                        <img src="../../img/stat_atk.png" alt="atk" class="stat__icon">
+                                                        <div class="stat__value">
+                                                            <div class="stat__percent"></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="stat__item">
+                                                        <img src="../../img/stat_def.png" alt="def" class="stat__icon">
+                                                        <div class="stat__value">
+                                                            <div class="stat__percent"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="pokedex__meta">
+                                            <div class="pokedex__header">
+                                                <h3 class="pokedex__name">
+                                                    Pikachu
+                                                </h3>
+                                                <h3 class="pokedex__ids">
+                                                    #007
+                                                </h3>
+                                            </div>
+                                            <div class="pokedex__body">
+                                                <div class="pokedex__text">
+                                                    <div class="pokedex__label">
+                                                        Type
+                                                    </div>
+                                                    <div class="pokedex__value">
+                                                        <span class="pokedex__type pokedex__type--bug">Bug</span>
+                                                        <span class="pokedex__type pokedex__type--steel">Steel</span>
+                                                    </div>
+                                                </div>
+                                                <div class="pokedex__text">
+                                                    <div class="pokedex__label">
+                                                        Abilities
+                                                    </div>
+                                                    <div class="pokedex__value">
+                                                        Swarm / Technician
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="pokedex__bg2"></div>
+                                    </div>
+                                    <div class="pokedex__overlay">
+                                        <button class="btn pokedex__btn pokedex__view">
+                                            <i class="fas fa-eye"></i> Viewmore
+                                        </button>
+                                        <button class="btn pokedex__btn pokedex__bookmark">
+                                            <i class="fas fa-bookmark"></i> Bookmark
+                                        </button>
+                                        <button class="btn pokedex__btn pokedex__compare">
+                                            <i class="fas fa-table"></i> Add compare
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="archivePoke__pagination text-center">
+                    <button class="btn archivePoke__more">
+                        Load more Pokemon
+                    </button>
+                </div>
+            </div>
+
+            <div class="block block__banner">
+                <div class="banner owl-carousel owl-carousel-banner owl-theme">
+                    <div class="banner__item">
+                        <div class="banner__img">
+                            <img src="../../img/banner.jpg" alt="banner">
+                        </div>
+                    </div>
+                    <div class="banner__item">
+                        <div class="banner__img">
+                            <img src="../../img/banner2.jpg" alt="banner">
+                        </div>
+                    </div>
+                    <div class="banner__item">
+                        <div class="banner__img">
+                            <img src="../../img/tv.jpg" alt="banner">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer__main">
+            <div class="container">
+                <div class="block block__footer">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="footer__log">
+                                <a href="../../index.html">
+                                    <img src="../../img/logo-footer.png" alt="logo">
+                                </a>
+                            </div>
+                            <div class="footer__desc">
+                                <p>
+                                    Ornare fuga consequatur sem, ullam! Blandit, taciti! Ratione ad quos excepteur
+                                    hendrerit,
+                                    eum, dolor? Hac pede bibendum beatae mus iure ab itaque irure diamlorem. Magnam
+                                    consequatur interdum sollicitudin! Etiam ridiculus odio sequi fermentum per!
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="footer__menu">
+                                <div class="footer__menutitle">
+                                    Navigation
+                                </div>
+                                <ul class="footer__menulist">
+                                    <li><a href="#" class="footer__menulink">Home</a></li>
+                                    <li><a href="#" class="footer__menulink">Contact</a></li>
+                                    <li><a href="#" class="footer__menulink">News</a></li>
+                                    <li><a href="#" class="footer__menulink">Forum</a></li>
+                                    <li><a href="#" class="footer__menulink">My account</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="footer__menu">
+                                <div class="footer__menutitle">
+                                    Abouts us
+                                </div>
+                                <ul class="footer__menulist">
+                                    <li><a href="#" class="footer__menulink">Company</a></li>
+                                    <li><a href="#" class="footer__menulink">Job</a></li>
+                                    <li><a href="#" class="footer__menulink">Press</a></li>
+                                    <li><a href="#" class="footer__menulink">Blog</a></li>
+                                    <li><a href="#" class="footer__menulink">Help & Support</a></li>
+                                    <li><a href="#" class="footer__menulink">FAQs</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="footer__menu">
+                                <div class="footer__menutitle">
+                                    Resources
+                                </div>
+                                <ul class="footer__menulist">
+                                    <li><a href="#" class="footer__menulink">Video</a></li>
+                                    <li><a href="#" class="footer__menulink">Gallery</a></li>
+                                    <li><a href="#" class="footer__menulink">Dowload</a></li>
+                                    <li><a href="#" class="footer__menulink">Software</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="footer__img">
+                                <a href="#">
+                                    <img src="../../img/the_pokemon_company_int.png" alt="pkm">
+                                </a>
+                                <a href="#">
+                                    <img src="../../img/en_badge_web_generic.png" alt="chplays">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="subfooter">
+            <div class="container">
+                <div class="subfooter__wrap">
+                    <div class="subfooter__coppyright">
+                        2021 Pokémon. TM, ®Nintendo.
+                    </div>
+                    <ul class="subfooter__menu">
+                        <li><a href="#" class="subfooter__link">Terms of Use</a></li>
+                        <li><a href="#" class="subfooter__link">Privacy Notice</a></li>
+                        <li><a href="#" class="subfooter__link">Cookie Page</a></li>
+                        <li><a href="#" class="subfooter__link">Legal Info</a></li>
+                        <li><a href="#" class="subfooter__link">Security</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Jquery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+        crossorigin="anonymous"></script>
+    <!-- Owl carousel -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+        integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
+        crossorigin="anonymous"></script>
+    <!-- Select 2 -->
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+
+    <script src="../../js/common/slide.js"></script>
+    <script src="../../js/common/script.js"></script>
+    <script src="../../js/pokemon/index.js"></script>
+</body>
+
+</html>

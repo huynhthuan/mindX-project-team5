@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Archive Card</title>
+
+    <link rel="shortcut icon" href="../../img/favicon.ico" type="image/x-icon">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <!-- Owl carousel CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+        integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g=="
+        crossorigin="anonymous" />
+    <!-- Owl carousel theme CSS -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+        integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
+        crossorigin="anonymous" />
+    <!-- Select 2 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="../../fonts/fontawesome-free-5.15.3-web/css/all.min.css">
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+
+<body>
+    <div class="navigation">
+        <div class="container">
+            <div class="navigation__wrap">
+                <div class="row align-items-center">
+                    <div class="col-md-1">
+                        <div class="navigation__brand">
+                            <div class="logo">
+                                <a href="../../index.html">
+                                    <div class="logo__img">
+                                        <img src="../../img/logo.png" alt="">
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-9">
+                        <form action="" class="form-search">
+                            <input type="text" class="form-control navigation__search"
+                                placeholder="Enter name or id pokemon...">
+                            <select name="search_type" id="search_type" class="form__select">
+                                <option value="pkm">Pokemon</option>
+                                <option value="pkmtcg">Pokemon TCG</option>
+                            </select>
+                        </form>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="navigation__action">
+                            <div class="navigation_menu">
+                                <ul class="navigation__list">
+                                    <li class="navigation__link">
+                                        <a href="#"><i class="fas fa-bookmark"></i></a>
+                                    </li>
+                                    <li class="navigation__link">
+                                        <a href="#"><i class="fas fa-newspaper"></i></a>
+                                    </li>
+                                    <li class="navigation__link">
+                                        <a href="#"><i class="fas fa-comments"></i></a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="navigation__account">
+                                <div class="dropdown">
+                                    <div class="account__ava">
+                                        <a href="#">
+                                            <img src="../../img/ava.png" alt="ava">
+                                        </a>
+                                    </div>
+                                    <button class="account__btn btn btn-secondary dropdown-toggle" type="button"
+                                        id="dropdownMenuAccount" data-bs-toggle="dropdown" aria-expanded="false">
+                                    </button>
+                                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuAccount">
+                                        <li><a class="dropdown-item" href="#">Login</a></li>
+                                        <li><a class="dropdown-item" href="#">Register</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <main>
+        <div class="container">
+            <div class="block block__ticker">
+                <div class="ticker__label">
+                    Live
+                </div>
+                <div class="ticker__content">
+                    <a href="#" class="ticker__link">
+                        Pokémon Players Cup III Pokémon TCG Global Finals Preview
+                    </a>
+                </div>
+            </div>
+
+            <div class="block block__header">
+                <div class="block__title">
+                    <h2>POKEMON TCG</h2>
+                </div>
+            </div>
+
+            <div class="block__content archivePoke">
+
+                <div class="archivePoke__action">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <button class="btn btn__randomPoke">
+                                <i class="fas fa-sync-alt"></i> Suprise me !
+                            </button>
+                        </div>
+                        <div class="col-md-6 text-end">
+                            <div class="dropdown">
+                                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownPokeSort"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    Sort results by
+                                </button>
+                                <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end"
+                                    aria-labelledby="dropdownPokemonFillter">
+                                    <li><a class="dropdown-item" href="#">Action</a></li>
+                                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="archiveCard__list">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="poketcg__item">
+                                <div class="poketcg__img">
+                                    <img src="../../img/tcg_card.png" alt="tcg">
+                                </div>
+                                <div class="poketcg_title">
+                                    Flapple G-Max
+                                </div>
+                                <div class="poketcg__overlay">
+                                    <button class="btn pokedextcg__btn pokedextcg__view">
+                                        <i class="fas fa-eye"></i> Viewmore
+                                    </button>
+                                    <button class="btn pokedextcg__btn pokedextcg__bookmark">
+                                        <i class="fas fa-bookmark"></i> Bookmark
+                                    </button>
+                                    <button class="btn pokedextcg__btn pokedextcg__compare">
+                                        <i class="fas fa-table"></i> Add compare
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="poketcg__item">
+                                <div class="poketcg__img">
+                                    <img src="../../img/tcg_card.png" alt="tcg">
+                                </div>
+                                <div class="poketcg_title">
+                                    Flapple G-Max
+                                </div>
+                                <div class="poketcg__overlay">
+                                    <button class="btn pokedextcg__btn pokedextcg__view">
+                                        <i class="fas fa-eye"></i> Viewmore
+                                    </button>
+                                    <button class="btn pokedextcg__btn pokedextcg__bookmark">
+                                        <i class="fas fa-bookmark"></i> Bookmark
+                                    </button>
+                                    <button class="btn pokedextcg__btn pokedextcg__compare">
+                                        <i class="fas fa-table"></i> Add compare
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="poketcg__item">
+                                <div class="poketcg__img">
+                                    <img src="../../img/tcg_card.png" alt="tcg">
+                                </div>
+                                <div class="poketcg_title">
+                                    Flapple G-Max
+                                </div>
+                                <div class="poketcg__overlay">
+                                    <button class="btn pokedextcg__btn pokedextcg__view">
+                                        <i class="fas fa-eye"></i> Viewmore
+                                    </button>
+                                    <button class="btn pokedextcg__btn pokedextcg__bookmark">
+                                        <i class="fas fa-bookmark"></i> Bookmark
+                                    </button>
+                                    <button class="btn pokedextcg__btn pokedextcg__compare">
+                                        <i class="fas fa-table"></i> Add compare
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="poketcg__item">
+                                <div class="poketcg__img">
+                                    <img src="../../img/tcg_card.png" alt="tcg">
+                                </div>
+                                <div class="poketcg_title">
+                                    Flapple G-Max
+                                </div>
+                                <div class="poketcg__overlay">
+                                    <button class="btn pokedextcg__btn pokedextcg__view">
+                                        <i class="fas fa-eye"></i> Viewmore
+                                    </button>
+                                    <button class="btn pokedextcg__btn pokedextcg__bookmark">
+                                        <i class="fas fa-bookmark"></i> Bookmark
+                                    </button>
+                                    <button class="btn pokedextcg__btn pokedextcg__compare">
+                                        <i class="fas fa-table"></i> Add compare
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="poketcg__item">
+                                <div class="poketcg__img">
+                                    <img src="../../img/tcg_card.png" alt="tcg">
+                                </div>
+                                <div class="poketcg_title">
+                                    Flapple G-Max
+                                </div>
+                                <div class="poketcg__overlay">
+                                    <button class="btn pokedextcg__btn pokedextcg__view">
+                                        <i class="fas fa-eye"></i> Viewmore
+                                    </button>
+                                    <button class="btn pokedextcg__btn pokedextcg__bookmark">
+                                        <i class="fas fa-bookmark"></i> Bookmark
+                                    </button>
+                                    <button class="btn pokedextcg__btn pokedextcg__compare">
+                                        <i class="fas fa-table"></i> Add compare
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="poketcg__item">
+                                <div class="poketcg__img">
+                                    <img src="../../img/tcg_card.png" alt="tcg">
+                                </div>
+                                <div class="poketcg_title">
+                                    Flapple G-Max
+                                </div>
+                                <div class="poketcg__overlay">
+                                    <button class="btn pokedextcg__btn pokedextcg__view">
+                                        <i class="fas fa-eye"></i> Viewmore
+                                    </button>
+                                    <button class="btn pokedextcg__btn pokedextcg__bookmark">
+                                        <i class="fas fa-bookmark"></i> Bookmark
+                                    </button>
+                                    <button class="btn pokedextcg__btn pokedextcg__compare">
+                                        <i class="fas fa-table"></i> Add compare
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="poketcg__item">
+                                <div class="poketcg__img">
+                                    <img src="../../img/tcg_card.png" alt="tcg">
+                                </div>
+                                <div class="poketcg_title">
+                                    Flapple G-Max
+                                </div>
+                                <div class="poketcg__overlay">
+                                    <button class="btn pokedextcg__btn pokedextcg__view">
+                                        <i class="fas fa-eye"></i> Viewmore
+                                    </button>
+                                    <button class="btn pokedextcg__btn pokedextcg__bookmark">
+                                        <i class="fas fa-bookmark"></i> Bookmark
+                                    </button>
+                                    <button class="btn pokedextcg__btn pokedextcg__compare">
+                                        <i class="fas fa-table"></i> Add compare
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="poketcg__item">
+                                <div class="poketcg__img">
+                                    <img src="../../img/tcg_card.png" alt="tcg">
+                                </div>
+                                <div class="poketcg_title">
+                                    Flapple G-Max
+                                </div>
+                                <div class="poketcg__overlay">
+                                    <button class="btn pokedextcg__btn pokedextcg__view">
+                                        <i class="fas fa-eye"></i> Viewmore
+                                    </button>
+                                    <button class="btn pokedextcg__btn pokedextcg__bookmark">
+                                        <i class="fas fa-bookmark"></i> Bookmark
+                                    </button>
+                                    <button class="btn pokedextcg__btn pokedextcg__compare">
+                                        <i class="fas fa-table"></i> Add compare
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="archivePoke__pagination text-center">
+                    <button class="btn archivePoke__more">
+                        Load more card
+                    </button>
+                </div>
+            </div>
+
+            <div class="block block__banner">
+                <div class="banner owl-carousel owl-carousel-banner owl-theme">
+                    <div class="banner__item">
+                        <div class="banner__img">
+                            <img src="../../img/banner.jpg" alt="banner">
+                        </div>
+                    </div>
+                    <div class="banner__item">
+                        <div class="banner__img">
+                            <img src="../../img/banner2.jpg" alt="banner">
+                        </div>
+                    </div>
+                    <div class="banner__item">
+                        <div class="banner__img">
+                            <img src="../../img/tv.jpg" alt="banner">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer__main">
+            <div class="container">
+                <div class="block block__footer">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="footer__log">
+                                <a href="../../index.html">
+                                    <img src="../../img/logo-footer.png" alt="logo">
+                                </a>
+                            </div>
+                            <div class="footer__desc">
+                                <p>
+                                    Ornare fuga consequatur sem, ullam! Blandit, taciti! Ratione ad quos excepteur
+                                    hendrerit,
+                                    eum, dolor? Hac pede bibendum beatae mus iure ab itaque irure diamlorem. Magnam
+                                    consequatur interdum sollicitudin! Etiam ridiculus odio sequi fermentum per!
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="footer__menu">
+                                <div class="footer__menutitle">
+                                    Navigation
+                                </div>
+                                <ul class="footer__menulist">
+                                    <li><a href="#" class="footer__menulink">Home</a></li>
+                                    <li><a href="#" class="footer__menulink">Contact</a></li>
+                                    <li><a href="#" class="footer__menulink">News</a></li>
+                                    <li><a href="#" class="footer__menulink">Forum</a></li>
+                                    <li><a href="#" class="footer__menulink">My account</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="footer__menu">
+                                <div class="footer__menutitle">
+                                    Abouts us
+                                </div>
+                                <ul class="footer__menulist">
+                                    <li><a href="#" class="footer__menulink">Company</a></li>
+                                    <li><a href="#" class="footer__menulink">Job</a></li>
+                                    <li><a href="#" class="footer__menulink">Press</a></li>
+                                    <li><a href="#" class="footer__menulink">Blog</a></li>
+                                    <li><a href="#" class="footer__menulink">Help & Support</a></li>
+                                    <li><a href="#" class="footer__menulink">FAQs</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="footer__menu">
+                                <div class="footer__menutitle">
+                                    Resources
+                                </div>
+                                <ul class="footer__menulist">
+                                    <li><a href="#" class="footer__menulink">Video</a></li>
+                                    <li><a href="#" class="footer__menulink">Gallery</a></li>
+                                    <li><a href="#" class="footer__menulink">Dowload</a></li>
+                                    <li><a href="#" class="footer__menulink">Software</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="footer__img">
+                                <a href="#">
+                                    <img src="../../img/the_pokemon_company_int.png" alt="pkm">
+                                </a>
+                                <a href="#">
+                                    <img src="../../img/en_badge_web_generic.png" alt="chplays">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="subfooter">
+            <div class="container">
+                <div class="subfooter__wrap">
+                    <div class="subfooter__coppyright">
+                        2021 Pokémon. TM, ®Nintendo.
+                    </div>
+                    <ul class="subfooter__menu">
+                        <li><a href="#" class="subfooter__link">Terms of Use</a></li>
+                        <li><a href="#" class="subfooter__link">Privacy Notice</a></li>
+                        <li><a href="#" class="subfooter__link">Cookie Page</a></li>
+                        <li><a href="#" class="subfooter__link">Legal Info</a></li>
+                        <li><a href="#" class="subfooter__link">Security</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Jquery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+        crossorigin="anonymous"></script>
+    <!-- Owl carousel -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+        integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
+        crossorigin="anonymous"></script>
+    <!-- Select 2 -->
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+
+    <script src="../../js/common/slide.js"></script>
+    <script src="../../js/common/script.js"></script>
+    <script src="../../js/card/index.js"></script>
+</body>
+
+</html>
