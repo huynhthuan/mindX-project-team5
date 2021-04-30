@@ -12,6 +12,21 @@
     --main-transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+/* width */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: var(--sliver-three-color);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+}
+
 body {
     font-size: 14px;
     font-family: 'UTM Avo';
@@ -35,6 +50,15 @@ ul {
 .navigation {
     padding: 12px;
     box-shadow: 0 8px 8px rgb(0 0 0 / 10%);
+    z-index: 1050;
+    position: relative;
+    background: white;
+}
+
+.navigation.stuck {
+    position: fixed;
+    top: 0;
+    width: 100%;
 }
 
 .navigation__brand {
@@ -1698,7 +1722,7 @@ ul {
 }
 
 .archivePoke__more {
-    width: 196px;
+    min-width: 196px;
     background: rgb(43, 115, 185);
     background: linear-gradient(
         180deg,
@@ -2737,4 +2761,322 @@ ul {
 
 .plyr {
     border-radius: 5px;
+}
+
+.result__title {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.bookmark__content nav {
+    margin-bottom: 30px;
+}
+
+.bookmark__content .nav-link {
+    width: 50%;
+    font-weight: bold;
+    color: var(--primary-color);
+    font-size: 16px;
+}
+
+.bookmark__content .nav-link.active {
+    background: var(--primary-color);
+    color: white;
+}
+
+main {
+    margin-right: 0;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+main.active {
+    margin-right: 20vw;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.chatbox {
+    position: fixed;
+    z-index: 1040;
+    background: white;
+    width: 0;
+    height: calc(100% - 80px);
+    top: 81px;
+    background: white;
+    box-shadow: var(--main-shadow);
+    overflow-y: auto;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    right: 0;
+}
+
+.chatbox.active {
+    width: 20vw;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.chatbox__inner {
+    padding: 10px;
+}
+
+.chat__header {
+    font-weight: bold;
+    color: var(--primary-color);
+    font-size: 16px;
+    padding-bottom: 4px;
+    border-bottom: 1px solid var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.chat__item a {
+    display: flex;
+    margin-bottom: 4px;
+    padding: 4px;
+    border-radius: 5px;
+}
+
+.chat__item a:hover {
+    background: #eaeaea;
+}
+
+.chat__ava {
+    width: 40px;
+    height: 40px;
+    overflow: hidden;
+    border-radius: 100%;
+    margin-right: 10px;
+}
+
+.chat__ava img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.chat__name {
+    color: var(--primary-color);
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 15px;
+}
+
+.chat__status {
+    font-size: 12px;
+}
+
+.chatbox::-webkit-scrollbar {
+    width: 8px;
+}
+
+.chatbox::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.chatbox::-webkit-scrollbar-thumb {
+    background-color: white;
+    border-radius: 5px;
+}
+
+.chatbox::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.chatbox:hover::-webkit-scrollbar-thumb {
+    background-color: var(--primary-color);
+}
+
+.modal-title {
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.compare__name {
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 10px;
+}
+
+.compare__image {
+    width: 60%;
+    margin: 30px auto;
+    background-image: url('../img/list_bg.png');
+    background-position: center center;
+    background-size: auto;
+    border-radius: 100%;
+    overflow: hidden;
+}
+
+.compare__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.compare__label {
+    font-weight: bold;
+    color: var(--primary-color);
+    border-top: 2px solid var(--primary-color);
+    padding-top: 10px;
+    padding-bottom: 20px;
+    font-size: 16px;
+}
+
+.compare__stats .stat__icon {
+    width: 20px;
+    height: 20px;
+}
+.compare__stats .stat__value {
+    height: 10px;
+}
+
+.btnCompare__more {
+    background: var(--primary-color);
+    color: white;
+}
+
+.btnCompare__more:hover {
+    color: white;
+}
+
+.chatbox__list {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 99%;
+    height: auto;
+    box-shadow: var(--main-shadow);
+    z-index: 50;
+    display: flex;
+    justify-content: flex-end;
+    transition: var(--main-transition);
+    align-items: flex-end;
+}
+
+.chatbox__list.active {
+    width: calc(99% - 20vw);
+    transition: var(--main-transition);
+}
+
+.chating__bar {
+    min-width: 140px;
+    text-align: center;
+    background: var(--primary-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.chating {
+    background: white;
+    border-radius: 5px 5px 0 0;
+    box-shadow: var(--main-shadow);
+    max-width: 340px;
+    overflow: hidden;
+    margin-left: 10px;
+    height: auto;
+    transition: var(--main-transition);
+}
+
+.chating.minimize {
+    height: 42px;
+    transition: var(--main-transition);
+}
+
+.chating__list {
+    height: 430px;
+    overflow-y: auto;
+}
+
+.chating__list,
+.chating__send {
+    padding: 10px 5px 10px 10px;
+}
+
+.chating__list::-webkit-scrollbar {
+    width: 5px;
+}
+
+.chating__list::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.chating__list::-webkit-scrollbar-thumb {
+    background-color: white;
+    border-radius: 5px;
+}
+
+.chating__list::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.chating__list:hover::-webkit-scrollbar-thumb {
+    background-color: var(--primary-color);
+}
+
+.chatting__item {
+    margin-bottom: 10px;
+    display: flex;
+}
+
+.chating__img {
+    width: 30px;
+    height: 30px;
+    overflow: hidden;
+    border-radius: 100%;
+    margin-right: 10px;
+}
+
+.chating__img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.chating__content {
+    width: calc(100% - 40px);
+}
+
+.chating__content {
+    background: #eaeaea;
+    border-radius: 5px;
+    padding: 8px;
+    font-size: 14px;
+}
+
+.chatting__item--send {
+    flex-direction: row-reverse;
+}
+
+.chatting__item--send .chating__img {
+    margin-right: 0;
+    margin-left: 10px;
+}
+
+.chatting__item--send .chating__content {
+    background: var(--third-color);
+    color: white;
+}
+
+.chating__send {
+    padding-top: 4px;
+}
+
+.chatting__info {
+    background: #eaeaea;
+    color: var(--primary-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+    padding: 2px 10px;
+}
+
+.info__action button {
+    color: var(--primary-color);
+}
+
+.info__action button:hover {
+    background-color: white;
+    color: var(--primary-color);
 }

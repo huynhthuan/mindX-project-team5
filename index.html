@@ -64,7 +64,9 @@
                                         <a href="#"><i class="fas fa-newspaper"></i></a>
                                     </li>
                                     <li class="navigation__link">
-                                        <a href="#"><i class="fas fa-comments"></i></a>
+                                        <a class="toggle__chat" href="javascript:void(0)">
+                                            <i class="fas fa-comments"></i>
+                                        </a>
                                     </li>
                                 </ul>
                             </div>
@@ -306,9 +308,11 @@
                                         <button class="btn pokedex__btn pokedex__bookmark">
                                             <i class="fas fa-bookmark"></i> Bookmark
                                         </button>
-                                        <button class="btn pokedex__btn pokedex__compare">
+                                        <button class="btn pokedex__btn pokedex__compare" data-bs-toggle="modal"
+                                            data-bs-target="#compareModal">
                                             <i class="fas fa-table"></i> Add compare
                                         </button>
+
                                     </div>
                                 </div>
                             </div>
@@ -1348,6 +1352,385 @@
         </div>
     </footer>
 
+    <div class="chatbox">
+        <div class="chatbox__inner">
+            <div class="chat__group">
+                <div class="chat__header">
+                    Channel
+                </div>
+                <ul class="chat__list">
+                    <li class="chat__item" data-name="World 1">
+                        <a href="#">
+                            <div class="chat__ava">
+                                <img src="./img/ava.png" alt="chat">
+                            </div>
+                            <div class="chat__meta">
+                                <div class="chat__name">World</div>
+                                <div class="chat__status"><span class="text-success">Online</span></div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="chat__item" data-name="World 2">
+                        <a href="#">
+                            <div class="chat__ava">
+                                <img src="./img/ava.png" alt="chat">
+                            </div>
+                            <div class="chat__meta">
+                                <div class="chat__name">World</div>
+                                <div class="chat__status"><span class="text-success">Online</span></div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="chat__item" data-name="World 3">
+                        <a href="#">
+                            <div class="chat__ava">
+                                <img src="./img/ava.png" alt="chat">
+                            </div>
+                            <div class="chat__meta">
+                                <div class="chat__name">World</div>
+                                <div class="chat__status"><span class="text-success">Online</span></div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="chat__item" data-name="World 4">
+                        <a href="#">
+                            <div class="chat__ava">
+                                <img src="./img/ava.png" alt="chat">
+                            </div>
+                            <div class="chat__meta">
+                                <div class="chat__name">World</div>
+                                <div class="chat__status"><span class="text-success">Online</span></div>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="chat__group">
+                <div class="chat__header">
+                    Contact
+                </div>
+                <ul class="chat__list">
+                    <li class="chat__item" data-name="Person 1">
+                        <a href="#">
+                            <div class="chat__ava">
+                                <img src="./img/ava.png" alt="chat">
+                            </div>
+                            <div class="chat__meta">
+                                <div class="chat__name">World</div>
+                                <div class="chat__status"><span class="text-success">Online</span></div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="chat__item" data-name="Person 2">
+                        <a href="#">
+                            <div class="chat__ava">
+                                <img src="./img/ava.png" alt="chat">
+                            </div>
+                            <div class="chat__meta">
+                                <div class="chat__name">World</div>
+                                <div class="chat__status"><span class="text-success">Online</span></div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="chat__item" data-name="Person 3">
+                        <a href="#">
+                            <div class="chat__ava">
+                                <img src="./img/ava.png" alt="chat">
+                            </div>
+                            <div class="chat__meta">
+                                <div class="chat__name">World</div>
+                                <div class="chat__status"><span class="text-success">Online</span></div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="chat__item" data-name="Person 4">
+                        <a href="#">
+                            <div class="chat__ava">
+                                <img src="./img/ava.png" alt="chat">
+                            </div>
+                            <div class="chat__meta">
+                                <div class="chat__name">World</div>
+                                <div class="chat__status"><span class="text-success">Online</span></div>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="chatbox__list">
+        <div class="chating">
+            <div class="chatting__info">
+                <div class="info__userName">Admin</div>
+                <div class="info__action">
+                    <button class="btn btn__minimizechat">
+                        <i class="fas fa-minus"></i>
+                    </button>
+                    <button class="btn btn__closechat">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+            </div>
+
+            <ul class="chating__list">
+                <li class="chatting__item chatting__item--receive">
+                    <div class="chating__img">
+                        <img src="./img/ava.png" alt="ava">
+                    </div>
+                    <div class="chating__content">
+                        123123123123123123123123 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo
+                        voluptatem maiores excepturi saepe ratione repellendus eveniet unde sapiente est, iure
+                        corrupti. Voluptatum vero, praesentium repudiandae porro ducimus maiores delectus
+                        obcaecati?
+                    </div>
+                </li>
+                <li class="chatting__item chatting__item--send">
+                    <div class="chating__img">
+                        <img src="./img/ava.png" alt="ava">
+                    </div>
+                    <div class="chating__content">
+                        123123123123123123123123 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo
+                        voluptatem maiores excepturi saepe ratione repellendus eveniet unde sapiente est, iure
+                        corrupti. Voluptatum vero, praesentium repudiandae porro ducimus maiores delectus
+                        obcaecati?
+                    </div>
+                </li>
+                <li class="chatting__item chatting__item--send">
+                    <div class="chating__img">
+                        <img src="./img/ava.png" alt="ava">
+                    </div>
+                    <div class="chating__content">
+                        123123123123123123123123 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo
+                        voluptatem maiores excepturi saepe ratione repellendus eveniet unde sapiente est, iure
+                        corrupti. Voluptatum vero, praesentium repudiandae porro ducimus maiores delectus
+                        obcaecati?
+                    </div>
+                </li>
+            </ul>
+
+            <div class="chating__send">
+                <form action="">
+                    <div class="form-group d-flex">
+                        <input type="text" name="message" class="form-control me-1" placeholder="Aa">
+                        <button class="btn btn-success"><i class="fas fa-paper-plane"></i></button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="chating">
+            <div class="chatting__info">
+                <div class="info__userName">Admin</div>
+                <div class="info__action">
+                    <button class="btn btn__minimizechat">
+                        <i class="fas fa-minus"></i>
+                    </button>
+                    <button class="btn btn__closechat">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+            </div>
+
+            <ul class="chating__list">
+                <li class="chatting__item chatting__item--receive">
+                    <div class="chating__img">
+                        <img src="./img/ava.png" alt="ava">
+                    </div>
+                    <div class="chating__content">
+                        123123123123123123123123 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo
+                        voluptatem maiores excepturi saepe ratione repellendus eveniet unde sapiente est, iure
+                        corrupti. Voluptatum vero, praesentium repudiandae porro ducimus maiores delectus
+                        obcaecati?
+                    </div>
+                </li>
+                <li class="chatting__item chatting__item--send">
+                    <div class="chating__img">
+                        <img src="./img/ava.png" alt="ava">
+                    </div>
+                    <div class="chating__content">
+                        123123123123123123123123 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo
+                        voluptatem maiores excepturi saepe ratione repellendus eveniet unde sapiente est, iure
+                        corrupti. Voluptatum vero, praesentium repudiandae porro ducimus maiores delectus
+                        obcaecati?
+                    </div>
+                </li>
+                <li class="chatting__item chatting__item--send">
+                    <div class="chating__img">
+                        <img src="./img/ava.png" alt="ava">
+                    </div>
+                    <div class="chating__content">
+                        123123123123123123123123 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo
+                        voluptatem maiores excepturi saepe ratione repellendus eveniet unde sapiente est, iure
+                        corrupti. Voluptatum vero, praesentium repudiandae porro ducimus maiores delectus
+                        obcaecati?
+                    </div>
+                </li>
+            </ul>
+
+            <div class="chating__send">
+                <form action="">
+                    <div class="form-group d-flex">
+                        <input type="text" name="message" class="form-control me-1" placeholder="Aa">
+                        <button class="btn btn-success"><i class="fas fa-paper-plane"></i></button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="chatbox__list--mini">
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="compareModal" tabindex="-1" aria-labelledby="compareModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="compareModalLabel">Compare Pokemon</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="compare">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="compare__item">
+                                        <button class="btn btn-danger w-100 mb-4">Remove</button>
+                                        <div class="compare__name">
+                                            Pokemon 1
+                                        </div>
+                                        <div class="compare__image">
+                                            <img src="./img/150.png" alt="pokemon">
+                                        </div>
+                                        <div class="compare__content">
+                                            <div class="compare__label">
+                                                Stats
+                                            </div>
+                                            <div class="compare__stats">
+                                                <div class="compare__stats">
+                                                    <div class="stats">
+                                                        <div class="stat__item">
+                                                            <img src="./img/stat_hp.png" alt="hp" class="stat__icon">
+                                                            <div class="stat__value">
+                                                                <div class="stat__percent"></div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="stat__item">
+                                                            <img src="./img/stat_atk.png" alt="atk" class="stat__icon">
+                                                            <div class="stat__value">
+                                                                <div class="stat__percent"></div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="stat__item">
+                                                            <img src="./img/stat_def.png" alt="def" class="stat__icon">
+                                                            <div class="stat__value">
+                                                                <div class="stat__percent"></div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="stat__item">
+                                                            <img src="./img/stat_atk_special.png" alt="hp"
+                                                                class="stat__icon">
+                                                            <div class="stat__value">
+                                                                <div class="stat__percent"></div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="stat__item">
+                                                            <img src="./img/stat_def_special.png" alt="atk"
+                                                                class="stat__icon">
+                                                            <div class="stat__value">
+                                                                <div class="stat__percent"></div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="stat__item">
+                                                            <img src="./img/stat_spd.png" alt="def" class="stat__icon">
+                                                            <div class="stat__value">
+                                                                <div class="stat__percent"></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="compare__button text-center">
+                                                <a href="./views/pokemon/detail.html" class="btn btnCompare__more">View
+                                                    detail</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="compare__item">
+                                        <button class="btn btn-danger w-100 mb-4">Remove</button>
+                                        <div class="compare__name">
+                                            Pokemon 1
+                                        </div>
+                                        <div class="compare__image">
+                                            <img src="./img/2.png" alt="pokemon">
+                                        </div>
+                                        <div class="compare__content">
+                                            <div class="compare__label">
+                                                Stats
+                                            </div>
+                                            <div class="compare__stats">
+                                                <div class="stats">
+                                                    <div class="stat__item">
+                                                        <img src="./img/stat_hp.png" alt="hp" class="stat__icon">
+                                                        <div class="stat__value">
+                                                            <div class="stat__percent"></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="stat__item">
+                                                        <img src="./img/stat_atk.png" alt="atk" class="stat__icon">
+                                                        <div class="stat__value">
+                                                            <div class="stat__percent"></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="stat__item">
+                                                        <img src="./img/stat_def.png" alt="def" class="stat__icon">
+                                                        <div class="stat__value">
+                                                            <div class="stat__percent"></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="stat__item">
+                                                        <img src="./img/stat_atk_special.png" alt="hp"
+                                                            class="stat__icon">
+                                                        <div class="stat__value">
+                                                            <div class="stat__percent"></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="stat__item">
+                                                        <img src="./img/stat_def_special.png" alt="atk"
+                                                            class="stat__icon">
+                                                        <div class="stat__value">
+                                                            <div class="stat__percent"></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="stat__item">
+                                                        <img src="./img/stat_spd.png" alt="def" class="stat__icon">
+                                                        <div class="stat__value">
+                                                            <div class="stat__percent"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="compare__button text-center">
+                                                <a href="./views/pokemon/detail.html" class="btn btnCompare__more">View
+                                                    detail</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Jquery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
@@ -1360,6 +1743,13 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
         integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
         crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"
+        integrity="sha512-CEiA+78TpP9KAIPzqBvxUv8hy41jyI3f2uHi7DGp/Y/Ka973qgSdybNegWFciqh6GrN2UePx2KkflnQUbUhNIA=="
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/shortcuts/sticky.min.js"
+        integrity="sha512-O5YCLUxCY2OBc4rfpnKUIgE4LGuCiW8CrJ7ty4hvkBAAKUOnlbomEFWd3a6ruRnFvO3LG2wiaGiJ1heOvdppvA=="
+        crossorigin="anonymous"></script>
+
     <script src="./js/common/slide.js"></script>
     <script src="./js/common/script.js"></script>
 </body>
