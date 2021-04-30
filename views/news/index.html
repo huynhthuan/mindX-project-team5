@@ -19,16 +19,17 @@
 </head>
 
 <body>
+    <!-- Navigation -->
     <div class="navigation">
         <div class="container">
             <div class="navigation__wrap">
-                <div class="row align-items-start">
+                <div class="row align-items-center">
                     <div class="col-md-1">
                         <div class="navigation__brand">
                             <div class="logo">
-                                <a href="../../index.html">
+                                <a href="../../">
                                     <div class="logo__img">
-                                        <img src="../../img/logo.png" alt="">
+                                        <img src="../../img/logo.png" alt="logo">
                                     </div>
                                 </a>
                             </div>
@@ -49,13 +50,14 @@
                             <div class="navigation_menu">
                                 <ul class="navigation__list">
                                     <li class="navigation__link">
-                                        <a href="#"><i class="fas fa-bookmark"></i></a>
+                                        <a href="../../views/profile/bookmark/"><i class="fas fa-bookmark"></i></a>
                                     </li>
                                     <li class="navigation__link">
-                                        <a href="#"><i class="fas fa-newspaper"></i></a>
+                                        <a href="../../views/news/"><i class="fas fa-newspaper"></i></a>
                                     </li>
                                     <li class="navigation__link">
-                                        <a href="#"><i class="fas fa-comments"></i></a>
+                                        <a href="javascript:void(0)" class="toggle__chat"><i
+                                                class="fas fa-comments"></i></a>
                                     </li>
                                 </ul>
                             </div>
@@ -63,7 +65,7 @@
                             <div class="navigation__account">
                                 <div class="dropdown">
                                     <div class="account__ava">
-                                        <a href="#">
+                                        <a href="../../views/profile/">
                                             <img src="../../img/ava.png" alt="ava">
                                         </a>
                                     </div>
@@ -71,8 +73,8 @@
                                         id="dropdownMenuAccount" data-bs-toggle="dropdown" aria-expanded="false">
                                     </button>
                                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuAccount">
-                                        <li><a class="dropdown-item" href="#">Login</a></li>
-                                        <li><a class="dropdown-item" href="#">Register</a></li>
+                                        <li><a class="dropdown-item" href="../../views/auth/login/">Login</a></li>
+                                        <li><a class="dropdown-item" href="../../views/auth/sign-up/">Sign up</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -83,430 +85,544 @@
         </div>
     </div>
 
-    <main>
-        <div class="container">
-            <div class="block block__ticker">
-                <div class="ticker__label">
-                    Live
-                </div>
-                <div class="ticker__content">
-                    <a href="#" class="ticker__link">
-                        Pokémon Players Cup III Pokémon TCG Global Finals Preview
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <div class="block block__newsBanner">
-            <img src="../../img/xy_wallpaper4_1920x1200.jpg" alt="banner">
-            <div class="newsBanner__overlay">
-                <div class="newsBanner__title">News</div>
-                <div class="breadcrumb">Home / News</div>
-            </div>
-        </div>
-
-        <div class="container">
-            <div class="block news">
-                <div class="row">
-                    <div class="col-md-8">
-                        <div class="block__header--detail">
-                            <span>LATEST NEWS</span>
-                        </div>
-
-                        <div class="news__list">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="news__item">
-                                        <a href="./detail.html">
-                                            <div class="news__img">
-                                                <img src="../../img/link3.jpg" alt="news">
-                                            </div>
-                                            <div class="news__meta">
-                                                <a href="./detail.html" class="news__link--detail">
-                                                    Battle Tornadus and Scout N & Zekrom in Pokémon Masters EX
-                                                </a>
-                                                <div class="news__info">
-                                                    <div class="news__groups">
-                                                        <div class="news__author">Admin</div>
-                                                        <div class="news__date">August 7, 2021</div>
-                                                    </div>
-                                                    <div class="news__count">
-                                                        <div class="news__views"><i class="fas fa-eye"></i> <span
-                                                                class="views__value">36678</span></div>
-                                                        <div class="news__comment">
-                                                            <i class="fas fa-comments"></i> <span
-                                                                class="comment__value">40</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="news__item">
-                                        <a href="./detail.html">
-                                            <div class="news__img">
-                                                <img src="../../img/link3.jpg" alt="news">
-                                            </div>
-                                            <div class="news__meta">
-                                                <a href="./detail.html" class="news__link--detail">
-                                                    Battle Tornadus and Scout N & Zekrom in Pokémon Masters EX
-                                                </a>
-                                                <div class="news__info">
-                                                    <div class="news__groups">
-                                                        <div class="news__author">Admin</div>
-                                                        <div class="news__date">August 7, 2021</div>
-                                                    </div>
-                                                    <div class="news__count">
-                                                        <div class="news__views"><i class="fas fa-eye"></i> <span
-                                                                class="views__value">36678</span></div>
-                                                        <div class="news__comment">
-                                                            <i class="fas fa-comments"></i> <span
-                                                                class="comment__value">40</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="news__item">
-                                        <a href="./detail.html">
-                                            <div class="news__img">
-                                                <img src="../../img/link3.jpg" alt="news">
-                                            </div>
-                                            <div class="news__meta">
-                                                <a href="./detail.html" class="news__link--detail">
-                                                    Battle Tornadus and Scout N & Zekrom in Pokémon Masters EX
-                                                </a>
-                                                <div class="news__info">
-                                                    <div class="news__groups">
-                                                        <div class="news__author">Admin</div>
-                                                        <div class="news__date">August 7, 2021</div>
-                                                    </div>
-                                                    <div class="news__count">
-                                                        <div class="news__views"><i class="fas fa-eye"></i> <span
-                                                                class="views__value">36678</span></div>
-                                                        <div class="news__comment">
-                                                            <i class="fas fa-comments"></i> <span
-                                                                class="comment__value">40</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="news__item">
-                                        <a href="./detail.html">
-                                            <div class="news__img">
-                                                <img src="../../img/link3.jpg" alt="news">
-                                            </div>
-                                            <div class="news__meta">
-                                                <a href="./detail.html" class="news__link--detail">
-                                                    Battle Tornadus and Scout N & Zekrom in Pokémon Masters EX
-                                                </a>
-                                                <div class="news__info">
-                                                    <div class="news__groups">
-                                                        <div class="news__author">Admin</div>
-                                                        <div class="news__date">August 7, 2021</div>
-                                                    </div>
-                                                    <div class="news__count">
-                                                        <div class="news__views"><i class="fas fa-eye"></i> <span
-                                                                class="views__value">36678</span></div>
-                                                        <div class="news__comment">
-                                                            <i class="fas fa-comments"></i> <span
-                                                                class="comment__value">40</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <nav aria-label="Page navigation example">
-                            <ul class="pagination">
-                                <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-                                <li class="page-item"><a class="page-link" href="#">Next</a></li>
-                            </ul>
-                        </nav>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="sidebar">
-                            <div class="widget widget__banner">
-                                <a href="#">
-                                    <img src="../../img/pokemon-go-11.jpg" alt="banner">
-                                </a>
-                            </div>
-
-                            <div class="widget widget__rank">
-                                <div class="widget__header">
-                                    <span>MOST VIEW POKEMON</span>
-                                </div>
-                                <div class="widget__content">
-                                    <div class="rank__item">
-                                        <div class="rank__count">1</div>
-                                        <div class="rank__content">
-                                            <div class="rank__img">
-                                                <img src="../../img/1.png" alt="pokemon">
-                                            </div>
-                                            <div class="rank__meta">
-                                                <a href="../pokemon/detail.html" class="rank__name">MeoTwo</a>
-                                                <div class="rank__views">
-                                                    <i class="fas fa-eye"></i> <span>152.256
-                                                        views</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="widget widget__popular">
-                                <div class="widget__header">
-                                    <span>MOST POPULAR</span>
-                                </div>
-
-                                <div class="widget__content">
-                                    <div class="news__short">
-                                        <div class="short__img">
-                                            <a href="./detail.html">
-                                                <img src="../../img/2021-players-cup-iv-qualifier-11.jpg" alt="img">
-                                            </a>
-                                        </div>
-                                        <div class="short__meta">
-                                            <a href="./detail.html" class="short__title">
-                                                Battle Tornadus and Scout N & Zekrom in Pokémon Masters EX
-                                            </a>
-                                            <div class="short__date">
-                                                August 7, 2019
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="news__short">
-                                        <div class="short__img">
-                                            <a href="./detail.html">
-                                                <img src="../../img/2021-players-cup-iv-qualifier-11.jpg" alt="img">
-                                            </a>
-                                        </div>
-                                        <div class="short__meta">
-                                            <a href="./detail.html" class="short__title">
-                                                Battle Tornadus and Scout N & Zekrom in Pokémon Masters EX
-                                            </a>
-                                            <div class="short__date">
-                                                August 7, 2019
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="news__short">
-                                        <div class="short__img">
-                                            <a href="./detail.html">
-                                                <img src="../../img/2021-players-cup-iv-qualifier-11.jpg" alt="img">
-                                            </a>
-                                        </div>
-                                        <div class="short__meta">
-                                            <a href="./detail.html" class="short__title">
-                                                Battle Tornadus and Scout N & Zekrom in Pokémon Masters EX
-                                            </a>
-                                            <div class="short__date">
-                                                August 7, 2019
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="news__short">
-                                        <div class="short__img">
-                                            <a href="./detail.html">
-                                                <img src="../../img/2021-players-cup-iv-qualifier-11.jpg" alt="img">
-                                            </a>
-                                        </div>
-                                        <div class="short__meta">
-                                            <a href="./detail.html" class="short__title">
-                                                Battle Tornadus and Scout N & Zekrom in Pokémon Masters EX
-                                            </a>
-                                            <div class="short__date">
-                                                August 7, 2019
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="widget widget__popular">
-                                <div class="widget__header">
-                                    <span>NEWS TTG</span>
-                                </div>
-
-                                <div class="widget__content">
-                                    <div class="news__short">
-                                        <div class="short__img">
-                                            <a href="./detail.html">
-                                                <img src="../../img/2021-players-cup-iv-qualifier-11.jpg" alt="img">
-                                            </a>
-                                        </div>
-                                        <div class="short__meta">
-                                            <a href="./detail.html" class="short__title">
-                                                Battle Tornadus and Scout N & Zekrom in Pokémon Masters EX
-                                            </a>
-                                            <div class="short__date">
-                                                August 7, 2019
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="news__short">
-                                        <div class="short__img">
-                                            <a href="./detail.html">
-                                                <img src="../../img/2021-players-cup-iv-qualifier-11.jpg" alt="img">
-                                            </a>
-                                        </div>
-                                        <div class="short__meta">
-                                            <a href="./detail.html" class="short__title">
-                                                Battle Tornadus and Scout N & Zekrom in Pokémon Masters EX
-                                            </a>
-                                            <div class="short__date">
-                                                August 7, 2019
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="news__short">
-                                        <div class="short__img">
-                                            <a href="./detail.html">
-                                                <img src="../../img/2021-players-cup-iv-qualifier-11.jpg" alt="img">
-                                            </a>
-                                        </div>
-                                        <div class="short__meta">
-                                            <a href="./detail.html" class="short__title">
-                                                Battle Tornadus and Scout N & Zekrom in Pokémon Masters EX
-                                            </a>
-                                            <div class="short__date">
-                                                August 7, 2019
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="news__short">
-                                        <div class="short__img">
-                                            <a href="./detail.html">
-                                                <img src="../../img/2021-players-cup-iv-qualifier-11.jpg" alt="img">
-                                            </a>
-                                        </div>
-                                        <div class="short__meta">
-                                            <a href="./detail.html" class="short__title">
-                                                Battle Tornadus and Scout N & Zekrom in Pokémon Masters EX
-                                            </a>
-                                            <div class="short__date">
-                                                August 7, 2019
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </main>
-
-    <footer>
-        <div class="footer__main">
+    <!-- Main -->
+    <div class="main__wrap">
+        <main>
             <div class="container">
-                <div class="block block__footer">
+                <div class="block block__ticker">
+                    <div class="ticker__label">
+                        Live
+                    </div>
+                    <div class="ticker__content">
+                        <a href="#" class="ticker__link">
+                            Pokémon Players Cup III Pokémon TCG Global Finals Preview
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="block block__newsBanner">
+                <img src="../../img/xy_wallpaper4_1920x1200.jpg" alt="banner">
+                <div class="newsBanner__overlay">
+                    <div class="newsBanner__title">News</div>
+                    <div class="breadcrumb">Home / News</div>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="block news">
                     <div class="row">
-                        <div class="col-md-3">
-                            <div class="footer__log">
-                                <a href="../../index.html">
-                                    <img src="../../img/logo-footer.png" alt="logo">
-                                </a>
+                        <div class="col-md-8">
+                            <div class="block__header--detail">
+                                <span>LATEST NEWS</span>
                             </div>
-                            <div class="footer__desc">
-                                <p>
-                                    Ornare fuga consequatur sem, ullam! Blandit, taciti! Ratione ad quos excepteur
-                                    hendrerit,
-                                    eum, dolor? Hac pede bibendum beatae mus iure ab itaque irure diamlorem. Magnam
-                                    consequatur interdum sollicitudin! Etiam ridiculus odio sequi fermentum per!
-                                </p>
-                            </div>
-                        </div>
-                        <div class="col-md-2">
-                            <div class="footer__menu">
-                                <div class="footer__menutitle">
-                                    Navigation
+
+                            <div class="news__list">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="news__item">
+                                            <a href="./detail.html">
+                                                <div class="news__img">
+                                                    <img src="../../img/link3.jpg" alt="news">
+                                                </div>
+                                                <div class="news__meta">
+                                                    <a href="./detail.html" class="news__link--detail">
+                                                        Battle Tornadus and Scout N & Zekrom in Pokémon Masters EX
+                                                    </a>
+                                                    <div class="news__info">
+                                                        <div class="news__groups">
+                                                            <div class="news__author">Admin</div>
+                                                            <div class="news__date">August 7, 2021</div>
+                                                        </div>
+                                                        <div class="news__count">
+                                                            <div class="news__views"><i class="fas fa-eye"></i> <span
+                                                                    class="views__value">36678</span></div>
+                                                            <div class="news__comment">
+                                                                <i class="fas fa-comments"></i> <span
+                                                                    class="comment__value">40</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="news__item">
+                                            <a href="./detail.html">
+                                                <div class="news__img">
+                                                    <img src="../../img/link3.jpg" alt="news">
+                                                </div>
+                                                <div class="news__meta">
+                                                    <a href="./detail.html" class="news__link--detail">
+                                                        Battle Tornadus and Scout N & Zekrom in Pokémon Masters EX
+                                                    </a>
+                                                    <div class="news__info">
+                                                        <div class="news__groups">
+                                                            <div class="news__author">Admin</div>
+                                                            <div class="news__date">August 7, 2021</div>
+                                                        </div>
+                                                        <div class="news__count">
+                                                            <div class="news__views"><i class="fas fa-eye"></i> <span
+                                                                    class="views__value">36678</span></div>
+                                                            <div class="news__comment">
+                                                                <i class="fas fa-comments"></i> <span
+                                                                    class="comment__value">40</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="news__item">
+                                            <a href="./detail.html">
+                                                <div class="news__img">
+                                                    <img src="../../img/link3.jpg" alt="news">
+                                                </div>
+                                                <div class="news__meta">
+                                                    <a href="./detail.html" class="news__link--detail">
+                                                        Battle Tornadus and Scout N & Zekrom in Pokémon Masters EX
+                                                    </a>
+                                                    <div class="news__info">
+                                                        <div class="news__groups">
+                                                            <div class="news__author">Admin</div>
+                                                            <div class="news__date">August 7, 2021</div>
+                                                        </div>
+                                                        <div class="news__count">
+                                                            <div class="news__views"><i class="fas fa-eye"></i> <span
+                                                                    class="views__value">36678</span></div>
+                                                            <div class="news__comment">
+                                                                <i class="fas fa-comments"></i> <span
+                                                                    class="comment__value">40</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="news__item">
+                                            <a href="./detail.html">
+                                                <div class="news__img">
+                                                    <img src="../../img/link3.jpg" alt="news">
+                                                </div>
+                                                <div class="news__meta">
+                                                    <a href="./detail.html" class="news__link--detail">
+                                                        Battle Tornadus and Scout N & Zekrom in Pokémon Masters EX
+                                                    </a>
+                                                    <div class="news__info">
+                                                        <div class="news__groups">
+                                                            <div class="news__author">Admin</div>
+                                                            <div class="news__date">August 7, 2021</div>
+                                                        </div>
+                                                        <div class="news__count">
+                                                            <div class="news__views"><i class="fas fa-eye"></i> <span
+                                                                    class="views__value">36678</span></div>
+                                                            <div class="news__comment">
+                                                                <i class="fas fa-comments"></i> <span
+                                                                    class="comment__value">40</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
                                 </div>
-                                <ul class="footer__menulist">
-                                    <li><a href="#" class="footer__menulink">Home</a></li>
-                                    <li><a href="#" class="footer__menulink">Contact</a></li>
-                                    <li><a href="#" class="footer__menulink">News</a></li>
-                                    <li><a href="#" class="footer__menulink">Forum</a></li>
-                                    <li><a href="#" class="footer__menulink">My account</a></li>
-                                </ul>
                             </div>
+
+                            <nav aria-label="Page navigation example">
+                                <ul class="pagination">
+                                    <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                                </ul>
+                            </nav>
                         </div>
-                        <div class="col-md-2">
-                            <div class="footer__menu">
-                                <div class="footer__menutitle">
-                                    Abouts us
+                        <div class="col-md-4">
+                            <div class="sidebar">
+                                <div class="widget widget__banner">
+                                    <a href="#">
+                                        <img src="../../img/pokemon-go-11.jpg" alt="banner">
+                                    </a>
                                 </div>
-                                <ul class="footer__menulist">
-                                    <li><a href="#" class="footer__menulink">Company</a></li>
-                                    <li><a href="#" class="footer__menulink">Job</a></li>
-                                    <li><a href="#" class="footer__menulink">Press</a></li>
-                                    <li><a href="#" class="footer__menulink">Blog</a></li>
-                                    <li><a href="#" class="footer__menulink">Help & Support</a></li>
-                                    <li><a href="#" class="footer__menulink">FAQs</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-md-2">
-                            <div class="footer__menu">
-                                <div class="footer__menutitle">
-                                    Resources
+
+                                <div class="widget widget__rank">
+                                    <div class="widget__header">
+                                        <span>MOST VIEW POKEMON</span>
+                                    </div>
+                                    <div class="widget__content">
+                                        <div class="rank__item">
+                                            <div class="rank__count">1</div>
+                                            <div class="rank__content">
+                                                <div class="rank__img">
+                                                    <img src="../../img/1.png" alt="pokemon">
+                                                </div>
+                                                <div class="rank__meta">
+                                                    <a href="../pokemon/detail.html" class="rank__name">MeoTwo</a>
+                                                    <div class="rank__views">
+                                                        <i class="fas fa-eye"></i> <span>152.256
+                                                            views</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                                <ul class="footer__menulist">
-                                    <li><a href="#" class="footer__menulink">Video</a></li>
-                                    <li><a href="#" class="footer__menulink">Gallery</a></li>
-                                    <li><a href="#" class="footer__menulink">Dowload</a></li>
-                                    <li><a href="#" class="footer__menulink">Software</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="footer__img">
-                                <a href="#">
-                                    <img src="../../img/the_pokemon_company_int.png" alt="pkm">
-                                </a>
-                                <a href="#">
-                                    <img src="../../img/en_badge_web_generic.png" alt="chplays">
-                                </a>
+
+                                <div class="widget widget__popular">
+                                    <div class="widget__header">
+                                        <span>MOST POPULAR</span>
+                                    </div>
+
+                                    <div class="widget__content">
+                                        <div class="news__short">
+                                            <div class="short__img">
+                                                <a href="./detail.html">
+                                                    <img src="../../img/2021-players-cup-iv-qualifier-11.jpg" alt="img">
+                                                </a>
+                                            </div>
+                                            <div class="short__meta">
+                                                <a href="./detail.html" class="short__title">
+                                                    Battle Tornadus and Scout N & Zekrom in Pokémon Masters EX
+                                                </a>
+                                                <div class="short__date">
+                                                    August 7, 2019
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="news__short">
+                                            <div class="short__img">
+                                                <a href="./detail.html">
+                                                    <img src="../../img/2021-players-cup-iv-qualifier-11.jpg" alt="img">
+                                                </a>
+                                            </div>
+                                            <div class="short__meta">
+                                                <a href="./detail.html" class="short__title">
+                                                    Battle Tornadus and Scout N & Zekrom in Pokémon Masters EX
+                                                </a>
+                                                <div class="short__date">
+                                                    August 7, 2019
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="news__short">
+                                            <div class="short__img">
+                                                <a href="./detail.html">
+                                                    <img src="../../img/2021-players-cup-iv-qualifier-11.jpg" alt="img">
+                                                </a>
+                                            </div>
+                                            <div class="short__meta">
+                                                <a href="./detail.html" class="short__title">
+                                                    Battle Tornadus and Scout N & Zekrom in Pokémon Masters EX
+                                                </a>
+                                                <div class="short__date">
+                                                    August 7, 2019
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="news__short">
+                                            <div class="short__img">
+                                                <a href="./detail.html">
+                                                    <img src="../../img/2021-players-cup-iv-qualifier-11.jpg" alt="img">
+                                                </a>
+                                            </div>
+                                            <div class="short__meta">
+                                                <a href="./detail.html" class="short__title">
+                                                    Battle Tornadus and Scout N & Zekrom in Pokémon Masters EX
+                                                </a>
+                                                <div class="short__date">
+                                                    August 7, 2019
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="widget widget__popular">
+                                    <div class="widget__header">
+                                        <span>NEWS TTG</span>
+                                    </div>
+
+                                    <div class="widget__content">
+                                        <div class="news__short">
+                                            <div class="short__img">
+                                                <a href="./detail.html">
+                                                    <img src="../../img/2021-players-cup-iv-qualifier-11.jpg" alt="img">
+                                                </a>
+                                            </div>
+                                            <div class="short__meta">
+                                                <a href="./detail.html" class="short__title">
+                                                    Battle Tornadus and Scout N & Zekrom in Pokémon Masters EX
+                                                </a>
+                                                <div class="short__date">
+                                                    August 7, 2019
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="news__short">
+                                            <div class="short__img">
+                                                <a href="./detail.html">
+                                                    <img src="../../img/2021-players-cup-iv-qualifier-11.jpg" alt="img">
+                                                </a>
+                                            </div>
+                                            <div class="short__meta">
+                                                <a href="./detail.html" class="short__title">
+                                                    Battle Tornadus and Scout N & Zekrom in Pokémon Masters EX
+                                                </a>
+                                                <div class="short__date">
+                                                    August 7, 2019
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="news__short">
+                                            <div class="short__img">
+                                                <a href="./detail.html">
+                                                    <img src="../../img/2021-players-cup-iv-qualifier-11.jpg" alt="img">
+                                                </a>
+                                            </div>
+                                            <div class="short__meta">
+                                                <a href="./detail.html" class="short__title">
+                                                    Battle Tornadus and Scout N & Zekrom in Pokémon Masters EX
+                                                </a>
+                                                <div class="short__date">
+                                                    August 7, 2019
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="news__short">
+                                            <div class="short__img">
+                                                <a href="./detail.html">
+                                                    <img src="../../img/2021-players-cup-iv-qualifier-11.jpg" alt="img">
+                                                </a>
+                                            </div>
+                                            <div class="short__meta">
+                                                <a href="./detail.html" class="short__title">
+                                                    Battle Tornadus and Scout N & Zekrom in Pokémon Masters EX
+                                                </a>
+                                                <div class="short__date">
+                                                    August 7, 2019
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </main>
 
-        <div class="subfooter">
-            <div class="container">
-                <div class="subfooter__wrap">
-                    <div class="subfooter__coppyright">
-                        2021 Pokémon. TM, ®Nintendo.
+        <footer>
+            <div class="footer__main">
+                <div class="container">
+                    <div class="block block__footer">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="footer__log">
+                                    <a href="../../index.html">
+                                        <img src="../../img/logo-footer.png" alt="logo">
+                                    </a>
+                                </div>
+                                <div class="footer__desc">
+                                    <p>
+                                        Ornare fuga consequatur sem, ullam! Blandit, taciti! Ratione ad quos excepteur
+                                        hendrerit,
+                                        eum, dolor? Hac pede bibendum beatae mus iure ab itaque irure diamlorem. Magnam
+                                        consequatur interdum sollicitudin! Etiam ridiculus odio sequi fermentum per!
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="footer__menu">
+                                    <div class="footer__menutitle">
+                                        Navigation
+                                    </div>
+                                    <ul class="footer__menulist">
+                                        <li><a href="#" class="footer__menulink">Home</a></li>
+                                        <li><a href="#" class="footer__menulink">Contact</a></li>
+                                        <li><a href="#" class="footer__menulink">News</a></li>
+                                        <li><a href="#" class="footer__menulink">Forum</a></li>
+                                        <li><a href="#" class="footer__menulink">My account</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="footer__menu">
+                                    <div class="footer__menutitle">
+                                        Abouts us
+                                    </div>
+                                    <ul class="footer__menulist">
+                                        <li><a href="#" class="footer__menulink">Company</a></li>
+                                        <li><a href="#" class="footer__menulink">Job</a></li>
+                                        <li><a href="#" class="footer__menulink">Press</a></li>
+                                        <li><a href="#" class="footer__menulink">Blog</a></li>
+                                        <li><a href="#" class="footer__menulink">Help & Support</a></li>
+                                        <li><a href="#" class="footer__menulink">FAQs</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="footer__menu">
+                                    <div class="footer__menutitle">
+                                        Resources
+                                    </div>
+                                    <ul class="footer__menulist">
+                                        <li><a href="#" class="footer__menulink">Video</a></li>
+                                        <li><a href="#" class="footer__menulink">Gallery</a></li>
+                                        <li><a href="#" class="footer__menulink">Dowload</a></li>
+                                        <li><a href="#" class="footer__menulink">Software</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="footer__img">
+                                    <a href="#">
+                                        <img src="../../img/the_pokemon_company_int.png" alt="pkm">
+                                    </a>
+                                    <a href="#">
+                                        <img src="../../img/en_badge_web_generic.png" alt="chplays">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <ul class="subfooter__menu">
-                        <li><a href="#" class="subfooter__link">Terms of Use</a></li>
-                        <li><a href="#" class="subfooter__link">Privacy Notice</a></li>
-                        <li><a href="#" class="subfooter__link">Cookie Page</a></li>
-                        <li><a href="#" class="subfooter__link">Legal Info</a></li>
-                        <li><a href="#" class="subfooter__link">Security</a></li>
-                    </ul>
                 </div>
             </div>
-        </div>
-    </footer>
 
+            <div class="subfooter">
+                <div class="container">
+                    <div class="subfooter__wrap">
+                        <div class="subfooter__coppyright">
+                            2021 Pokémon. TM, ®Nintendo.
+                        </div>
+                        <ul class="subfooter__menu">
+                            <li><a href="#" class="subfooter__link">Terms of Use</a></li>
+                            <li><a href="#" class="subfooter__link">Privacy Notice</a></li>
+                            <li><a href="#" class="subfooter__link">Cookie Page</a></li>
+                            <li><a href="#" class="subfooter__link">Legal Info</a></li>
+                            <li><a href="#" class="subfooter__link">Security</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Chat -->
+    <div class="chatbox">
+        <div class="chatbox__inner">
+            <div class="chat__group">
+                <div class="chat__header">
+                    Channel
+                </div>
+                <ul class="chat__list">
+                    <li class="chat__item">
+                        <a href="#" data-name="World 1">
+                            <div class="chat__ava">
+                                <img src="../../img/ava.png" alt="chat">
+                            </div>
+                            <div class="chat__meta">
+                                <div class="chat__name">World</div>
+                                <div class="chat__status"><span class="text-success">Online</span></div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="chat__item">
+                        <a href="#" data-name="World 2">
+                            <div class="chat__ava">
+                                <img src="../../img/ava.png" alt="chat">
+                            </div>
+                            <div class="chat__meta">
+                                <div class="chat__name">World</div>
+                                <div class="chat__status"><span class="text-success">Online</span></div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="chat__item">
+                        <a href="#" data-name="World 3">
+                            <div class="chat__ava">
+                                <img src="../../img/ava.png" alt="chat">
+                            </div>
+                            <div class="chat__meta">
+                                <div class="chat__name">World</div>
+                                <div class="chat__status"><span class="text-success">Online</span></div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="chat__item">
+                        <a href="#" data-name="World 4">
+                            <div class="chat__ava">
+                                <img src="../../img/ava.png" alt="chat">
+                            </div>
+                            <div class="chat__meta">
+                                <div class="chat__name">World</div>
+                                <div class="chat__status"><span class="text-success">Online</span></div>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="chat__group">
+                <div class="chat__header">
+                    Contact
+                </div>
+                <ul class="chat__list">
+                    <li class="chat__item">
+                        <a href="#" data-name="Person 1">
+                            <div class="chat__ava">
+                                <img src="../../img/ava.png" alt="chat">
+                            </div>
+                            <div class="chat__meta">
+                                <div class="chat__name">World</div>
+                                <div class="chat__status"><span class="text-success">Online</span></div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="chat__item">
+                        <a href="#" data-name="Person 2">
+                            <div class="chat__ava">
+                                <img src="../../img/ava.png" alt="chat">
+                            </div>
+                            <div class="chat__meta">
+                                <div class="chat__name">World</div>
+                                <div class="chat__status"><span class="text-success">Online</span></div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="chat__item">
+                        <a href="#" data-name="Person 3">
+                            <div class="chat__ava">
+                                <img src="../../img/ava.png" alt="chat">
+                            </div>
+                            <div class="chat__meta">
+                                <div class="chat__name">World</div>
+                                <div class="chat__status"><span class="text-success">Online</span></div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="chat__item">
+                        <a href="#" data-name="Person 4">
+                            <div class="chat__ava">
+                                <img src="../../img/ava.png" alt="chat">
+                            </div>
+                            <div class="chat__meta">
+                                <div class="chat__name">World</div>
+                                <div class="chat__status"><span class="text-success">Online</span></div>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="chatbox__list">
+    </div>
 
     <!-- Jquery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
@@ -515,8 +631,17 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
         crossorigin="anonymous"></script>
-
+    <!-- Waypoint -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"
+        integrity="sha512-CEiA+78TpP9KAIPzqBvxUv8hy41jyI3f2uHi7DGp/Y/Ka973qgSdybNegWFciqh6GrN2UePx2KkflnQUbUhNIA=="
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/shortcuts/sticky.min.js"
+        integrity="sha512-O5YCLUxCY2OBc4rfpnKUIgE4LGuCiW8CrJ7ty4hvkBAAKUOnlbomEFWd3a6ruRnFvO3LG2wiaGiJ1heOvdppvA=="
+        crossorigin="anonymous"></script>
+    <!-- Single -->
     <script src="../../js/news/index.js"></script>
+    <!-- Common -->
+    <script src="../../js/common/script.js"></script>
 </body>
 
 </html>

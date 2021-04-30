@@ -10,7 +10,6 @@ $(document).ready(function () {
 
     //Stop close dropdown fillter
     fillterContent.click((e) => {
-        console.log('123');
         e.stopPropagation();
     });
 

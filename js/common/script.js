@@ -2,7 +2,7 @@ let sticky = new Waypoint.Sticky({
     element: $('.navigation')[0],
 });
 
-let main = document.querySelector('main');
+let main = document.querySelector('.main__wrap');
 let btnChat = document.querySelector('.toggle__chat');
 let chatBox = document.querySelector('.chatbox');
 let chatboxList = document.querySelector('.chatbox__list');
@@ -16,37 +16,52 @@ btnChat.onclick = () => {
     chatboxList.classList.toggle('active');
 };
 
-btnMinimizeChat.forEach((item) => {
-    item.onclick = () => {
-        let parent = item.parentNode.parentNode.parentNode;
-        parent.classList.toggle('minimize');
-    };
-});
+// Function thu nhỏ chat cho chatbox tạo mới
+let minimizeChat = (btn) => {
+    let parent = btn.parentNode.parentNode.parentNode;
+    parent.classList.toggle('minimize');
+};
 
-btnCloseChat.forEach((item) => {
-    item.onclick = () => {
-        let parent = item.parentNode.parentNode.parentNode;
-        parent.remove();
-    };
-});
+// Function đóng chat cho chatbox tạo mới
+let closeChat = (btn) => {
+    let parent = btn.parentNode.parentNode.parentNode;
+    parent.remove();
+};
 
+// Thêm hộp chat khi ấn và danh sách chat sidebar
 btnChatList.forEach((item) => {
-    item.onclick = () => {
+    item.onclick = (e) => {
+        e.preventDefault();
         let chatName = item.dataset.name;
-        chatboxList.innerHTML += `
-        <div class="chating">
+        let currentChatBox = document.querySelector(
+            '#' + chatName.toLowerCase().replaceAll(' ', '-')
+        );
+
+        // Kiểm tra chatbox, nếu đã tồn tại thì thu nhỏ
+        if (currentChatBox) {
+            currentChatBox.classList.toggle('minimize');
+        } else {
+            // Kiểm tra nếu chatlist có hơn 4 chatbox thì xóa chatbox đầu tiên
+            if (chatboxList.childElementCount === 3) {
+                chatboxList.removeChild(
+                    chatboxList.childNodes[chatboxList.childElementCount - 1]
+                );
+            }
+            let html = `<div class="chating" id="${chatName
+                .toLowerCase()
+                .replaceAll(' ', '-')}">
             <div class="chatting__info">
-                <div class="info__userName">Admin</div>
+                <div class="info__userName"><span class="text-success chat__status--icon"><i class="fas fa-circle"></i></span>${chatName}</div>
                 <div class="info__action">
-                    <button class="btn btn__minimizechat">
+                    <button class="btn btn__minimizechat" onclick="minimizeChat(this)">
                         <i class="fas fa-minus"></i>
                     </button>
-                    <button class="btn btn__closechat">
+                    <button class="btn btn__closechat" onclick="closeChat(this)">
                         <i class="fas fa-times"></i>
                     </button>
                 </div>
             </div>
-
+    
             <ul class="chating__list">
                 <li class="chatting__item chatting__item--receive">
                     <div class="chating__img">
@@ -82,7 +97,7 @@ btnChatList.forEach((item) => {
                     </div>
                 </li>
             </ul>
-
+    
             <div class="chating__send">
                 <form action="">
                     <div class="form-group d-flex">
@@ -90,8 +105,9 @@ btnChatList.forEach((item) => {
                         <button class="btn btn-success"><i class="fas fa-paper-plane"></i></button>
                     </div>
                 </form>
-            </div>
-        </div>
-        `;
+            </div></div>`;
+
+            chatboxList.insertAdjacentHTML('afterbegin', html);
+        }
     };
 });

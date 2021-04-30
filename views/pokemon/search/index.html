@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Archive Pokedex</title>
+    <title>Search Pokedex</title>
 
-    <link rel="shortcut icon" href="../../img/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="../../../img/favicon.ico" type="image/x-icon">
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -24,9 +24,9 @@
     <!-- Select 2 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
     <!-- Main CSS -->
-    <link rel="stylesheet" href="../../fonts/fontawesome-free-5.15.3-web/css/all.min.css">
+    <link rel="stylesheet" href="../../../fonts/fontawesome-free-5.15.3-web/css/all.min.css">
     <!-- Main CSS -->
-    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../../css/style.css">
 </head>
 
 <body>
@@ -38,9 +38,9 @@
                     <div class="col-md-1">
                         <div class="navigation__brand">
                             <div class="logo">
-                                <a href="../../">
+                                <a href="../../../">
                                     <div class="logo__img">
-                                        <img src="../../img/logo.png" alt="logo">
+                                        <img src="../../../img/logo.png" alt="logo">
                                     </div>
                                 </a>
                             </div>
@@ -61,14 +61,15 @@
                             <div class="navigation_menu">
                                 <ul class="navigation__list">
                                     <li class="navigation__link">
-                                        <a href="../../views/profile/bookmark/"><i class="fas fa-bookmark"></i></a>
+                                        <a href="../../../views/profile/bookmark/"><i class="fas fa-bookmark"></i></a>
                                     </li>
                                     <li class="navigation__link">
-                                        <a href="../../views/news/"><i class="fas fa-newspaper"></i></a>
+                                        <a href="../../../views/news/"><i class="fas fa-newspaper"></i></a>
                                     </li>
                                     <li class="navigation__link">
-                                        <a href="javascript:void(0)" class="toggle__chat"><i
-                                                class="fas fa-comments"></i></a>
+                                        <a class="toggle__chat" href="javascript:void(0)">
+                                            <i class="fas fa-comments"></i>
+                                        </a>
                                     </li>
                                 </ul>
                             </div>
@@ -76,16 +77,17 @@
                             <div class="navigation__account">
                                 <div class="dropdown">
                                     <div class="account__ava">
-                                        <a href="#">
-                                            <img src="../../img/ava.png" alt="ava">
+                                        <a href="../../../views/profile/">
+                                            <img src="../../../img/ava.png" alt="ava">
                                         </a>
                                     </div>
                                     <button class="account__btn btn btn-secondary dropdown-toggle" type="button"
                                         id="dropdownMenuAccount" data-bs-toggle="dropdown" aria-expanded="false">
                                     </button>
                                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuAccount">
-                                        <li><a class="dropdown-item" href="../../views/auth/login/">Login</a></li>
-                                        <li><a class="dropdown-item" href="../../views/auth/sign-up/">Sign up</a></li>
+                                        <li><a class="dropdown-item" href="../../../views/auth/login/">Login</a></li>
+                                        <li><a class="dropdown-item" href="../../../views/auth/sign-up/">Sign up</a>
+                                        </li>
                                     </ul>
                                 </div>
                             </div>
@@ -95,7 +97,6 @@
             </div>
         </div>
     </div>
-
     <!-- Main -->
     <div class="main__wrap">
         <main>
@@ -113,7 +114,7 @@
 
                 <div class="block block__header">
                     <div class="block__title--archive">
-                        <h2>Poke dex</h2>
+                        <h2>Pokemon search</h2>
                     </div>
                 </div>
 
@@ -716,9 +717,9 @@
                     <div class="archivePoke__action">
                         <div class="row">
                             <div class="col-md-6">
-                                <button class="btn btn__randomPoke">
-                                    <i class="fas fa-sync-alt"></i> Suprise me !
-                                </button>
+                                <div class="result__title">
+                                    400 result for <span>"Pika"</span>
+                                </div>
                             </div>
                             <div class="col-md-6 text-end">
                                 <div class="dropdown">
@@ -741,32 +742,32 @@
                         <div class="row">
                             <div class="col-md-3">
                                 <div class="pokedex__item">
-                                    <img src="../../img/pokedex-bg.png" alt="pokedex__bg" class="pokedex__bg">
+                                    <img src="../../../img/pokedex-bg.png" alt="pokedex__bg" class="pokedex__bg">
                                     <div class="pokedex__content">
                                         <div class="pokedex__id">#007</div>
                                         <div class="pokedex__info">
                                             <div class="pokedex__media">
                                                 <div class="pokedex__ava">
-                                                    <img src="../../img/pokemon.png" alt="pokedex_ava">
+                                                    <img src="../../../img/pokemon.png" alt="pokedex_ava">
                                                 </div>
                                                 <div class="pokedex__stats">
                                                     <div class="stats">
                                                         <div class="stat__item">
-                                                            <img src="../../img/stat_hp.png" alt="hp"
+                                                            <img src="../../../img/stat_hp.png" alt="hp"
                                                                 class="stat__icon">
                                                             <div class="stat__value">
                                                                 <div class="stat__percent"></div>
                                                             </div>
                                                         </div>
                                                         <div class="stat__item">
-                                                            <img src="../../img/stat_atk.png" alt="atk"
+                                                            <img src="../../../img/stat_atk.png" alt="atk"
                                                                 class="stat__icon">
                                                             <div class="stat__value">
                                                                 <div class="stat__percent"></div>
                                                             </div>
                                                         </div>
                                                         <div class="stat__item">
-                                                            <img src="../../img/stat_def.png" alt="def"
+                                                            <img src="../../../img/stat_def.png" alt="def"
                                                                 class="stat__icon">
                                                             <div class="stat__value">
                                                                 <div class="stat__percent"></div>
@@ -810,9 +811,10 @@
                                             <div class="pokedex__bg2"></div>
                                         </div>
                                         <div class="pokedex__overlay">
-                                            <button class="btn pokedex__btn pokedex__view">
+                                            <a href="../../../views/pokemon/detail/"
+                                                class="btn pokedex__btn pokedex__view">
                                                 <i class="fas fa-eye"></i> Viewmore
-                                            </button>
+                                            </a>
                                             <button class="btn pokedex__btn pokedex__bookmark">
                                                 <i class="fas fa-bookmark"></i> Bookmark
                                             </button>
@@ -820,7 +822,6 @@
                                                 data-bs-target="#compareModal">
                                                 <i class="fas fa-table"></i> Add compare
                                             </button>
-
                                         </div>
                                     </div>
                                 </div>
@@ -838,17 +839,17 @@
                     <div class="banner owl-carousel owl-carousel-banner owl-theme">
                         <div class="banner__item">
                             <div class="banner__img">
-                                <img src="../../img/banner.jpg" alt="banner">
+                                <img src="../../../img/banner.jpg" alt="banner">
                             </div>
                         </div>
                         <div class="banner__item">
                             <div class="banner__img">
-                                <img src="../../img/banner2.jpg" alt="banner">
+                                <img src="../../../img/banner2.jpg" alt="banner">
                             </div>
                         </div>
                         <div class="banner__item">
                             <div class="banner__img">
-                                <img src="../../img/tv.jpg" alt="banner">
+                                <img src="../../../img/tv.jpg" alt="banner">
                             </div>
                         </div>
                     </div>
@@ -863,8 +864,8 @@
                         <div class="row">
                             <div class="col-md-3">
                                 <div class="footer__log">
-                                    <a href="../../index.html">
-                                        <img src="../../img/logo-footer.png" alt="logo">
+                                    <a href="../../../">
+                                        <img src="../../../img/logo-footer.png" alt="logo">
                                     </a>
                                 </div>
                                 <div class="footer__desc">
@@ -921,10 +922,10 @@
                             <div class="col-md-3">
                                 <div class="footer__img">
                                     <a href="#">
-                                        <img src="../../img/the_pokemon_company_int.png" alt="pkm">
+                                        <img src="../../../img/the_pokemon_company_int.png" alt="pkm">
                                     </a>
                                     <a href="#">
-                                        <img src="../../img/en_badge_web_generic.png" alt="chplays">
+                                        <img src="../../../img/en_badge_web_generic.png" alt="chplays">
                                     </a>
                                 </div>
                             </div>
@@ -963,7 +964,7 @@
                     <li class="chat__item">
                         <a href="#" data-name="World 1">
                             <div class="chat__ava">
-                                <img src="../../img/ava.png" alt="chat">
+                                <img src="../../../img/ava.png" alt="chat">
                             </div>
                             <div class="chat__meta">
                                 <div class="chat__name">World</div>
@@ -974,7 +975,7 @@
                     <li class="chat__item">
                         <a href="#" data-name="World 2">
                             <div class="chat__ava">
-                                <img src="../../img/ava.png" alt="chat">
+                                <img src="../../../img/ava.png" alt="chat">
                             </div>
                             <div class="chat__meta">
                                 <div class="chat__name">World</div>
@@ -985,7 +986,7 @@
                     <li class="chat__item">
                         <a href="#" data-name="World 3">
                             <div class="chat__ava">
-                                <img src="../../img/ava.png" alt="chat">
+                                <img src="../../../img/ava.png" alt="chat">
                             </div>
                             <div class="chat__meta">
                                 <div class="chat__name">World</div>
@@ -996,7 +997,7 @@
                     <li class="chat__item">
                         <a href="#" data-name="World 4">
                             <div class="chat__ava">
-                                <img src="../../img/ava.png" alt="chat">
+                                <img src="../../../img/ava.png" alt="chat">
                             </div>
                             <div class="chat__meta">
                                 <div class="chat__name">World</div>
@@ -1015,7 +1016,7 @@
                     <li class="chat__item">
                         <a href="#" data-name="Person 1">
                             <div class="chat__ava">
-                                <img src="../../img/ava.png" alt="chat">
+                                <img src="../../../img/ava.png" alt="chat">
                             </div>
                             <div class="chat__meta">
                                 <div class="chat__name">World</div>
@@ -1026,7 +1027,7 @@
                     <li class="chat__item">
                         <a href="#" data-name="Person 2">
                             <div class="chat__ava">
-                                <img src="../../img/ava.png" alt="chat">
+                                <img src="../../../img/ava.png" alt="chat">
                             </div>
                             <div class="chat__meta">
                                 <div class="chat__name">World</div>
@@ -1037,7 +1038,7 @@
                     <li class="chat__item">
                         <a href="#" data-name="Person 3">
                             <div class="chat__ava">
-                                <img src="../../img/ava.png" alt="chat">
+                                <img src="../../../img/ava.png" alt="chat">
                             </div>
                             <div class="chat__meta">
                                 <div class="chat__name">World</div>
@@ -1048,7 +1049,7 @@
                     <li class="chat__item">
                         <a href="#" data-name="Person 4">
                             <div class="chat__ava">
-                                <img src="../../img/ava.png" alt="chat">
+                                <img src="../../../img/ava.png" alt="chat">
                             </div>
                             <div class="chat__meta">
                                 <div class="chat__name">World</div>
@@ -1083,7 +1084,7 @@
                                             Pokemon 1
                                         </div>
                                         <div class="compare__image">
-                                            <img src="../../img/150.png" alt="pokemon">
+                                            <img src="../../..//img/150.png" alt="pokemon">
                                         </div>
                                         <div class="compare__content">
                                             <div class="compare__label">
@@ -1093,42 +1094,42 @@
                                                 <div class="compare__stats">
                                                     <div class="stats">
                                                         <div class="stat__item">
-                                                            <img src="../../img/stat_hp.png" alt="hp"
+                                                            <img src="../../../img/stat_hp.png" alt="hp"
                                                                 class="stat__icon">
                                                             <div class="stat__value">
                                                                 <div class="stat__percent"></div>
                                                             </div>
                                                         </div>
                                                         <div class="stat__item">
-                                                            <img src="../../img/stat_atk.png" alt="atk"
+                                                            <img src="../../../img/stat_atk.png" alt="atk"
                                                                 class="stat__icon">
                                                             <div class="stat__value">
                                                                 <div class="stat__percent"></div>
                                                             </div>
                                                         </div>
                                                         <div class="stat__item">
-                                                            <img src="../../img/stat_def.png" alt="def"
+                                                            <img src="../../../img/stat_def.png" alt="def"
                                                                 class="stat__icon">
                                                             <div class="stat__value">
                                                                 <div class="stat__percent"></div>
                                                             </div>
                                                         </div>
                                                         <div class="stat__item">
-                                                            <img src="../../img/stat_atk_special.png" alt="hp"
+                                                            <img src="../../../img/stat_atk_special.png" alt="hp"
                                                                 class="stat__icon">
                                                             <div class="stat__value">
                                                                 <div class="stat__percent"></div>
                                                             </div>
                                                         </div>
                                                         <div class="stat__item">
-                                                            <img src="../../img/stat_def_special.png" alt="atk"
+                                                            <img src="../../../img/stat_def_special.png" alt="atk"
                                                                 class="stat__icon">
                                                             <div class="stat__value">
                                                                 <div class="stat__percent"></div>
                                                             </div>
                                                         </div>
                                                         <div class="stat__item">
-                                                            <img src="../../img/stat_spd.png" alt="def"
+                                                            <img src="../../../img/stat_spd.png" alt="def"
                                                                 class="stat__icon">
                                                             <div class="stat__value">
                                                                 <div class="stat__percent"></div>
@@ -1138,9 +1139,9 @@
                                                 </div>
                                             </div>
                                             <div class="compare__button text-center">
-                                                <a href="../../views/pokemon/detail/" class="btn btnCompare__more">
-                                                    View detail
-                                                </a>
+                                                <a href="../../../views/pokemon/detail.html"
+                                                    class="btn btnCompare__more">View
+                                                    detail</a>
                                             </div>
                                         </div>
                                     </div>
@@ -1152,7 +1153,7 @@
                                             Pokemon 1
                                         </div>
                                         <div class="compare__image">
-                                            <img src="../../img/2.png" alt="pokemon">
+                                            <img src="../../../img/2.png" alt="pokemon">
                                         </div>
                                         <div class="compare__content">
                                             <div class="compare__label">
@@ -1161,39 +1162,42 @@
                                             <div class="compare__stats">
                                                 <div class="stats">
                                                     <div class="stat__item">
-                                                        <img src="../../img/stat_hp.png" alt="hp" class="stat__icon">
+                                                        <img src="../../../img/stat_hp.png" alt="hp" class="stat__icon">
                                                         <div class="stat__value">
                                                             <div class="stat__percent"></div>
                                                         </div>
                                                     </div>
                                                     <div class="stat__item">
-                                                        <img src="../../img/stat_atk.png" alt="atk" class="stat__icon">
-                                                        <div class="stat__value">
-                                                            <div class="stat__percent"></div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="stat__item">
-                                                        <img src="../../img/stat_def.png" alt="def" class="stat__icon">
-                                                        <div class="stat__value">
-                                                            <div class="stat__percent"></div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="stat__item">
-                                                        <img src="../../img/stat_atk_special.png" alt="hp"
+                                                        <img src="../../../img/stat_atk.png" alt="atk"
                                                             class="stat__icon">
                                                         <div class="stat__value">
                                                             <div class="stat__percent"></div>
                                                         </div>
                                                     </div>
                                                     <div class="stat__item">
-                                                        <img src="../../img/stat_def_special.png" alt="atk"
+                                                        <img src="../../../img/stat_def.png" alt="def"
                                                             class="stat__icon">
                                                         <div class="stat__value">
                                                             <div class="stat__percent"></div>
                                                         </div>
                                                     </div>
                                                     <div class="stat__item">
-                                                        <img src="../../img/stat_spd.png" alt="def" class="stat__icon">
+                                                        <img src="../../../img/stat_atk_special.png" alt="hp"
+                                                            class="stat__icon">
+                                                        <div class="stat__value">
+                                                            <div class="stat__percent"></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="stat__item">
+                                                        <img src="../../../img/stat_def_special.png" alt="atk"
+                                                            class="stat__icon">
+                                                        <div class="stat__value">
+                                                            <div class="stat__percent"></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="stat__item">
+                                                        <img src="../../../img/stat_spd.png" alt="def"
+                                                            class="stat__icon">
                                                         <div class="stat__value">
                                                             <div class="stat__percent"></div>
                                                         </div>
@@ -1201,9 +1205,9 @@
                                                 </div>
                                             </div>
                                             <div class="compare__button text-center">
-                                                <a href="../../views/pokemon/detail/" class="btn btnCompare__more">
-                                                    View detail
-                                                </a>
+                                                <a href="../../../views/pokemon/detail.html"
+                                                    class="btn btnCompare__more">View
+                                                    detail</a>
                                             </div>
                                         </div>
                                     </div>
@@ -1240,10 +1244,10 @@
         integrity="sha512-O5YCLUxCY2OBc4rfpnKUIgE4LGuCiW8CrJ7ty4hvkBAAKUOnlbomEFWd3a6ruRnFvO3LG2wiaGiJ1heOvdppvA=="
         crossorigin="anonymous"></script>
     <!-- Single -->
-    <script src="../../js/pokemon/index.js"></script>
+    <script src="../../../js/pokemon/search.js"></script>
     <!-- Common -->
-    <script src="../../js/common/slide.js"></script>
-    <script src="../../js/common/script.js"></script>
+    <script src="../../../js/common/slide.js"></script>
+    <script src="../../../js/common/script.js"></script>
 </body>
 
 </html>

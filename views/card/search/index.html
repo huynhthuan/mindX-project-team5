@@ -5,17 +5,28 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profile</title>
+    <title>Search Card</title>
 
-    <link rel="shortcut icon" href="../../img/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="../../../img/favicon.ico" type="image/x-icon">
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <!-- Owl carousel CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+        integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g=="
+        crossorigin="anonymous" />
+    <!-- Owl carousel theme CSS -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+        integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
+        crossorigin="anonymous" />
+    <!-- Select 2 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
     <!-- Main CSS -->
-    <link rel="stylesheet" href="../../fonts/fontawesome-free-5.15.3-web/css/all.min.css">
+    <link rel="stylesheet" href="../../../fonts/fontawesome-free-5.15.3-web/css/all.min.css">
     <!-- Main CSS -->
-    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../../css/style.css">
 </head>
 
 <body>
@@ -27,9 +38,9 @@
                     <div class="col-md-1">
                         <div class="navigation__brand">
                             <div class="logo">
-                                <a href="../../">
+                                <a href="../../../">
                                     <div class="logo__img">
-                                        <img src="../../img/logo.png" alt="logo">
+                                        <img src="../../../img/logo.png" alt="logo">
                                     </div>
                                 </a>
                             </div>
@@ -50,14 +61,15 @@
                             <div class="navigation_menu">
                                 <ul class="navigation__list">
                                     <li class="navigation__link">
-                                        <a href="../../views/profile/bookmark/"><i class="fas fa-bookmark"></i></a>
+                                        <a href="../../../views/profile/bookmark/"><i class="fas fa-bookmark"></i></a>
                                     </li>
                                     <li class="navigation__link">
-                                        <a href="../../views/news/"><i class="fas fa-newspaper"></i></a>
+                                        <a href="../../../views/news/"><i class="fas fa-newspaper"></i></a>
                                     </li>
                                     <li class="navigation__link">
-                                        <a href="javascript:void(0)" class="toggle__chat"><i
-                                                class="fas fa-comments"></i></a>
+                                        <a class="toggle__chat" href="javascript:void(0)">
+                                            <i class="fas fa-comments"></i>
+                                        </a>
                                     </li>
                                 </ul>
                             </div>
@@ -65,16 +77,17 @@
                             <div class="navigation__account">
                                 <div class="dropdown">
                                     <div class="account__ava">
-                                        <a href="../../views/profile/">
-                                            <img src="../../img/ava.png" alt="ava">
+                                        <a href="../../../views/profile/">
+                                            <img src="../../../img/ava.png" alt="ava">
                                         </a>
                                     </div>
                                     <button class="account__btn btn btn-secondary dropdown-toggle" type="button"
                                         id="dropdownMenuAccount" data-bs-toggle="dropdown" aria-expanded="false">
                                     </button>
                                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuAccount">
-                                        <li><a class="dropdown-item" href="../../views/auth/login/">Login</a></li>
-                                        <li><a class="dropdown-item" href="../../views/auth/sign-up/">Sign up</a></li>
+                                        <li><a class="dropdown-item" href="../../../views/auth/login/">Login</a></li>
+                                        <li><a class="dropdown-item" href="../../../views/auth/sign-up/">Register</a>
+                                        </li>
                                     </ul>
                                 </div>
                             </div>
@@ -89,161 +102,95 @@
     <div class="main__wrap">
         <main>
             <div class="container">
-                <div class="block block__profile">
-                    <div class="profile">
+                <div class="block block__ticker">
+                    <div class="ticker__label">
+                        Live
+                    </div>
+                    <div class="ticker__content">
+                        <a href="#" class="ticker__link">
+                            Pokémon Players Cup III Pokémon TCG Global Finals Preview
+                        </a>
+                    </div>
+                </div>
+
+                <div class="block block__header">
+                    <div class="block__title--archive">
+                        <h2>Search card</h2>
+                    </div>
+                </div>
+
+                <div class="block__content archivePoke">
+
+                    <div class="archivePoke__action">
                         <div class="row">
-                            <div class="nav flex-column nav-pills col-md-3 profile__tab" id="v-pills-tab" role="tablist"
-                                aria-orientation="vertical">
-                                <div class="profile__meta">
-                                    <div class="profile__image">
-                                        <img src="../../img/ava.png" alt="ava">
-                                    </div>
-                                    <div class="profile__info">
-                                        <div class="profile__username">Math Thompson</div>
-                                        <div class="profile__email">Thompson@gmail.com</div>
-                                    </div>
+                            <div class="col-md-6">
+                                <div class="result__title">
+                                    400 result for <span>"Pika"</span>
                                 </div>
-                                <button class="nav-link active tab__btn" id="v-pills-info-tab" data-bs-toggle="pill"
-                                    data-bs-target="#v-pills-info" type="button" role="tab" aria-controls="v-pills-info"
-                                    aria-selected="true"><i class="fas fa-user"></i> Information</button>
-
-                                <button class="nav-link tab__btn" id="v-pills-settings-tab" data-bs-toggle="pill"
-                                    data-bs-target="#v-pills-settings" type="button" role="tab"
-                                    aria-controls="v-pills-settings" aria-selected="false"><i
-                                        class="fas fa-sliders-h"></i>
-                                    Settings</button>
-
-                                <button class="nav-link tab__btn" id="v-pills-bookmark-tab" data-bs-toggle="pill"
-                                    data-bs-target="#v-pills-bookmark" type="button" role="tab"
-                                    aria-controls="v-pills-bookmark" aria-selected="false"><i
-                                        class="fas fa-bookmark"></i>
-                                    Bookmark</button>
-
-                                <button class="nav-link tab__btn" type="button">
-                                    <i class="fas fa-sign-out-alt"></i> Logout
-                                </button>
                             </div>
-                            <div class="tab-content col-md-9" id="v-pills-tabContent">
-                                <div class="tab-pane fade show active" id="v-pills-info" role="tabpanel"
-                                    aria-labelledby="v-pills-info-tab">
-                                    <div class="info__content">
-                                        <div class="info__title"><span>Information</span></div>
-                                        <div class="info__value">
-                                            <form action="">
-                                                <div class="row info__input align-items-start">
-                                                    <div class="col-md-2">
-                                                        <label for="email" class="col-form-label">Email</label>
-                                                    </div>
-                                                    <div class="col-md-10">
-                                                        <input type="text" name="email" id="email" class="form-control"
-                                                            aria-describedby="email" value="thom@gmal.com">
-                                                    </div>
-                                                </div>
-                                                <div class="row info__input align-items-start">
-                                                    <div class="col-md-2">
-                                                        <label for="username" class="col-form-label">Username</label>
-                                                    </div>
-                                                    <div class="col-md-10">
-                                                        <input type="text" name="username" id="username"
-                                                            class="form-control" aria-describedby="Username"
-                                                            value="thom@123">
-                                                    </div>
-                                                </div>
-                                                <div class="row info__input align-items-start">
-                                                    <div class="col-md-2">
-                                                        <label for="address" class="col-form-label">Address</label>
-                                                    </div>
-                                                    <div class="col-md-10">
-                                                        <textarea name="address" id="address" cols="30" rows="4"
-                                                            class="form-control">123123 HN</textarea>
-                                                    </div>
-                                                </div>
-                                                <div class="row info__input align-items-start">
-                                                    <div class="col-md-2">
-                                                        <label for="bod" class="col-form-label">Birth of day</label>
-                                                    </div>
-                                                    <div class="col-md-10">
-                                                        <input type="date" id="bod" name="bod" class="form-control"
-                                                            aria-describedby="bod" value="2021-04-30">
-                                                    </div>
-                                                </div>
-                                                <div class="row info__input align-items-start">
-                                                    <div class="col-md-2">
-                                                        <label for="telephone" class="col-form-label">Telephone</label>
-                                                    </div>
-                                                    <div class="col-md-10">
-                                                        <input type="text" id="telephone" name="telephone"
-                                                            class="form-control" aria-describedby="telephone"
-                                                            value="0915356625">
-                                                    </div>
-                                                </div>
-                                                <div class="row info__input align-items-start">
-                                                    <div class="col-md-2">
-                                                        <label for="about" class="col-form-label">About me</label>
-                                                    </div>
-                                                    <div class="col-md-10">
-                                                        <textarea name="about" id="about" cols="30" rows="8"
-                                                            class="form-control">Facilisi orci quibusdam sunt, incidunt vitae ridiculus ligula vivamus ultrices officia velit deserunt excepturi porttitor? Rutrum saepe, bibendum cubilia, exercitationem! Accumsan, magnis iste officia, cubilia! Cubilia dictum sunt, voluptas volutpat harum quo eum dictum. Ipsam? Vitae! Deleniti euismod fermentum? Pharetra, ultrices necessitatibus senectus laudantium conubia orci, fuga ad, pretium, iaculis platea! Sagittis aenean etiam auctor facilis suscipit</textarea>
-                                                    </div>
-                                                </div>
-                                                <div class="info__save text-end">
-                                                    <button class="btn btn-save btn-save">Save</button>
-                                                </div>
-                                            </form>
-                                        </div>
+                            <div class="col-md-6 text-end">
+                                <div class="dropdown">
+                                    <button class="btn btn-secondary dropdown-toggle" type="button"
+                                        id="dropdownPokeSort" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Sort results by
+                                    </button>
+                                    <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end"
+                                        aria-labelledby="dropdownPokemonFillter">
+                                        <li><a class="dropdown-item" href="#">Action</a></li>
+                                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="archiveCard__list">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="poketcg__item">
+                                    <div class="poketcg__img">
+                                        <img src="../../../img/tcg_card.png" alt="tcg">
+                                    </div>
+                                    <div class="poketcg_title">
+                                        Flapple G-Max
+                                    </div>
+                                    <div class="poketcg__overlay">
+                                        <a href="../../../views/card/detail/"
+                                            class="btn pokedextcg__btn pokedextcg__view">
+                                            <i class="fas fa-eye"></i> Viewmore
+                                        </a>
+                                        <button class="btn pokedextcg__btn pokedextcg__bookmark">
+                                            <i class="fas fa-bookmark"></i> Bookmark
+                                        </button>
                                     </div>
                                 </div>
+                            </div>
+                        </div>
+                    </div>
 
-                                <div class="tab-pane fade" id="v-pills-settings" role="tabpanel"
-                                    aria-labelledby="v-pills-settings-tab">
-                                    <div class="info__content">
-                                        <div class="info__title"><span>Settings</span></div>
-                                        <div class="info__value">
-                                            <form action="">
-                                                <div class="row info__input align-items-start">
-                                                    <div class="col-md-2">
-                                                        <label for="color" class="col-form-label">Color template</label>
-                                                    </div>
-                                                    <div class="col-md-10">
-                                                        <select name="color" class="form-select">
-                                                            <option value="0">Default</option>
-                                                            <option value="1">Light</option>
-                                                            <option value="2">Dark</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
+                    <div class="archivePoke__pagination text-center">
+                        <button class="btn archivePoke__more">
+                            Load more card
+                        </button>
+                    </div>
+                </div>
 
-                                                <div class="info__save text-end">
-                                                    <button class="btn btn-save btn-save">Save</button>
-                                                </div>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="tab-pane fade" id="v-pills-bookmark" role="tabpanel"
-                                    aria-labelledby="v-pills-bookmark-tab">
-                                    <div class="info__content">
-                                        <div class="info__title"><span>Bookmarks</span></div>
-                                        <div class="info__value">
-                                            <div class="row">
-                                                <div class="col-md-6">
-                                                    <a href="../bookmark/index.html" class="bookmark__item">
-                                                        <img src="../../img/ptv-app-2732x940.jpg" alt="pokemon">
-                                                        <div class="bookmark__overlay">Pokemon</div>
-                                                    </a>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <a href="../bookmark/index.html" class="bookmark__item">
-                                                        <img src="../../img/2021-players-cup-iv-qualifier-11.jpg"
-                                                            alt="pokemon">
-                                                        <div class="bookmark__overlay">Pokemon TCG</div>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                <div class="block block__banner">
+                    <div class="banner owl-carousel owl-carousel-banner owl-theme">
+                        <div class="banner__item">
+                            <div class="banner__img">
+                                <img src="../../../img/banner.jpg" alt="banner">
+                            </div>
+                        </div>
+                        <div class="banner__item">
+                            <div class="banner__img">
+                                <img src="../../../img/banner2.jpg" alt="banner">
+                            </div>
+                        </div>
+                        <div class="banner__item">
+                            <div class="banner__img">
+                                <img src="../../../img/tv.jpg" alt="banner">
                             </div>
                         </div>
                     </div>
@@ -258,8 +205,8 @@
                         <div class="row">
                             <div class="col-md-3">
                                 <div class="footer__log">
-                                    <a href="../../index.html">
-                                        <img src="../../img/logo-footer.png" alt="logo">
+                                    <a href="../../../">
+                                        <img src="../../../img/logo-footer.png" alt="logo">
                                     </a>
                                 </div>
                                 <div class="footer__desc">
@@ -316,10 +263,10 @@
                             <div class="col-md-3">
                                 <div class="footer__img">
                                     <a href="#">
-                                        <img src="../../img/the_pokemon_company_int.png" alt="pkm">
+                                        <img src="../../../img/the_pokemon_company_int.png" alt="pkm">
                                     </a>
                                     <a href="#">
-                                        <img src="../../img/en_badge_web_generic.png" alt="chplays">
+                                        <img src="../../../img/en_badge_web_generic.png" alt="chplays">
                                     </a>
                                 </div>
                             </div>
@@ -358,7 +305,7 @@
                     <li class="chat__item">
                         <a href="#" data-name="World 1">
                             <div class="chat__ava">
-                                <img src="../../img/ava.png" alt="chat">
+                                <img src="../../../img/ava.png" alt="chat">
                             </div>
                             <div class="chat__meta">
                                 <div class="chat__name">World</div>
@@ -369,7 +316,7 @@
                     <li class="chat__item">
                         <a href="#" data-name="World 2">
                             <div class="chat__ava">
-                                <img src="../../img/ava.png" alt="chat">
+                                <img src="../../../img/ava.png" alt="chat">
                             </div>
                             <div class="chat__meta">
                                 <div class="chat__name">World</div>
@@ -380,7 +327,7 @@
                     <li class="chat__item">
                         <a href="#" data-name="World 3">
                             <div class="chat__ava">
-                                <img src="../../img/ava.png" alt="chat">
+                                <img src="../../../img/ava.png" alt="chat">
                             </div>
                             <div class="chat__meta">
                                 <div class="chat__name">World</div>
@@ -391,7 +338,7 @@
                     <li class="chat__item">
                         <a href="#" data-name="World 4">
                             <div class="chat__ava">
-                                <img src="../../img/ava.png" alt="chat">
+                                <img src="../../../img/ava.png" alt="chat">
                             </div>
                             <div class="chat__meta">
                                 <div class="chat__name">World</div>
@@ -410,7 +357,7 @@
                     <li class="chat__item">
                         <a href="#" data-name="Person 1">
                             <div class="chat__ava">
-                                <img src="../../img/ava.png" alt="chat">
+                                <img src="../../../img/ava.png" alt="chat">
                             </div>
                             <div class="chat__meta">
                                 <div class="chat__name">World</div>
@@ -421,7 +368,7 @@
                     <li class="chat__item">
                         <a href="#" data-name="Person 2">
                             <div class="chat__ava">
-                                <img src="../../img/ava.png" alt="chat">
+                                <img src="../../../img/ava.png" alt="chat">
                             </div>
                             <div class="chat__meta">
                                 <div class="chat__name">World</div>
@@ -432,7 +379,7 @@
                     <li class="chat__item">
                         <a href="#" data-name="Person 3">
                             <div class="chat__ava">
-                                <img src="../../img/ava.png" alt="chat">
+                                <img src="../../../img/ava.png" alt="chat">
                             </div>
                             <div class="chat__meta">
                                 <div class="chat__name">World</div>
@@ -443,7 +390,7 @@
                     <li class="chat__item">
                         <a href="#" data-name="Person 4">
                             <div class="chat__ava">
-                                <img src="../../img/ava.png" alt="chat">
+                                <img src="../../../img/ava.png" alt="chat">
                             </div>
                             <div class="chat__meta">
                                 <div class="chat__name">World</div>
@@ -466,6 +413,12 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
         crossorigin="anonymous"></script>
+    <!-- Owl carousel -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+        integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
+        crossorigin="anonymous"></script>
+    <!-- Select 2 -->
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
     <!-- Waypoint -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"
         integrity="sha512-CEiA+78TpP9KAIPzqBvxUv8hy41jyI3f2uHi7DGp/Y/Ka973qgSdybNegWFciqh6GrN2UePx2KkflnQUbUhNIA=="
@@ -474,9 +427,10 @@
         integrity="sha512-O5YCLUxCY2OBc4rfpnKUIgE4LGuCiW8CrJ7ty4hvkBAAKUOnlbomEFWd3a6ruRnFvO3LG2wiaGiJ1heOvdppvA=="
         crossorigin="anonymous"></script>
     <!-- Single -->
-    <script src="../../js/profile/index.js"></script>
+    <script src="../../../js/card/search.js"></script>
     <!-- Common -->
-    <script src="../../js/common/script.js"></script>
+    <script src="../../../js/common/slide.js"></script>
+    <script src="../../../js/common/script.js"></script>
 </body>
 
 </html>

@@ -47,6 +47,13 @@ ul {
     margin: 0;
 }
 
+.btn:focus {
+    border: none;
+    box-shadow: none;
+}
+
+/* Start */
+
 .navigation {
     padding: 12px;
     box-shadow: 0 8px 8px rgb(0 0 0 / 10%);
@@ -2784,12 +2791,12 @@ ul {
     color: white;
 }
 
-main {
+.main__wrap {
     margin-right: 0;
     transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-main.active {
+.main__wrap.active {
     margin-right: 20vw;
     transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -2948,8 +2955,8 @@ main.active {
     box-shadow: var(--main-shadow);
     z-index: 50;
     display: flex;
-    justify-content: flex-end;
     transition: var(--main-transition);
+    justify-content: flex-end;
     align-items: flex-end;
 }
 
@@ -2971,11 +2978,12 @@ main.active {
     background: white;
     border-radius: 5px 5px 0 0;
     box-shadow: var(--main-shadow);
-    max-width: 340px;
+    width: 340px;
     overflow: hidden;
     margin-left: 10px;
     height: auto;
     transition: var(--main-transition);
+    scroll-snap-align: start;
 }
 
 .chating.minimize {
@@ -3079,4 +3087,15 @@ main.active {
 .info__action button:hover {
     background-color: white;
     color: var(--primary-color);
+}
+
+.info__userName {
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+}
+
+.chat__status--icon {
+    font-size: 8px;
+    margin-right: 6px;
 }
