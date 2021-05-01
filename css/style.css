@@ -2024,15 +2024,13 @@ ul {
 }
 
 .auth__btn {
-    margin-top: 36px;
-}
-
-.auth__btn {
     width: 100%;
     text-align: center;
     background: var(--primary-color);
     font-weight: bold;
     color: white;
+    margin-top: 36px;
+    border: none;
 }
 
 .auth__text {
@@ -3098,4 +3096,8 @@ ul {
 .chat__status--icon {
     font-size: 8px;
     margin-right: 6px;
+}
+
+.toast-body:first-letter {
+    text-transform: uppercase;
 }

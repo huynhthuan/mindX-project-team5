@@ -16,6 +16,8 @@
     <link rel="stylesheet" href="../../../fonts/fontawesome-free-5.15.3-web/css/all.min.css">
     <!-- Main CSS -->
     <link rel="stylesheet" href="../../../css/style.css">
+    <!-- Const JS -->
+    <script src="../../../js/common/constant.js"></script>
 </head>
 
 <body>
@@ -99,22 +101,26 @@
                                     Welcome Back
                                 </div>
                                 <div class="auth__form">
-                                    <form action="">
+                                    <form novalidate class="needs-validation">
                                         <div class="mb-3">
                                             <label for="email" class="form-label">Email</label>
                                             <input type="email" class="form-control" id="email"
                                                 placeholder="Your email">
+                                            <div class="invalid-feedback"></div>
                                         </div>
                                         <div class="mb-3">
                                             <label for="password" class="form-label">Password</label>
                                             <input type="password" class="form-control" id="password">
+                                            <div class="invalid-feedback"></div>
                                         </div>
 
                                         <div class="mb-3">
-                                            <button class="btn auth__btn auth__login">Login</button>
+                                            <button class="btn auth__btn auth__login" type="submit">Login</button>
                                         </div>
-                                        <p class="auth__text">Don't have an account yet? <a href="./sign-up.html">Sign
-                                                up</a></p>
+                                        <p class="auth__text">
+                                            Don't have an account yet? <a href="./sign-up.html">Sign
+                                                up</a>
+                                        </p>
                                     </form>
                                 </div>
                             </div>
@@ -220,6 +226,8 @@
         </footer>
     </div>
 
+    <div class="toast__wrap"></div>
+
     <!-- Jquery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
@@ -234,9 +242,14 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/shortcuts/sticky.min.js"
         integrity="sha512-O5YCLUxCY2OBc4rfpnKUIgE4LGuCiW8CrJ7ty4hvkBAAKUOnlbomEFWd3a6ruRnFvO3LG2wiaGiJ1heOvdppvA=="
         crossorigin="anonymous"></script>
+    <!-- Crypto -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"
+        integrity="sha512-nOQuvD9nKirvxDdvQ9OMqe2dgapbPB7vYAMrzJihw5m+aNcf0dX53m6YxM4LgA9u8e9eg9QX+/+mPu8kCNpV2A=="
+        crossorigin="anonymous"></script>
     <!-- Single -->
     <script src="../../../js/auth/login.js"></script>
     <!-- Common -->
+    <script src="../../../js/common/helpers.js"></script>
     <script src="../../../js/common/script.js"></script>
 </body>
 

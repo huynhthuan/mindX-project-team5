@@ -1,0 +1,42 @@
+{
+  "users": [
+    {
+      "id": "_bfrypy7nk",
+      "email": "huynhthuanvugia@gmail.com",
+      "username": "huynie007",
+      "password": "gnzLDuqKcGxMNKFokfhOew==",
+      "address": "123 Linh nam, Ha noi",
+      "bod": "2021-04-30",
+      "telephone": "0915425561",
+      "about": "Sapiente ornare expedita esse eius illo suspendisse, nihil, nostra augue repellat ultricies irure parturient, dictumst! Perferendis animi do adipiscing vel pariatur veniam amet? Ligula ratione corrupti distinctio? Aut earum feugiat quod qui?",
+      "avatar": "ava.png",
+      "settings": {
+        "colorTemplate": 0,
+        "status": 0
+      },
+      "bookmark": {
+        "pokedex": [],
+        "card": []
+      }
+    },
+    {
+      "id": "_a2rc227no",
+      "email": "huynhthuan@gmail.com",
+      "username": "huynie008",
+      "password": "gnzLDuqKcGxMNKFokfhOew==",
+      "address": "123 Linh nam, Ha noi",
+      "bod": "2021-04-15",
+      "telephone": "0332570938",
+      "about": "Sapiente ornare expedita esse eius illo suspendisse, nihil, nostra augue repellat ultricies irure parturient, dictumst! Perferendis animi do adipiscing vel pariatur veniam amet? Ligula ratione corrupti distinctio? Aut earum feugiat quod qui?",
+      "avatar": "ava2.png",
+      "settings": {
+        "colorTemplate": 0,
+        "status": 0
+      },
+      "bookmark": {
+        "pokedex": [],
+        "card": []
+      }
+    }
+  ]
+}

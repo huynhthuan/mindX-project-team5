@@ -16,6 +16,10 @@
     <link rel="stylesheet" href="../../fonts/fontawesome-free-5.15.3-web/css/all.min.css">
     <!-- Main CSS -->
     <link rel="stylesheet" href="../../css/style.css">
+    <!-- Const Js -->
+    <script src="../../js/common/constant.js"></script>
+    <!-- Middleware Login -->
+    <script src="../../js/auth/middlewareLogin.js"></script>
 </head>
 
 <body>
@@ -129,14 +133,15 @@
                                     <div class="info__content">
                                         <div class="info__title"><span>Information</span></div>
                                         <div class="info__value">
-                                            <form action="">
+                                            <form action="" id="form-tabinformation">
                                                 <div class="row info__input align-items-start">
                                                     <div class="col-md-2">
                                                         <label for="email" class="col-form-label">Email</label>
                                                     </div>
                                                     <div class="col-md-10">
-                                                        <input type="text" name="email" id="email" class="form-control"
-                                                            aria-describedby="email" value="thom@gmal.com">
+                                                        <input type="text" name="email" id="email" readonly
+                                                            class="form-control" aria-describedby="email"
+                                                            value="thom@gmal.com">
                                                     </div>
                                                 </div>
                                                 <div class="row info__input align-items-start">
@@ -147,6 +152,7 @@
                                                         <input type="text" name="username" id="username"
                                                             class="form-control" aria-describedby="Username"
                                                             value="thom@123">
+                                                        <div class="invalid-feedback"></div>
                                                     </div>
                                                 </div>
                                                 <div class="row info__input align-items-start">
@@ -156,6 +162,7 @@
                                                     <div class="col-md-10">
                                                         <textarea name="address" id="address" cols="30" rows="4"
                                                             class="form-control">123123 HN</textarea>
+                                                        <div class="invalid-feedback"></div>
                                                     </div>
                                                 </div>
                                                 <div class="row info__input align-items-start">
@@ -165,6 +172,7 @@
                                                     <div class="col-md-10">
                                                         <input type="date" id="bod" name="bod" class="form-control"
                                                             aria-describedby="bod" value="2021-04-30">
+                                                        <div class="invalid-feedback"></div>
                                                     </div>
                                                 </div>
                                                 <div class="row info__input align-items-start">
@@ -175,6 +183,7 @@
                                                         <input type="text" id="telephone" name="telephone"
                                                             class="form-control" aria-describedby="telephone"
                                                             value="0915356625">
+                                                        <div class="invalid-feedback"></div>
                                                     </div>
                                                 </div>
                                                 <div class="row info__input align-items-start">
@@ -184,10 +193,12 @@
                                                     <div class="col-md-10">
                                                         <textarea name="about" id="about" cols="30" rows="8"
                                                             class="form-control">Facilisi orci quibusdam sunt, incidunt vitae ridiculus ligula vivamus ultrices officia velit deserunt excepturi porttitor? Rutrum saepe, bibendum cubilia, exercitationem! Accumsan, magnis iste officia, cubilia! Cubilia dictum sunt, voluptas volutpat harum quo eum dictum. Ipsam? Vitae! Deleniti euismod fermentum? Pharetra, ultrices necessitatibus senectus laudantium conubia orci, fuga ad, pretium, iaculis platea! Sagittis aenean etiam auctor facilis suscipit</textarea>
+                                                        <div class="invalid-feedback"></div>
                                                     </div>
+
                                                 </div>
                                                 <div class="info__save text-end">
-                                                    <button class="btn btn-save btn-save">Save</button>
+                                                    <button type="submit" class="btn btn-save btn-save">Save</button>
                                                 </div>
                                             </form>
                                         </div>
@@ -473,6 +484,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/shortcuts/sticky.min.js"
         integrity="sha512-O5YCLUxCY2OBc4rfpnKUIgE4LGuCiW8CrJ7ty4hvkBAAKUOnlbomEFWd3a6ruRnFvO3LG2wiaGiJ1heOvdppvA=="
         crossorigin="anonymous"></script>
+    <!-- Helper -->
+    <script src="../../js/common/helpers.js"></script>
     <!-- Single -->
     <script src="../../js/profile/index.js"></script>
     <!-- Common -->

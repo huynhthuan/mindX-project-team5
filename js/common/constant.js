@@ -1,1 +1,7 @@
-const homeUrl = 'http://127.0.0.1:5500/';
+// Const
+const domain = 'http://localhost/pokebook/';
+const domainApi = 'http://localhost:3000/';
+const userApiUrl = domainApi + 'users/';
+const homeUrl = domain;
+const uploadUrl = domain + 'uploads/user/';
+const profileUrl = domain + 'views/profile/';

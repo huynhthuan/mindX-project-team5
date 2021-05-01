@@ -1,7 +1,9 @@
+// Tạo fixed menu
 let sticky = new Waypoint.Sticky({
     element: $('.navigation')[0],
 });
 
+// Tạo chatbox
 let main = document.querySelector('.main__wrap');
 let btnChat = document.querySelector('.toggle__chat');
 let chatBox = document.querySelector('.chatbox');
@@ -111,3 +113,31 @@ btnChatList.forEach((item) => {
         }
     };
 });
+
+// Hiển thị thông báo
+if (getAllUrlParams().toast === 'true') {
+    showNotice(
+        getAllUrlParams().type,
+        getAllUrlParams().msg.replaceAll('%20', ' ')
+    );
+}
+
+// Hiển thị dữ liệu người dùng khi đã đăng nhập
+let userAva = document.querySelector('.account__ava a img');
+let userMenu = document.querySelector('.navigation__account .dropdown-menu ');
+
+if (isLogin()) {
+    userAva.src = uploadUrl + getUserDataLogged().avatar;
+    userMenu.innerHTML = `
+        <li><a class="dropdown-item" href="${profileUrl}"><i class="fas fa-user"></i> Profile</a></li>
+        <li><a class="dropdown-item" href="javascript:void(0)" id="logOut"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+    `;
+}
+
+// Đăng xuất
+let btnLogOut = document.querySelector('#logOut');
+if (btnLogOut) {
+    btnLogOut.onclick = () => {
+        logOut();
+    };
+}
