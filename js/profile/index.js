@@ -1,5 +1,19 @@
+// Form upload avatar
+let formUpload = document.querySelector('#fileAvatar');
+let btnUpload = document.querySelector('#btnUploadFile');
+let previewUpload = document.querySelector('#previewUpload');
+let modalUplopadEl = document.querySelector('#uploadImage');
+let modalUplopad = new bootstrap.Modal(modalUplopadEl);
+
+// Form color template
+let colorTemplate = document.querySelector('#colorTemplate');
+let btnSaveColor = document.querySelector('#btn__saveColor');
+
 // Form tab information
 let formInfo = document.querySelector('#form-tabinformation');
+let formInfoInput = document.querySelectorAll(
+    '#form-tabinformation input, #form-tabinformation textarea'
+);
 
 // Lấy element ở sidebar
 let profileAva = document.querySelector('.profile__image img');
@@ -16,7 +30,7 @@ let profileTabAbout = document.querySelector('.info__value #about');
 
 function renderDataProfile() {
     // Set data ở sidebar
-    profileAva.src = uploadUrl + getUserDataLogged().avatar;
+    profileAva.src = getUserDataLogged().avatar;
     profileName.innerText = getUserDataLogged().username;
     profileEmail.innerText = getUserDataLogged().email;
 
@@ -27,10 +41,12 @@ function renderDataProfile() {
     profileTabBod.value = getUserDataLogged().bod;
     profileTabTelephone.value = getUserDataLogged().telephone;
     profileTabAbout.value = getUserDataLogged().about;
+    colorTemplate.selectedIndex = getUserDataLogged().settings.colorTemplate;
 }
 
 renderDataProfile();
 
+// Lưu dữ liệu thông tin người dùng
 formInfo.onsubmit = async (e) => {
     e.preventDefault();
     e.stopPropagation();
@@ -121,6 +137,73 @@ formInfo.onsubmit = async (e) => {
             about: profileTabAbout.value,
         };
 
-        let result = updateUserDataById(getUserDataLogged().id, newData);
+        let result = await updateUserDataById(getUserDataLogged().id, newData);
+
+        if (Object.keys(result).length !== 0) {
+            // Đặt lại data người dùng sau khi update ở localStorage
+            let newData = await getUserById(getUserDataLogged().id);
+            setUserDataLogged(newData);
+            renderDataProfile();
+            formInfoInput.forEach((item) => {
+                item.classList.remove('is-valid');
+            });
+            showNotice('success', 'Update data success!!!');
+        } else {
+            showNotice('error', 'Update data error! Try again.');
+        }
     }
+};
+
+// Show preview image upload
+formUpload.onchange = () => {
+    let file = formUpload.files[0];
+    let reader = new FileReader();
+    reader.onloadend = function () {
+        newDataAva = reader.result;
+        previewUpload.src = newDataAva;
+    };
+
+    reader.readAsDataURL(file);
+};
+
+// Upload avatar
+btnUpload.onclick = () => {
+    let newDataAva;
+    if (formUpload.files[0] === undefined) {
+        formUpload.nextElementSibling.innerText = 'Please chossen file upload!';
+        formUpload.classList.add('is-invalid');
+    } else {
+        let file = formUpload.files[0];
+        let reader = new FileReader();
+        reader.onloadend = async function () {
+            newDataAva = reader.result;
+            previewUpload.src = newDataAva;
+            let response = await updateUserDataById(getUserDataLogged().id, {
+                avatar: newDataAva,
+            });
+            console.log(previewUpload);
+            setUserDataLogged(response);
+            renderDataProfile();
+            setDataMenu();
+            showNotice('success', 'Upload image successfully!');
+            modalUplopad.hide();
+        };
+
+        reader.readAsDataURL(file);
+    }
+};
+
+// Thay đổi color template
+btnSaveColor.onclick = async () => {
+    let newData = await updateUserDataById(getUserDataLogged().id, {
+        settings: {
+            colorTemplate: Number(colorTemplate.value),
+            status: getUserDataLogged().settings.status,
+        },
+    });
+
+    setUserDataLogged(newData);
+    renderDataProfile();
+    changeColorTemplate();
+    showNotice('success', 'Change color template successfully!');
 };

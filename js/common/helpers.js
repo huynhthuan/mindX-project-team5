@@ -1,4 +1,15 @@
 // Hỗ trợ xử lý =============================
+// Viết hoa chữ cái đầu của từng từ
+function capitalizeTheFirstLetterOfEachWord(words) {
+    var separateWord = words.toLowerCase().split(' ');
+    for (var i = 0; i < separateWord.length; i++) {
+        separateWord[i] =
+            separateWord[i].charAt(0).toUpperCase() +
+            separateWord[i].substring(1);
+    }
+    return separateWord.join(' ');
+}
+
 // Xử lý chuyển hướng
 function redirectTo(url) {
     window.location.href = url;
@@ -103,10 +114,25 @@ function getAllUrlParams(url) {
 
 // Hiển thị thông báo
 function showNotice(type, msg) {
+    let classColor;
+    switch (type) {
+        case 'success':
+            classColor = 'bg-primary';
+            break;
+        case 'notice':
+            classColor = 'bg-warning';
+            break;
+        case 'error':
+            classColor = 'bg-danger';
+            break;
+        default:
+            classColor = 'bg-primary';
+    }
+
     let toastWrap = document.querySelector('.toast__wrap');
     toastWrap.innerHTML += `<div class="position-fixed top-0 end-0 p-3" style="z-index: 999999">
     <div id="liveToast" class="toast hide" role="alert" aria-live="assertive" aria-atomic="true">
-      <div class="toast-header bg-primary text-white">
+      <div class="toast-header ${classColor} text-white">
         <strong class="me-auto">${type.toUpperCase()}</strong>
         <small>just nows</small>
         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="toast" aria-label="Close"></button>
@@ -127,7 +153,14 @@ function isLogin() {
 }
 
 // Đăng xuất
-function logOut() {
+async function logOut(userData) {
+    // Thay đổi trạng thái người dùng
+    await updateUserDataById(userData.id, {
+        settings: {
+            colorTemplate: userData.settings.colorTemplate,
+            status: 0,
+        },
+    });
     localStorage.removeItem('userLoggeData');
     redirectTo(homeUrl);
 }
@@ -141,6 +174,17 @@ function getDateNow() {
     return (today = yyyy + '-' + mm + '-' + dd);
 }
 
+// Random ID user
+
+function randomUserID() {
+    let ID = '';
+    let characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+    for (var i = 0; i < 12; i++) {
+        ID += characters.charAt(Math.floor(Math.random() * 36));
+    }
+    return ID;
+}
+
 // Validate data =============================
 // Validate định dạng email
 function validateEmail(email) {
@@ -149,16 +193,45 @@ function validateEmail(email) {
 }
 
 // Validate số điện thoại
-
 function validateTelephoneNumber(telephone) {
     const rete = /(03[2|3|4|5|6|7|8|9])+([0-9]{7})\b/;
     return rete.test(telephone);
 }
 
 // CRUD user =============================
+// Hiển thị dữ liệu người dùng ở menu
+function setDataMenu() {
+    let userAva = document.querySelector('.account__ava a img');
+    let userMenu = document.querySelector(
+        '.navigation__account .dropdown-menu '
+    );
+
+    if (isLogin()) {
+        userAva.src = getUserDataLogged().avatar;
+        userMenu.innerHTML = `
+        <li><a class="dropdown-item" href="${profileUrl}"><i class="fas fa-user"></i> Profile</a></li>
+        <li><a class="dropdown-item" href="javascript:void(0)" id="logOut"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+    `;
+    }
+}
+
 // Lấy data user theo email
 async function getUserByEmail(email) {
     let response = await fetch(userApiUrl + '?email=' + email);
+    userData = await response.json();
+    return userData[0];
+}
+
+// Lấy data user theo id
+async function getUserById(id) {
+    let response = await fetch(userApiUrl + '?id=' + id);
+    userData = await response.json();
+    return userData[0];
+}
+
+// Lấy data user theo username
+async function getUserByUserName(username) {
+    let response = await fetch(userApiUrl + '?username=' + username);
     userData = await response.json();
     return userData[0];
 }
@@ -172,5 +245,78 @@ async function updateUserDataById(id, data) {
         },
         body: JSON.stringify(data),
     });
+
     return await response.json();
+}
+
+// Thêm user vào database
+async function addUser(data) {
+    let response = await fetch(userApiUrl, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+    });
+
+    return await response.json();
+}
+
+// Thay đổi màu giao diện
+function changeColorTemplate() {
+    if (isLogin()) {
+        let color = getUserDataLogged().settings.colorTemplate;
+        switch (color) {
+            case 1:
+                document.documentElement.style.setProperty(
+                    '--primary-color',
+                    '#eaeaea'
+                );
+                break;
+            case 2:
+                document.documentElement.style.setProperty(
+                    '--primary-color',
+                    '#000000'
+                );
+                break;
+            default:
+                document.documentElement.style.setProperty(
+                    '--primary-color',
+                    '#21386e'
+                );
+        }
+    }
+}
+
+// CRUD pokemons =============================
+// Lấy dữ liệu nhiều pokemon
+async function getPokemonsById(
+    ids,
+    sortby = 'id',
+    order = 'asc',
+    page = '1',
+    limit = '10'
+) {
+    let responses = await fetch(
+        pokeApiUrl +
+            '?id=' +
+            ids.join('&id=') +
+            '&_sort=' +
+            sortby +
+            '&_order=' +
+            order +
+            '&_page=' +
+            page +
+            '&_limit=' +
+            limit
+    );
+    let data = await responses.json();
+    return data;
+}
+
+// Lấy dữ liệu 1 pokemon
+async function getPokemonById(id) {
+    let response = await fetch(pokeApiUrl + '?id=' + id);
+    let data = await response.json();
+    return data;
 }

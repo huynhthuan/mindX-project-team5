@@ -123,21 +123,15 @@ if (getAllUrlParams().toast === 'true') {
 }
 
 // Hiển thị dữ liệu người dùng khi đã đăng nhập
-let userAva = document.querySelector('.account__ava a img');
-let userMenu = document.querySelector('.navigation__account .dropdown-menu ');
+setDataMenu();
 
-if (isLogin()) {
-    userAva.src = uploadUrl + getUserDataLogged().avatar;
-    userMenu.innerHTML = `
-        <li><a class="dropdown-item" href="${profileUrl}"><i class="fas fa-user"></i> Profile</a></li>
-        <li><a class="dropdown-item" href="javascript:void(0)" id="logOut"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
-    `;
-}
+// Thay đổi màu theo setting người dùng
+changeColorTemplate();
 
 // Đăng xuất
 let btnLogOut = document.querySelector('#logOut');
 if (btnLogOut) {
-    btnLogOut.onclick = () => {
-        logOut();
+    btnLogOut.onclick = async () => {
+        await logOut(getUserDataLogged());
     };
 }

@@ -16,6 +16,10 @@
     <link rel="stylesheet" href="../../../fonts/fontawesome-free-5.15.3-web/css/all.min.css">
     <!-- Main CSS -->
     <link rel="stylesheet" href="../../../css/style.css">
+    <!-- Const Js -->
+    <script src="../../../js/common/constant.js"></script>
+    <!-- Middleware Login -->
+    <script src="../../../js/middleware/redirectIfNotLogin.js"></script>
 </head>
 
 <body>
@@ -129,91 +133,7 @@
                                 aria-labelledby="nav-pokemon-tab">
                                 <div class="bookmark__pokemon">
                                     <div class="row">
-                                        <div class="col-md-3">
-                                            <div class="pokedex__item">
-                                                <img src="../../../img/pokedex-bg.png" alt="pokedex__bg"
-                                                    class="pokedex__bg">
-                                                <div class="pokedex__content">
-                                                    <div class="pokedex__id">#007</div>
-                                                    <div class="pokedex__info">
-                                                        <div class="pokedex__media">
-                                                            <div class="pokedex__ava">
-                                                                <img src="../../../img/pokemon.png" alt="pokedex_ava">
-                                                            </div>
-                                                            <div class="pokedex__stats">
-                                                                <div class="stats">
-                                                                    <div class="stat__item">
-                                                                        <img src="../../../img/stat_hp.png" alt="hp"
-                                                                            class="stat__icon">
-                                                                        <div class="stat__value">
-                                                                            <div class="stat__percent"></div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="stat__item">
-                                                                        <img src="../../../img/stat_atk.png" alt="atk"
-                                                                            class="stat__icon">
-                                                                        <div class="stat__value">
-                                                                            <div class="stat__percent"></div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="stat__item">
-                                                                        <img src="../../../img/stat_def.png" alt="def"
-                                                                            class="stat__icon">
-                                                                        <div class="stat__value">
-                                                                            <div class="stat__percent"></div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
 
-                                                        <div class="pokedex__meta">
-                                                            <div class="pokedex__header">
-                                                                <h3 class="pokedex__name">
-                                                                    Pikachu
-                                                                </h3>
-                                                                <h3 class="pokedex__ids">
-                                                                    #007
-                                                                </h3>
-                                                            </div>
-                                                            <div class="pokedex__body">
-                                                                <div class="pokedex__text">
-                                                                    <div class="pokedex__label">
-                                                                        Type
-                                                                    </div>
-                                                                    <div class="pokedex__value">
-                                                                        <span
-                                                                            class="pokedex__type pokedex__type--bug">Bug</span>
-                                                                        <span
-                                                                            class="pokedex__type pokedex__type--steel">Steel</span>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="pokedex__text">
-                                                                    <div class="pokedex__label">
-                                                                        Abilities
-                                                                    </div>
-                                                                    <div class="pokedex__value">
-                                                                        Swarm / Technician
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="pokedex__bg2"></div>
-                                                    </div>
-                                                    <div class="pokedex__overlay">
-                                                        <a href="../../../views/pokemon/detail/"
-                                                            class="btn pokedex__btn pokedex__view">
-                                                            <i class="fas fa-eye"></i> Viewmore
-                                                        </a>
-                                                        <button class="btn pokedex__btn pokedex__compare"
-                                                            data-bs-toggle="modal" data-bs-target="#compareModal">
-                                                            <i class="fas fa-table"></i> Add compare
-                                                        </button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
                                     </div>
 
                                     <div class="bookmark__more text-center">
@@ -623,6 +543,8 @@
         </div>
     </div>
 
+    <div class="toast__wrap"></div>
+
     <!-- Jquery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
@@ -637,10 +559,12 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/shortcuts/sticky.min.js"
         integrity="sha512-O5YCLUxCY2OBc4rfpnKUIgE4LGuCiW8CrJ7ty4hvkBAAKUOnlbomEFWd3a6ruRnFvO3LG2wiaGiJ1heOvdppvA=="
         crossorigin="anonymous"></script>
-    <!-- Single -->
-    <script src="../../../js/profile/bookmark.js"></script>
+    <!-- Helper -->
+    <script src="../../../js/common/helpers.js"></script>
     <!-- Common -->
     <script src="../../../js/common/script.js"></script>
+    <!-- Single -->
+    <script src="../../../js/profile/bookmark.js"></script>
 </body>
 
 </html>

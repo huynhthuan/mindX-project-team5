@@ -19,7 +19,7 @@
     <!-- Const Js -->
     <script src="../../js/common/constant.js"></script>
     <!-- Middleware Login -->
-    <script src="../../js/auth/middlewareLogin.js"></script>
+    <script src="../../js/middleware/redirectLogin.js"></script>
 </head>
 
 <body>
@@ -100,7 +100,10 @@
                                 aria-orientation="vertical">
                                 <div class="profile__meta">
                                     <div class="profile__image">
-                                        <img src="../../img/ava.png" alt="ava">
+                                        <a href="javascript:void(0)" data-bs-toggle="modal"
+                                            data-bs-target="#uploadImage">
+                                            <img src="../../img/ava.png" alt="ava">
+                                        </a>
                                     </div>
                                     <div class="profile__info">
                                         <div class="profile__username">Math Thompson</div>
@@ -140,8 +143,7 @@
                                                     </div>
                                                     <div class="col-md-10">
                                                         <input type="text" name="email" id="email" readonly
-                                                            class="form-control" aria-describedby="email"
-                                                            value="thom@gmal.com">
+                                                            class="form-control" aria-describedby="email">
                                                     </div>
                                                 </div>
                                                 <div class="row info__input align-items-start">
@@ -150,8 +152,7 @@
                                                     </div>
                                                     <div class="col-md-10">
                                                         <input type="text" name="username" id="username"
-                                                            class="form-control" aria-describedby="Username"
-                                                            value="thom@123">
+                                                            class="form-control" aria-describedby="Username">
                                                         <div class="invalid-feedback"></div>
                                                     </div>
                                                 </div>
@@ -161,7 +162,7 @@
                                                     </div>
                                                     <div class="col-md-10">
                                                         <textarea name="address" id="address" cols="30" rows="4"
-                                                            class="form-control">123123 HN</textarea>
+                                                            class="form-control"></textarea>
                                                         <div class="invalid-feedback"></div>
                                                     </div>
                                                 </div>
@@ -171,7 +172,7 @@
                                                     </div>
                                                     <div class="col-md-10">
                                                         <input type="date" id="bod" name="bod" class="form-control"
-                                                            aria-describedby="bod" value="2021-04-30">
+                                                            aria-describedby="bod">
                                                         <div class="invalid-feedback"></div>
                                                     </div>
                                                 </div>
@@ -181,8 +182,7 @@
                                                     </div>
                                                     <div class="col-md-10">
                                                         <input type="text" id="telephone" name="telephone"
-                                                            class="form-control" aria-describedby="telephone"
-                                                            value="0915356625">
+                                                            class="form-control" aria-describedby="telephone">
                                                         <div class="invalid-feedback"></div>
                                                     </div>
                                                 </div>
@@ -192,7 +192,7 @@
                                                     </div>
                                                     <div class="col-md-10">
                                                         <textarea name="about" id="about" cols="30" rows="8"
-                                                            class="form-control">Facilisi orci quibusdam sunt, incidunt vitae ridiculus ligula vivamus ultrices officia velit deserunt excepturi porttitor? Rutrum saepe, bibendum cubilia, exercitationem! Accumsan, magnis iste officia, cubilia! Cubilia dictum sunt, voluptas volutpat harum quo eum dictum. Ipsam? Vitae! Deleniti euismod fermentum? Pharetra, ultrices necessitatibus senectus laudantium conubia orci, fuga ad, pretium, iaculis platea! Sagittis aenean etiam auctor facilis suscipit</textarea>
+                                                            class="form-control"></textarea>
                                                         <div class="invalid-feedback"></div>
                                                     </div>
 
@@ -210,24 +210,22 @@
                                     <div class="info__content">
                                         <div class="info__title"><span>Settings</span></div>
                                         <div class="info__value">
-                                            <form action="">
-                                                <div class="row info__input align-items-start">
-                                                    <div class="col-md-2">
-                                                        <label for="color" class="col-form-label">Color template</label>
-                                                    </div>
-                                                    <div class="col-md-10">
-                                                        <select name="color" class="form-select">
-                                                            <option value="0">Default</option>
-                                                            <option value="1">Light</option>
-                                                            <option value="2">Dark</option>
-                                                        </select>
-                                                    </div>
+                                            <div class="row info__input align-items-start">
+                                                <div class="col-md-2">
+                                                    <label for="color" class="col-form-label">Color template</label>
                                                 </div>
+                                                <div class="col-md-10">
+                                                    <select name="color" class="form-select" id="colorTemplate">
+                                                        <option value="0">Default</option>
+                                                        <option value="1">Light</option>
+                                                        <option value="2">Dark</option>
+                                                    </select>
+                                                </div>
+                                            </div>
 
-                                                <div class="info__save text-end">
-                                                    <button class="btn btn-save btn-save">Save</button>
-                                                </div>
-                                            </form>
+                                            <div class="info__save text-end">
+                                                <button class="btn btn-save" id="btn__saveColor">Save</button>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -468,6 +466,34 @@
     </div>
 
     <div class="chatbox__list">
+    </div>
+
+    <div class="toast__wrap"></div>
+
+    <!-- Modal upload image -->
+    <div class="modal fade" id="uploadImage" tabindex="-1" aria-labelledby="uploadImageLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Change avatar</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="input-group mb-3">
+                        <label class="input-group-text" for="fileAvatar">Upload</label>
+                        <input type="file" class="form-control" id="fileAvatar">
+                        <div class="invalid-feedback"></div>
+                    </div>
+                    <div class="preview__wrap">
+                        <img id="previewUpload" src="../../img/ava_preview.png">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" id="btnUploadFile">Save</button>
+                </div>
+            </div>
+        </div>
     </div>
 
     <!-- Jquery -->
