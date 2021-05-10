@@ -1,7 +1,9 @@
 let containerPoke = document.querySelector('.bookmark__pokemon .row');
+let containerPokeCard = document.querySelector('.bookmark__card .row');
 // Lấy dữ liệu bookmark người dùng
 let data = getUserDataLogged().bookmark;
-let page = 1;
+let pagePokemon = 1;
+let pagePokemonCard = 1;
 
 // Lấy dữ liệu pokemon
 async function renderPokeBookmark(
@@ -134,7 +136,7 @@ if (data.pokedex.length > 0) {
     containerPoke.innerHTML = `
         <div class="col-12">
             <div class="alert alert-warning text-center" role="alert">
-                No bookmark card found.
+                No bookmark pokemon found.
             </div>
         </div>
     `;
@@ -143,10 +145,10 @@ if (data.pokedex.length > 0) {
 // Load thêm pokemon
 let btnLoadPokemon = document.querySelector('.bookmarkPokemon__more');
 btnLoadPokemon.onclick = () => {
-    page++;
+    pagePokemon++;
     console.log(page, Number(data.pokedex.length) / 10);
-    if (page <= Number(data.pokedex.length) / 10) {
-        if (page === Number(data.pokedex.length) / 10) {
+    if (pagePokemon <= Number(data.pokedex.length) / 10) {
+        if (pagePokemon === Number(data.pokedex.length) / 10) {
             btnLoadPokemon.classList.add('d-none');
         }
         renderPokeBookmark(
@@ -154,7 +156,72 @@ btnLoadPokemon.onclick = () => {
             getPokemonsById,
             undefined,
             undefined,
-            page,
+            pagePokemon,
+            undefined
+        );
+    }
+};
+
+// Lấy dữ liệu pokemon card
+async function renderPokeCardBookmark(
+    ids,
+    callback,
+    sort = 'id',
+    orderby = 'asc',
+    page = '1',
+    limit = '10'
+) {
+    let html = '';
+    let pokemonCards;
+    pokemonCards = await callback(ids, sort, orderby, page, limit);
+    pokemonCards.forEach((pokemonCard) => {
+        html += `<div class="col-md-3">
+        <div class="poketcg__item">
+            <div class="poketcg__img">
+                <img src="${pokemonCard.images.small}" alt="tcg">
+            </div>
+            <div class="poketcg_title">
+                ${pokemonCard.name}
+            </div>
+            <div class="poketcg__overlay">
+                <a href="../../../views/card/detail?card-Id=${pokemonCard.id}"
+                    class="btn pokedextcg__btn pokedextcg__view">
+                    <i class="fas fa-eye"></i> Viewmore
+                </a>
+            </div>
+        </div>
+    </div>`;
+    });
+
+    containerPokeCard.innerHTML += html;
+}
+
+if (data.cards.length > 0) {
+    renderPokeCardBookmark(data.cards, getPokemonCardsById);
+} else {
+    containerPokeCard.innerHTML = `
+        <div class="col-12">
+            <div class="alert alert-warning text-center" role="alert">
+                No bookmark card found.
+            </div>
+        </div>
+    `;
+}
+
+// Load thêm pokemon card
+let btnLoadPokemonCard = document.querySelector('.bookmarkCard__more');
+btnLoadPokemonCard.onclick = () => {
+    pagePokemonCard++;
+    if (pagePokemonCard <= Number(data.cards.length) / 10) {
+        if (pagePokemonCard === Number(data.cards.length) / 10) {
+            btnLoadPokemon.classList.add('d-none');
+        }
+        renderPokeCardBookmark(
+            data.cards,
+            getPokemonCardsById,
+            undefined,
+            undefined,
+            pagePokemonCard,
             undefined
         );
     }

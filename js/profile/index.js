@@ -30,7 +30,7 @@ let profileTabAbout = document.querySelector('.info__value #about');
 
 function renderDataProfile() {
     // Set data ở sidebar
-    profileAva.src = getUserDataLogged().avatar;
+    profileAva.src = uploadFolderUserUrl + getUserDataLogged().avatar;
     profileName.innerText = getUserDataLogged().username;
     profileEmail.innerText = getUserDataLogged().email;
 
@@ -167,29 +167,35 @@ formUpload.onchange = () => {
 };
 
 // Upload avatar
-btnUpload.onclick = () => {
-    let newDataAva;
+
+btnUpload.onclick = async () => {
+    let newAvaUrl;
+
     if (formUpload.files[0] === undefined) {
         formUpload.nextElementSibling.innerText = 'Please chossen file upload!';
         formUpload.classList.add('is-invalid');
     } else {
         let file = formUpload.files[0];
-        let reader = new FileReader();
-        reader.onloadend = async function () {
-            newDataAva = reader.result;
-            previewUpload.src = newDataAva;
-            let response = await updateUserDataById(getUserDataLogged().id, {
-                avatar: newDataAva,
-            });
-            console.log(previewUpload);
-            setUserDataLogged(response);
-            renderDataProfile();
-            setDataMenu();
-            showNotice('success', 'Upload image successfully!');
-            modalUplopad.hide();
-        };
 
-        reader.readAsDataURL(file);
+        const formData = new FormData();
+        formData.append('file_upload', file);
+
+        let response = await upload(
+            'http://localhost/pokebook/server/upload.php',
+            formData
+        );
+
+        newAvaUrl = await response.json();
+
+        response = await updateUserDataById(getUserDataLogged().id, {
+            avatar: newAvaUrl,
+        });
+
+        setUserDataLogged(response);
+        renderDataProfile();
+        setDataMenu();
+        showNotice('success', 'Upload image successfully!');
+        modalUplopad.hide();
     }
 };
 

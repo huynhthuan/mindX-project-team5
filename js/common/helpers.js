@@ -32,7 +32,7 @@ function setUserDataLogged(user) {
         },
         bookmark: {
             pokedex: user.bookmark.pokedex,
-            card: user.bookmark.card,
+            cards: user.bookmark.cards,
         },
     };
 
@@ -185,6 +185,15 @@ function randomUserID() {
     return ID;
 }
 
+// Xóa trùng lặp trong mảng
+function removeDuplicateInArray(arr) {
+    let newArr = arr.filter((item, pos) => {
+        return arr.indexOf(item) === pos;
+    });
+
+    return newArr;
+}
+
 // Validate data =============================
 // Validate định dạng email
 function validateEmail(email) {
@@ -207,10 +216,10 @@ function setDataMenu() {
     );
 
     if (isLogin()) {
-        userAva.src = getUserDataLogged().avatar;
+        userAva.src = uploadFolderUserUrl + getUserDataLogged().avatar;
         userMenu.innerHTML = `
         <li><a class="dropdown-item" href="${profileUrl}"><i class="fas fa-user"></i> Profile</a></li>
-        <li><a class="dropdown-item" href="javascript:void(0)" id="logOut"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+        <li><a class="dropdown-item" href="javascript:void(0)" onclick="logOut(getUserDataLogged())" id="logOut"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
     `;
     }
 }
@@ -288,6 +297,16 @@ function changeColorTemplate() {
     }
 }
 
+// Upload file
+
+async function upload(url, file) {
+    let response = await fetch(url, {
+        method: 'POST',
+        body: file,
+    });
+    return response;
+}
+
 // CRUD pokemons =============================
 // Lấy dữ liệu nhiều pokemon
 async function getPokemonsById(
@@ -318,5 +337,45 @@ async function getPokemonsById(
 async function getPokemonById(id) {
     let response = await fetch(pokeApiUrl + '?id=' + id);
     let data = await response.json();
+    return data;
+}
+
+// CRUD pokemon cards =============================
+// Lấy dữ liệu nhiều pokemon card
+async function getPokemonCardsById(
+    ids,
+    sortby = 'id',
+    order = 'asc',
+    page = '1',
+    limit = '10'
+) {
+    let responses = await fetch(
+        pokeCardApiUrl +
+            '?id=' +
+            ids.join('&id=') +
+            '&_sort=' +
+            sortby +
+            '&_order=' +
+            order +
+            '&_page=' +
+            page +
+            '&_limit=' +
+            limit
+    );
+    let data = await responses.json();
+    return data;
+}
+
+// Lấy dữ liệu 1 pokemon card
+async function getPokemonCardById(id) {
+    let response = await fetch(pokeCardApiUrl + '?id=' + id);
+    let data = await response.json();
+    return data;
+}
+
+// CRUD chat =============================
+async function getChannelsChat() {
+    let responses = await fetch(chatChannelApiUrl);
+    let data = await responses.json();
     return data;
 }

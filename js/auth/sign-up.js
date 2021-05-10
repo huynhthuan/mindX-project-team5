@@ -1,5 +1,4 @@
 let formsSignUp = document.querySelector('#form-sign-up');
-let defaultImg = defaultImageBase64;
 
 formsSignUp.onsubmit = async (event) => {
     event.preventDefault();
@@ -108,7 +107,7 @@ formsSignUp.onsubmit = async (event) => {
             bod: '',
             telephone: '',
             about: '',
-            avatar: defaultImg,
+            avatar: defaultAvatar,
             settings: {
                 colorTemplate: 0,
                 status: 0,

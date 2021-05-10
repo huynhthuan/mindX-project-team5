@@ -24,7 +24,6 @@ formsLogin.onsubmit = async (event) => {
     } else {
         // Kiểm tra email có tồn tại không
         userData = await getUserByEmail(email.value);
-
         if (!userData) {
             email.nextElementSibling.innerText =
                 'Email does not exist, please check again.';
