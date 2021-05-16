@@ -16,6 +16,8 @@
     <link rel="stylesheet" href="../../../fonts/fontawesome-free-5.15.3-web/css/all.min.css">
     <!-- Main CSS -->
     <link rel="stylesheet" href="../../../css/style.css">
+    <!-- Const -->
+    <script src="../../../js/common/constant.js"></script>
 </head>
 
 <body>
@@ -24,7 +26,7 @@
         <div class="container">
             <div class="navigation__wrap">
                 <div class="row align-items-center">
-                    <div class="col-md-1">
+                    <div class="col-lg-1">
                         <div class="navigation__brand">
                             <div class="logo">
                                 <a href="../../../">
@@ -35,9 +37,9 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-9">
+                    <div class="col-md-8">
                         <form action="" class="form-search">
-                            <input type="text" class="form-control navigation__search"
+                            <input type="text" name="name" class="form-control navigation__search"
                                 placeholder="Enter name or id pokemon...">
                             <select name="search_type" id="search_type" class="form__select">
                                 <option value="pkm">Pokemon</option>
@@ -45,7 +47,7 @@
                             </select>
                         </form>
                     </div>
-                    <div class="col-md-2">
+                    <div class="col-md-4 col-lg-3">
                         <div class="navigation__action">
                             <div class="navigation_menu">
                                 <ul class="navigation__list">
@@ -54,6 +56,9 @@
                                     </li>
                                     <li class="navigation__link">
                                         <a href="../../../views/news/"><i class="fas fa-newspaper"></i></a>
+                                    </li>
+                                    <li class="navigation__link">
+                                        <a href="../../../views/video/"><i class="fas fa-video"></i></a>
                                     </li>
                                     <li class="navigation__link">
                                         <a class="toggle__chat" href="javascript:void(0)">
@@ -148,7 +153,7 @@
                                     <div class="post__feature">
                                         <img src="../../../img/xy_wallpaper4_1920x1200.jpg" alt="feature">
                                     </div>
-                                    <div class="post__text">
+                                    <div class="post__text ck-content">
                                         <p>
                                             Assumenda sapiente ac, incidunt omnis ac congue nullam ex iaculis, tellus
                                             senectus illo venenatis illum sollicitudin conubia? Est id eum bibendum unde
@@ -188,19 +193,64 @@
                                         </div>
                                     </div>
 
-                                    <div class="author__meta">
-                                        <div class="authormeta__ava">
-                                            <img src="../../../img/ava.png" alt="ava">
+                                    <div class="video__comment">
+                                        <div class="user__ava">
+                                            <img src="../../../img/ava.png" alt="user">
                                         </div>
-                                        <div class="authormeta__info">
-                                            <div class="authormeta__name">Admin</div>
-                                            <p class="authormeta__about">
-                                                Lorem ipsum dolor sit amet consectetur adipiscing elit. Vestibulum ac
-                                                vehicula leo. Donec urna lacus gravida ac vulputate sagittis tristique
-                                                vitae
-                                                lectus. Nullam rhoncus tortor at dignissim vehicula.
-                                            </p>
+                                        <div class="comment__box">
+                                            <div class="comment__text">
+                                                <textarea name="comment" id="" cols="30" rows="5" class="form-control"
+                                                    placeholder="Enter comment..."></textarea>
+                                            </div>
+                                            <div class="comment__send text-end">
+                                                <button class="btn btn__comment">Send</button>
+                                            </div>
                                         </div>
+                                    </div>
+
+                                    <div class="comment__list">
+                                        <div class="comments__header">
+                                            <i class="fas fa-comments"></i> <span class="comments_count">1.000</span>
+                                            comment
+                                        </div>
+                                        <ul class="comments">
+                                            <li class="comment__item">
+                                                <div class="comment__ava">
+                                                    <img src="../../../img/ava.png" alt="ava">
+                                                </div>
+                                                <div class="comment__content">
+                                                    <div class="comment__name">
+                                                        Sinedd
+                                                    </div>
+                                                    <div class="comment__value">
+                                                        Great to be back home in Amsterdam for my THE ETHER show during
+                                                        Amsterdam
+                                                        Dance Event 2019! So proud of the team, it looks so sick in 4K!
+                                                        Dropped
+                                                        some
+                                                        new STMPD RCRDS IDs in there too, so hope you like it!
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="comment__item">
+                                                <div class="comment__ava">
+                                                    <img src="../../../img/ava.png" alt="ava">
+                                                </div>
+                                                <div class="comment__content">
+                                                    <div class="comment__name">
+                                                        Sinedd
+                                                    </div>
+                                                    <div class="comment__value">
+                                                        Great to be back home in Amsterdam for my THE ETHER show during
+                                                        Amsterdam
+                                                        Dance Event 2019! So proud of the team, it looks so sick in 4K!
+                                                        Dropped
+                                                        some
+                                                        new STMPD RCRDS IDs in there too, so hope you like it!
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
                                     </div>
                                 </div>
 
@@ -352,7 +402,7 @@
                                     </a>
                                 </div>
 
-                                <div class="widget widget__rank">
+                                <div class="d-none widget widget__rank">
                                     <div class="widget__header">
                                         <span>MOST VIEW POKEMON</span>
                                     </div>
@@ -446,15 +496,6 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                </div>
-
-                                <div class="widget widget__popular">
-                                    <div class="widget__header">
-                                        <span>NEWS TTG</span>
-                                    </div>
-
-                                    <div class="widget__content">
                                         <div class="news__short">
                                             <div class="short__img">
                                                 <a href="../../../views/news/detail/">
@@ -487,6 +528,39 @@
                                                 </div>
                                             </div>
                                         </div>
+                                        <div class="news__short">
+                                            <div class="short__img">
+                                                <a href="../../../views/news/detail/">
+                                                    <img src="../../../img/2021-players-cup-iv-qualifier-11.jpg"
+                                                        alt="img">
+                                                </a>
+                                            </div>
+                                            <div class="short__meta">
+                                                <a href="../../../views/news/detail/" class="short__title">
+                                                    Battle Tornadus and Scout N & Zekrom in Pokémon Masters EX
+                                                </a>
+                                                <div class="short__date">
+                                                    August 7, 2019
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="news__short">
+                                            <div class="short__img">
+                                                <a href="../../../views/news/detail/">
+                                                    <img src="../../../img/2021-players-cup-iv-qualifier-11.jpg"
+                                                        alt="img">
+                                                </a>
+                                            </div>
+                                            <div class="short__meta">
+                                                <a href="../../../views/news/detail/" class="short__title">
+                                                    Battle Tornadus and Scout N & Zekrom in Pokémon Masters EX
+                                                </a>
+                                                <div class="short__date">
+                                                    August 7, 2019
+                                                </div>
+                                            </div>
+                                        </div>
+
                                     </div>
                                 </div>
                             </div>
@@ -614,8 +688,7 @@
         </div>
     </div>
 
-    <div class="chatbox__list">
-    </div>
+    <div class="chatbox__list"></div>
 
     <!-- Jquery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
@@ -631,10 +704,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/shortcuts/sticky.min.js"
         integrity="sha512-O5YCLUxCY2OBc4rfpnKUIgE4LGuCiW8CrJ7ty4hvkBAAKUOnlbomEFWd3a6ruRnFvO3LG2wiaGiJ1heOvdppvA=="
         crossorigin="anonymous"></script>
+    <!-- Common -->
+    <script src="../../../js/common/helpers.js"></script>
+    <script src="../../../js/common/script.js"></script>
     <!-- Single -->
     <script src="../../../js/news/detail.js"></script>
-    <!-- Common -->
-    <script src="../../../js/common/script.js"></script>
 </body>
 
 </html>

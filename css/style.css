@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap');
+
 :root {
     --primary-color: #21386e;
     --secondary-color: #ffcb05;
@@ -31,8 +33,32 @@
 
 body {
     font-size: 14px;
-    font-family: 'UTM Avo';
+    /* font-family: 'UTM Avo', sans-serif; */
+    font-family: 'Nunito', sans-serif;
     color: var(--black-color);
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 999999;
+    background-color: #ffffff;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-image: url(../img/loading.svg);
+    opacity: 1;
+    visibility: visible;
+    transition: all 0.1s linear;
+}
+
+body.disable-preloader::before {
+    opacity: 0;
+    visibility: hidden;
+    transition: all 1s linear;
 }
 
 a {
@@ -50,14 +76,17 @@ ul {
 }
 
 .btn:focus {
-    border: none;
+    box-shadow: none;
+}
+
+.btn:active:focus {
     box-shadow: none;
 }
 
 /* Start */
 
 .navigation {
-    padding: 12px;
+    padding: 12px 0;
     box-shadow: 0 8px 8px rgb(0 0 0 / 10%);
     z-index: 1050;
     position: relative;
@@ -300,12 +329,7 @@ ul {
     left: 0;
     padding: 20px 33px;
     background: rgb(33, 56, 110);
-    background: linear-gradient(
-        180deg,
-        rgba(33, 56, 110, 0.06) 0%,
-        rgba(29, 49, 96, 0.31) 60%,
-        rgba(17, 28, 55, 1) 100%
-    );
+    background: linear-gradient(180deg, rgba(33, 56, 110, 0.06) 0%, rgba(29, 49, 96, 0.31) 60%, rgba(17, 28, 55, 1) 100%);
     color: white;
     display: flex;
     flex-direction: column;
@@ -397,6 +421,7 @@ ul {
     transform: translateX(-50%);
     opacity: 0.35;
     z-index: 1;
+    width: 100%;
 }
 
 .pokedex__content {
@@ -512,7 +537,13 @@ ul {
     margin: 0;
     font-weight: bold;
     font-size: 20px;
-    line-height: 16px;
+    line-height: 20px;
+    text-transform: capitalize;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
 }
 
 .pokedex__ids {
@@ -530,6 +561,7 @@ ul {
 .pokedex__label {
     font-size: 13px;
     width: 70px;
+    text-transform: capitalize;
 }
 
 .pokedex__value {
@@ -540,6 +572,7 @@ ul {
     overflow: hidden;
     -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;
+    text-transform: capitalize;
 }
 
 .pokedex__type {
@@ -571,18 +604,29 @@ ul {
 .stat__icon {
     width: 10px;
     height: 10px;
-    margin-right: 7px;
 }
 
 .stat__item {
     display: flex;
     align-items: center;
-    margin-bottom: 8px;
+    color: white;
+}
+
+.stat__item span {
+    margin: 0 4px;
+    font-size: 12px;
+}
+
+.pokedex__item .stat__label {
+    display: flex;
+    align-items: center;
+    width: 35px;
+    justify-content: flex-end;
 }
 
 .stat__value {
     height: 8px;
-    width: 100%;
+    width: calc(100% - 35px);
     background: var(--sliver-four-color);
     position: relative;
 }
@@ -647,12 +691,7 @@ ul {
     width: 100%;
     height: 30%;
     background: rgb(33, 56, 110);
-    background: linear-gradient(
-        180deg,
-        rgba(33, 56, 110, 0) 0%,
-        rgba(33, 56, 110, 0.89) 46%,
-        rgba(33, 56, 110, 1) 100%
-    );
+    background: linear-gradient(180deg, rgba(33, 56, 110, 0) 0%, rgba(33, 56, 110, 0.89) 46%, rgba(33, 56, 110, 1) 100%);
     color: white;
     display: flex;
     align-items: center;
@@ -695,6 +734,11 @@ ul {
     color: var(--primary-color);
     font-size: 16px;
     margin-bottom: 10px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .news__link {
@@ -735,12 +779,12 @@ ul {
     position: relative;
     border-radius: 5px;
     overflow: hidden;
-    height: 358px;
+    /* height: 358px; */
     box-shadow: var(--main-shadow);
 }
 
 .video__img {
-    height: 100%;
+    height: 320px;
 }
 
 .video__img img {
@@ -755,7 +799,7 @@ ul {
 }
 
 .video__tag {
-    width: 79px;
+    width: 60px;
     height: 25px;
     border-radius: 5px;
     background: #ee0707;
@@ -786,12 +830,7 @@ ul {
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
-    background: linear-gradient(
-        180deg,
-        rgba(33, 56, 110, 0) 0%,
-        rgba(29, 48, 95, 0.44) 38%,
-        rgba(17, 28, 55, 1) 100%
-    );
+    background: linear-gradient(180deg, rgba(33, 56, 110, 0) 0%, rgba(29, 48, 95, 0.44) 38%, rgba(17, 28, 55, 1) 100%);
     color: white;
     padding-bottom: 37px;
 }
@@ -894,11 +933,7 @@ ul {
 .footer__main {
     padding: 50px 0;
     background: rgb(36, 62, 122);
-    background: linear-gradient(
-        180deg,
-        rgba(36, 62, 122, 1) 0%,
-        rgba(18, 31, 61, 1) 100%
-    );
+    background: linear-gradient(180deg, rgba(36, 62, 122, 1) 0%, rgba(18, 31, 61, 1) 100%);
     color: white;
 }
 
@@ -1048,6 +1083,18 @@ ul {
     height: 100%;
 }
 
+.single__table--stats {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.abilities__list {
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
 .table__content {
     padding: 20px;
 }
@@ -1061,6 +1108,12 @@ ul {
     text-align: center;
     line-height: 60px;
     border-radius: 5px 5px 0 0;
+}
+
+.poke__mainform {
+    max-height: 580px;
+    overflow-y: auto;
+    padding: 10px;
 }
 
 .poke__quote {
@@ -1083,9 +1136,18 @@ ul {
 }
 
 .poke__stats .stat__value {
+    font-weight: bold;
     height: 26px;
     background-color: #afb2b7;
     margin-bottom: 10px;
+    width: 100%;
+}
+
+.stat__number {
+    position: absolute;
+    line-height: 27px;
+    z-index: 3;
+    padding-left: 10px;
 }
 
 .poke__stats .stat__percent {
@@ -1104,13 +1166,13 @@ ul {
 }
 
 .poke__mainname {
-    height: 87px;
+    height: 70px;
     border-radius: 6px;
     background: var(--primary-color);
-    line-height: 87px;
+    line-height: 70px;
     color: white;
     font-weight: bold;
-    font-size: 30px;
+    font-size: 24px;
     position: absolute;
     text-align: center;
     bottom: 44px;
@@ -1227,6 +1289,7 @@ ul {
     line-height: 44px;
     box-shadow: var(--main-shadow);
     transition: var(--main-transition);
+    text-transform: capitalize;
 }
 
 .form__item:hover {
@@ -1265,6 +1328,11 @@ ul {
     margin-bottom: 4px;
 }
 
+.type__list {
+    display: flex;
+    flex-wrap: wrap;
+}
+
 .type__item,
 .weaknesses__item {
     width: 138px;
@@ -1273,6 +1341,11 @@ ul {
     text-align: center;
     border-radius: 5px;
     background: var(--sliver-three-color);
+    margin-right: 4px;
+    margin-bottom: 4px;
+}
+
+.weakItem {
     margin-right: 4px;
 }
 
@@ -1286,7 +1359,7 @@ ul {
     width: 100px;
     height: 100px;
     border-radius: 5px;
-    background-image: url('../../img/evolutions_pokemon_bg.png');
+    background-image: url('../img/evolutions_pokemon_bg.png');
     padding: 10px;
     margin-bottom: 10px;
 }
@@ -1301,10 +1374,17 @@ ul {
     font-style: italic;
     color: var(--black-color);
     text-align: center;
+    font-weight: bold;
+}
+
+.evution__item a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .infomain__content {
-    margin-top: 43px;
+    margin-top: 16%;
 }
 
 .weaknesses__list {
@@ -1320,14 +1400,15 @@ ul {
 }
 
 .infomain__box {
-    width: 25%;
+    width: 33.33%;
     margin-bottom: 24px;
 }
 
 .infomain__value {
-    font-size: 26px;
+    font-size: 16px;
     color: #1c2530;
     font-style: italic;
+    font-weight: bold;
 }
 
 .random__list.owl-carousel .owl-item .pokedex__bg {
@@ -1411,7 +1492,7 @@ ul {
 }
 
 .tabletcg__content {
-    padding: 10px 20px;
+    padding: 10px;
 }
 
 .tabletcg__name {
@@ -1473,16 +1554,21 @@ ul {
 .tabletcg__row--price {
     justify-content: space-around;
     margin-bottom: 30px;
+    flex-wrap: wrap;
+    align-items: flex-start;
 }
 
 .tabletcg__priceitem {
     text-align: center;
+    width: 25%;
+    margin-bottom: 10px;
 }
 
 .priceitem__label {
-    font-size: 14px;
+    font-size: 13px;
     margin-bottom: 2px;
     color: #313131;
+    text-transform: uppercase;
 }
 
 .priceitem__value {
@@ -1526,16 +1612,26 @@ ul {
 }
 
 .tcginfo__label {
-    font-size: 14px;
+    font-size: 16px;
     margin-bottom: 16px;
+    font-weight: bold;
 }
 
 .tcgabili__item span,
 .tcgatk__item span:not(.atk__list) {
-    font-size: 15px;
-    font-weight: bold;
+    font-size: 16px;
+    font-weight: 900;
     color: var(--primary-color);
     margin-left: 9px;
+}
+
+.tcgabili__item img {
+    width: 103px;
+}
+
+.atk__list {
+    display: flex;
+    align-items: center;
 }
 
 .tcgabili__item {
@@ -1550,6 +1646,7 @@ ul {
     font-size: 16px;
     color: #4a4a4a;
     margin-bottom: 16px;
+    text-align: justify;
 }
 
 .atk__list img {
@@ -1559,6 +1656,7 @@ ul {
 
 .tcgatk__item {
     margin-bottom: 11px;
+    display: flex;
 }
 
 .rule__value {
@@ -1608,10 +1706,11 @@ ul {
     overflow: hidden;
     height: 200px;
     width: 50px;
+    z-index: 999;
 }
 
 .quickation__main {
-    background: var(--primary-color);
+    background: #000000;
     width: 50px;
     height: 50px;
     color: white;
@@ -1623,6 +1722,7 @@ ul {
     position: absolute;
     bottom: 0;
     border-radius: 5px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
 .quickaction__wrap {
@@ -1744,11 +1844,7 @@ ul {
 .archivePoke__more {
     min-width: 196px;
     background: rgb(43, 115, 185);
-    background: linear-gradient(
-        180deg,
-        rgba(43, 115, 185, 1) 0%,
-        rgba(22, 58, 93, 1) 100%
-    );
+    background: linear-gradient(180deg, rgba(43, 115, 185, 1) 0%, rgba(22, 58, 93, 1) 100%);
     color: white;
     font-weight: bold;
     margin: 15px 0 37px;
@@ -2416,7 +2512,7 @@ ul {
     font-size: 16px;
     font-weight: bold;
     color: var(--primary-color);
-    line-height: 16px;
+    line-height: 20px;
     text-overflow: ellipsis;
     overflow: hidden;
     display: -webkit-box;
@@ -2606,19 +2702,38 @@ ul {
 .video__title {
     margin-top: 20px;
     font-size: 25px;
-    line-height: 25px;
+    line-height: 28px;
     color: var(--black-color);
     margin-bottom: 10px;
 }
 
+.block__news .video__title {
+    max-width: 80%;
+    text-align: center;
+}
+
+.block__news .video__title a {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+}
+
 .videos__meta {
     padding-bottom: 18px;
-    border-bottom: 1px solid #e3e3e3;
     margin-bottom: 36px;
+}
+
+.block__video .videos__meta {
+    /* border-bottom: 1px solid #e3e3e3; */
+    margin: 0;
 }
 
 .video__comment {
     display: flex;
+    border-top: 1px solid #e3e3e3;
+    padding-top: 20px;
 }
 
 .user__ava {
@@ -2627,6 +2742,7 @@ ul {
     margin-right: 18px;
     border-radius: 100%;
     overflow: hidden;
+    border: 1px solid #eaeaea;
 }
 
 .user__ava img {
@@ -2660,6 +2776,14 @@ ul {
     border-top: 1px solid #e3e3e3;
 }
 
+.comments {
+    margin-bottom: 30px;
+    max-height: 800px;
+    overflow-y: auto;
+    padding: 6px;
+    margin-top: 40px;
+}
+
 .comments__header {
     font-weight: bold;
     color: var(--primary-color);
@@ -2668,10 +2792,6 @@ ul {
 
 .comments__header i {
     margin-right: 14px;
-}
-
-.comments {
-    margin-top: 40px;
 }
 
 .comment__item {
@@ -2761,7 +2881,7 @@ ul {
 }
 
 .related__link {
-    font-weight: 14px;
+    font-weight: bold;
     line-height: 18px;
     display: -webkit-box;
     -webkit-line-clamp: 3;
@@ -2769,6 +2889,7 @@ ul {
     font-weight: bold;
     color: var(--primary-color);
     margin-bottom: 5px;
+    overflow: hidden;
 }
 
 .related__author,
@@ -2916,18 +3037,22 @@ ul {
 }
 
 .compare__image {
-    width: 60%;
+    width: 315px;
+    height: 315px;
     margin: 30px auto;
     background-image: url('../img/list_bg.png');
     background-position: center center;
     background-size: auto;
     border-radius: 100%;
     overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .compare__image img {
-    width: 100%;
-    height: 100%;
+    width: 80%;
+    height: 80%;
     object-fit: contain;
 }
 
@@ -2944,6 +3069,15 @@ ul {
     width: 20px;
     height: 20px;
 }
+
+.compare__stats .stat__item {
+    margin-bottom: 10px;
+}
+
+.compare__stats .stat__item img {
+    margin-right: 10px;
+}
+
 .compare__stats .stat__value {
     height: 10px;
 }
@@ -3157,4 +3291,724 @@ ul {
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+.chatbox__inner .chat__group:last-child {
+    display: none;
+}
+
+/* Responsive */
+
+@media (max-width: 1200px) {
+    .poketcg__img img {
+        height: 340px;
+    }
+
+    .random__list .owl-prev {
+        left: 0;
+    }
+
+    .random__list .owl-next {
+        right: 0;
+    }
+
+    .poketcg__card {
+        max-width: 330px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .poketcg__img img {
+        height: 290px;
+    }
+
+    .news__img {
+        height: 151px;
+    }
+
+    .video__img {
+        height: 288px;
+    }
+
+    .news__count {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .news__info {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .news__link {
+        width: 120px;
+        height: 36px;
+        line-height: 36px;
+    }
+
+    #sortPoke {
+        font-size: 12px;
+    }
+
+    .slider__inner {
+        height: 360px;
+    }
+
+    body::before {
+        background-size: 14%;
+    }
+
+    .table__content {
+        padding: 10px;
+    }
+
+    .poke__ava {
+        width: 100%;
+    }
+
+    .poke__mainname {
+        bottom: 0;
+    }
+
+    .poke__bganimation {
+        width: 100%;
+        height: 118%;
+        top: -27px;
+        left: 0;
+    }
+
+    .poke__border {
+        width: 100%;
+        height: auto;
+    }
+
+    .poke__img {
+        width: 100%;
+        height: 444px;
+    }
+
+    .poke__img img {
+        width: 70%;
+    }
+
+    .poke__bganimation {
+        display: none;
+    }
+
+    .poketcg__set {
+        max-width: 90px;
+    }
+
+    .video__list .video__info {
+        flex-direction: column;
+    }
+
+    .share__item {
+        width: 30px;
+        height: 30px;
+    }
+
+    .related__img {
+        width: 155px;
+        height: 115px;
+    }
+
+    .video__related .related__meta {
+        width: calc(100% - 170px);
+    }
+
+    .form__img img {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .pokedex__bg {
+        top: unset;
+        bottom: 0;
+    }
+
+    .slider__inner {
+        height: 320px;
+    }
+
+    .poketcg__img img {
+        height: 425px;
+    }
+
+    .video__item {
+        height: 290px;
+        margin-bottom: 30px;
+    }
+
+    .video__desc {
+        max-width: 300px;
+    }
+
+    .footer__log a img {
+        width: 100%;
+    }
+
+    .footer__img {
+        flex-direction: column;
+    }
+
+    .footer__img a img {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .logo__img {
+        margin-bottom: 10px;
+    }
+
+    .chatbox.active {
+        width: 30vw;
+    }
+
+    .main__wrap.active {
+        margin-right: unset;
+    }
+
+    .chatbox {
+        height: calc(100% - 139px);
+        top: 139px;
+    }
+
+    .chatbox__list.active {
+        width: calc(99% - 30vw);
+    }
+
+    .chating__list {
+        height: 320px;
+    }
+
+    .chating {
+        width: 40vw;
+    }
+
+    .tabletcg__priceitem {
+        width: 50%;
+    }
+
+    #sortPoke {
+        font-size: 14px;
+    }
+
+    .fillter__typeItem {
+        width: calc((100% - (10px * 2)) / 3);
+        margin-bottom: 10px;
+    }
+
+    .fillter__typeItem:not(:nth-child(4n)) {
+        margin-right: unset;
+    }
+
+    .fillter__typeItem:not(:nth-child(3n)) {
+        margin-right: 10px;
+    }
+
+    .evution__ava {
+        width: 80px;
+        height: 80px;
+        background-size: 100%;
+    }
+
+    .type__item,
+    .weaknesses__item {
+        width: 100px;
+        margin-bottom: 5px;
+    }
+
+    .poke__ava {
+        margin-bottom: 30px;
+    }
+
+    .poke__img {
+        height: 556px;
+    }
+
+    .form__img img {
+        width: 50%;
+    }
+
+    .modal-dialog {
+        max-width: 99% !important;
+    }
+
+    .block__newsBanner {
+        height: 260px;
+    }
+
+    .related__item {
+        flex-direction: column;
+    }
+
+    .related__img {
+        margin-bottom: 10px;
+        width: 100%;
+    }
+
+    .video__related .related__meta {
+        width: 100%;
+    }
+
+    .comments {
+        margin-top: 16px;
+    }
+
+    .info__input {
+        margin-bottom: 14px;
+    }
+
+    .profile__meta {
+        flex-direction: column;
+    }
+
+    .profile__info {
+        text-align: center;
+    }
+
+    .profile__image {
+        width: 50px;
+        height: 50px;
+    }
+
+    .profile__username {
+        font-size: 18px;
+    }
+
+    .profile__tab {
+        padding: 10px;
+    }
+
+    .form__select {
+        width: 26%;
+    }
+}
+
+@media (max-width: 576px) {
+    .form-search {
+        margin-bottom: 10px;
+    }
+
+    .ticker__label {
+        font-size: 15px;
+    }
+
+    .ticker__label::before {
+        left: 8px;
+    }
+
+    .slider__overlay .slider__title a {
+        font-size: 19px;
+        line-height: 19px;
+    }
+
+    .slider__overlay {
+        background: linear-gradient(180deg, rgba(33, 56, 110, 0.06) 0%, rgba(29, 49, 96, 0.31) 36%, rgba(17, 28, 55, 1) 100%);
+    }
+
+    .poketcg__img img {
+        height: 490px;
+    }
+
+    .footer__log a img {
+        width: auto;
+    }
+
+    .footer__img {
+        flex-direction: row;
+        padding-top: 20px;
+    }
+
+    .footer__main {
+        padding: 20px 0;
+    }
+
+    .subfooter__wrap {
+        flex-direction: column;
+    }
+
+    .subfooter__menu {
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .compare__item {
+        margin-bottom: 20px;
+    }
+
+    .pokenav__icon,
+    .pokenav__ava {
+        display: none;
+    }
+
+    .poke__img {
+        height: 377px;
+    }
+
+    .single__table {
+        margin-bottom: 10px;
+        height: auto;
+    }
+
+    .random__list.owl-carousel .owl-item .pokedex__bg {
+        width: 100%;
+    }
+
+    .videos__meta,
+    .videos__item {
+        margin-bottom: 0;
+    }
+
+    .form__select {
+        width: 30%;
+    }
+
+    .poketcg__card {
+        margin-bottom: 20px;
+    }
+}
+
+/* CK content */
+/*
+ * CKEditor 5 (v27.1.0) content styles.
+ * Generated on Wed, 21 Apr 2021 07:00:21 GMT.
+ * For more information, check out https://ckeditor.com/docs/ckeditor5/latest/builds/guides/integration/content-styles.html
+ */
+
+:root {
+    --ck-color-mention-background: hsla(341, 100%, 30%, 0.1);
+    --ck-color-mention-text: hsl(341, 100%, 30%);
+    --ck-highlight-marker-blue: hsl(201, 97%, 72%);
+    --ck-highlight-marker-green: hsl(120, 93%, 68%);
+    --ck-highlight-marker-pink: hsl(345, 96%, 73%);
+    --ck-highlight-marker-yellow: hsl(60, 97%, 73%);
+    --ck-highlight-pen-green: hsl(112, 100%, 27%);
+    --ck-highlight-pen-red: hsl(0, 85%, 49%);
+    --ck-image-style-spacing: 1.5em;
+    --ck-todo-list-checkmark-size: 16px;
+}
+
+/* ckeditor5-highlight/theme/highlight.css */
+.ck-content .marker-yellow {
+    background-color: var(--ck-highlight-marker-yellow);
+}
+/* ckeditor5-highlight/theme/highlight.css */
+.ck-content .marker-green {
+    background-color: var(--ck-highlight-marker-green);
+}
+/* ckeditor5-highlight/theme/highlight.css */
+.ck-content .marker-pink {
+    background-color: var(--ck-highlight-marker-pink);
+}
+/* ckeditor5-highlight/theme/highlight.css */
+.ck-content .marker-blue {
+    background-color: var(--ck-highlight-marker-blue);
+}
+/* ckeditor5-highlight/theme/highlight.css */
+.ck-content .pen-red {
+    color: var(--ck-highlight-pen-red);
+    background-color: transparent;
+}
+/* ckeditor5-highlight/theme/highlight.css */
+.ck-content .pen-green {
+    color: var(--ck-highlight-pen-green);
+    background-color: transparent;
+}
+/* ckeditor5-font/theme/fontsize.css */
+.ck-content .text-tiny {
+    font-size: 0.7em;
+}
+/* ckeditor5-font/theme/fontsize.css */
+.ck-content .text-small {
+    font-size: 0.85em;
+}
+/* ckeditor5-font/theme/fontsize.css */
+.ck-content .text-big {
+    font-size: 1.4em;
+}
+/* ckeditor5-font/theme/fontsize.css */
+.ck-content .text-huge {
+    font-size: 1.8em;
+}
+/* ckeditor5-image/theme/imagestyle.css */
+.ck-content .image-style-side {
+    float: right;
+    margin-left: var(--ck-image-style-spacing);
+    max-width: 50%;
+}
+/* ckeditor5-image/theme/imagestyle.css */
+.ck-content .image-style-align-left {
+    float: left;
+    margin-right: var(--ck-image-style-spacing);
+}
+/* ckeditor5-image/theme/imagestyle.css */
+.ck-content .image-style-align-center {
+    margin-left: auto;
+    margin-right: auto;
+}
+/* ckeditor5-image/theme/imagestyle.css */
+.ck-content .image-style-align-right {
+    float: right;
+    margin-left: var(--ck-image-style-spacing);
+}
+/* ckeditor5-code-block/theme/codeblock.css */
+.ck-content pre {
+    padding: 1em;
+    color: hsl(0, 0%, 20.8%);
+    background: hsla(0, 0%, 78%, 0.3);
+    border: 1px solid hsl(0, 0%, 77%);
+    border-radius: 2px;
+    text-align: left;
+    direction: ltr;
+    tab-size: 4;
+    white-space: pre-wrap;
+    font-style: normal;
+    min-width: 200px;
+}
+/* ckeditor5-code-block/theme/codeblock.css */
+.ck-content pre code {
+    background: unset;
+    padding: 0;
+    border-radius: 0;
+}
+/* ckeditor5-html-embed/theme/htmlembed.css */
+.ck-content .raw-html-embed {
+    margin: 1em auto;
+    min-width: 15em;
+    font-style: normal;
+}
+/* ckeditor5-horizontal-line/theme/horizontalline.css */
+.ck-content hr {
+    margin: 15px 0;
+    height: 4px;
+    background: hsl(0, 0%, 87%);
+    border: 0;
+}
+/* ckeditor5-image/theme/imagecaption.css */
+.ck-content .image > figcaption {
+    display: table-caption;
+    caption-side: bottom;
+    word-break: break-word;
+    color: hsl(0, 0%, 20%);
+    background-color: hsl(0, 0%, 97%);
+    padding: 0.6em;
+    font-size: 0.75em;
+    outline-offset: -1px;
+}
+/* ckeditor5-image/theme/imageresize.css */
+.ck-content .image.image_resized {
+    max-width: 100%;
+    display: block;
+    box-sizing: border-box;
+}
+/* ckeditor5-image/theme/imageresize.css */
+.ck-content .image.image_resized img {
+    width: 100%;
+}
+/* ckeditor5-image/theme/imageresize.css */
+.ck-content .image.image_resized > figcaption {
+    display: block;
+}
+/* ckeditor5-image/theme/image.css */
+.ck-content .image {
+    display: table;
+    clear: both;
+    text-align: center;
+    margin: 1em auto;
+}
+/* ckeditor5-image/theme/image.css */
+.ck-content .image img {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    min-width: 50px;
+}
+/* ckeditor5-language/theme/language.css */
+.ck-content span[lang] {
+    font-style: italic;
+}
+/* ckeditor5-basic-styles/theme/code.css */
+.ck-content code {
+    background-color: hsla(0, 0%, 78%, 0.3);
+    padding: 0.15em;
+    border-radius: 2px;
+}
+/* ckeditor5-block-quote/theme/blockquote.css */
+.ck-content blockquote {
+    overflow: hidden;
+    padding-right: 1.5em;
+    padding-left: 1.5em;
+    margin-left: 0;
+    margin-right: 0;
+    font-style: italic;
+    border-left: solid 5px hsl(0, 0%, 80%);
+}
+/* ckeditor5-block-quote/theme/blockquote.css */
+.ck-content[dir='rtl'] blockquote {
+    border-left: 0;
+    border-right: solid 5px hsl(0, 0%, 80%);
+}
+/* ckeditor5-table/theme/table.css */
+.ck-content .table {
+    margin: 1em auto;
+    display: table;
+}
+/* ckeditor5-table/theme/table.css */
+.ck-content .table table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    height: 100%;
+    border: 1px double hsl(0, 0%, 70%);
+}
+/* ckeditor5-table/theme/table.css */
+.ck-content .table table td,
+.ck-content .table table th {
+    min-width: 2em;
+    padding: 0.4em;
+    border: 1px solid hsl(0, 0%, 75%);
+}
+/* ckeditor5-table/theme/table.css */
+.ck-content .table table th {
+    font-weight: bold;
+    background: hsla(0, 0%, 0%, 5%);
+}
+/* ckeditor5-table/theme/table.css */
+.ck-content[dir='rtl'] .table th {
+    text-align: right;
+}
+/* ckeditor5-table/theme/table.css */
+.ck-content[dir='ltr'] .table th {
+    text-align: left;
+}
+/* ckeditor5-page-break/theme/pagebreak.css */
+.ck-content .page-break {
+    position: relative;
+    clear: both;
+    padding: 5px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/* ckeditor5-page-break/theme/pagebreak.css */
+.ck-content .page-break::after {
+    content: '';
+    position: absolute;
+    border-bottom: 2px dashed hsl(0, 0%, 77%);
+    width: 100%;
+}
+/* ckeditor5-page-break/theme/pagebreak.css */
+.ck-content .page-break__label {
+    position: relative;
+    z-index: 1;
+    padding: 0.3em 0.6em;
+    display: block;
+    text-transform: uppercase;
+    border: 1px solid hsl(0, 0%, 77%);
+    border-radius: 2px;
+    font-family: Helvetica, Arial, Tahoma, Verdana, Sans-Serif;
+    font-size: 0.75em;
+    font-weight: bold;
+    color: hsl(0, 0%, 20%);
+    background: hsl(0, 0%, 100%);
+    box-shadow: 2px 2px 1px hsla(0, 0%, 0%, 0.15);
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+/* ckeditor5-media-embed/theme/mediaembed.css */
+.ck-content .media {
+    clear: both;
+    margin: 1em 0;
+    display: block;
+    min-width: 15em;
+}
+/* ckeditor5-list/theme/todolist.css */
+.ck-content .todo-list {
+    list-style: none;
+}
+/* ckeditor5-list/theme/todolist.css */
+.ck-content .todo-list li {
+    margin-bottom: 5px;
+}
+/* ckeditor5-list/theme/todolist.css */
+.ck-content .todo-list li .todo-list {
+    margin-top: 5px;
+}
+/* ckeditor5-list/theme/todolist.css */
+.ck-content .todo-list .todo-list__label > input {
+    -webkit-appearance: none;
+    display: inline-block;
+    position: relative;
+    width: var(--ck-todo-list-checkmark-size);
+    height: var(--ck-todo-list-checkmark-size);
+    vertical-align: middle;
+    border: 0;
+    left: -25px;
+    margin-right: -15px;
+    right: 0;
+    margin-left: 0;
+}
+/* ckeditor5-list/theme/todolist.css */
+.ck-content .todo-list .todo-list__label > input::before {
+    display: block;
+    position: absolute;
+    box-sizing: border-box;
+    content: '';
+    width: 100%;
+    height: 100%;
+    border: 1px solid hsl(0, 0%, 20%);
+    border-radius: 2px;
+    transition: 250ms ease-in-out box-shadow, 250ms ease-in-out background, 250ms ease-in-out border;
+}
+/* ckeditor5-list/theme/todolist.css */
+.ck-content .todo-list .todo-list__label > input::after {
+    display: block;
+    position: absolute;
+    box-sizing: content-box;
+    pointer-events: none;
+    content: '';
+    left: calc(var(--ck-todo-list-checkmark-size) / 3);
+    top: calc(var(--ck-todo-list-checkmark-size) / 5.3);
+    width: calc(var(--ck-todo-list-checkmark-size) / 5.3);
+    height: calc(var(--ck-todo-list-checkmark-size) / 2.6);
+    border-style: solid;
+    border-color: transparent;
+    border-width: 0 calc(var(--ck-todo-list-checkmark-size) / 8) calc(var(--ck-todo-list-checkmark-size) / 8) 0;
+    transform: rotate(45deg);
+}
+/* ckeditor5-list/theme/todolist.css */
+.ck-content .todo-list .todo-list__label > input[checked]::before {
+    background: hsl(126, 64%, 41%);
+    border-color: hsl(126, 64%, 41%);
+}
+/* ckeditor5-list/theme/todolist.css */
+.ck-content .todo-list .todo-list__label > input[checked]::after {
+    border-color: hsl(0, 0%, 100%);
+}
+/* ckeditor5-list/theme/todolist.css */
+.ck-content .todo-list .todo-list__label .todo-list__label__description {
+    vertical-align: middle;
+}
+/* ckeditor5-mention/theme/mention.css */
+.ck-content .mention {
+    background: var(--ck-color-mention-background);
+    color: var(--ck-color-mention-text);
+}
+
+@media print {
+    /* ckeditor5-page-break/theme/pagebreak.css */
+    .ck-content .page-break {
+        padding: 0;
+    }
+    /* ckeditor5-page-break/theme/pagebreak.css */
+    .ck-content .page-break::after {
+        display: none;
+    }
 }

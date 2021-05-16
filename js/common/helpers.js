@@ -1,11 +1,23 @@
 // Hỗ trợ xử lý =============================
+function disablePreload() {
+    let body = document.querySelector('body');
+    setTimeout(() => {
+        body.classList.add('disable-preloader');
+    }, 1500);
+}
+
+disablePreload();
+
+function enablePreload() {
+    let body = document.querySelector('body');
+    body.classList.remove('disable-preloader');
+}
+
 // Viết hoa chữ cái đầu của từng từ
 function capitalizeTheFirstLetterOfEachWord(words) {
     var separateWord = words.toLowerCase().split(' ');
     for (var i = 0; i < separateWord.length; i++) {
-        separateWord[i] =
-            separateWord[i].charAt(0).toUpperCase() +
-            separateWord[i].substring(1);
+        separateWord[i] = separateWord[i].charAt(0).toUpperCase() + separateWord[i].substring(1);
     }
     return separateWord.join(' ');
 }
@@ -26,6 +38,7 @@ function setUserDataLogged(user) {
         telephone: user.telephone,
         about: user.about,
         avatar: user.avatar,
+        role: user.role,
         settings: {
             colorTemplate: user.settings.colorTemplate,
             status: user.settings.status,
@@ -45,7 +58,7 @@ function getUserDataLogged() {
     return JSON.parse(userLogged);
 }
 
-// Lấy url paramater
+// Lấy query url
 function getAllUrlParams(url) {
     // get query string from url (optional) or window
     var queryString = url ? url.split('?')[1] : window.location.search.slice(1);
@@ -71,8 +84,7 @@ function getAllUrlParams(url) {
 
             // (optional) keep case consistent
             paramName = paramName.toLowerCase();
-            if (typeof paramValue === 'string')
-                paramValue = paramValue.toLowerCase();
+            if (typeof paramValue === 'string') paramValue = paramValue;
 
             // if the paramName ends with square brackets, e.g. colors[] or colors[2]
             if (paramName.match(/\[(\d+)?\]$/)) {
@@ -94,10 +106,7 @@ function getAllUrlParams(url) {
                 if (!obj[paramName]) {
                     // if it doesn't exist, create property
                     obj[paramName] = paramValue;
-                } else if (
-                    obj[paramName] &&
-                    typeof obj[paramName] === 'string'
-                ) {
+                } else if (obj[paramName] && typeof obj[paramName] === 'string') {
                     // if property does exist and it's a string, convert it to an array
                     obj[paramName] = [obj[paramName]];
                     obj[paramName].push(paramValue);
@@ -117,7 +126,7 @@ function showNotice(type, msg) {
     let classColor;
     switch (type) {
         case 'success':
-            classColor = 'bg-primary';
+            classColor = 'bg-success';
             break;
         case 'notice':
             classColor = 'bg-warning';
@@ -130,7 +139,7 @@ function showNotice(type, msg) {
     }
 
     let toastWrap = document.querySelector('.toast__wrap');
-    toastWrap.innerHTML += `<div class="position-fixed top-0 end-0 p-3" style="z-index: 999999">
+    toastWrap.innerHTML = `<div class="position-fixed top-0 end-0 p-3" style="z-index: 999999">
     <div id="liveToast" class="toast hide" role="alert" aria-live="assertive" aria-atomic="true">
       <div class="toast-header ${classColor} text-white">
         <strong class="me-auto">${type.toUpperCase()}</strong>
@@ -142,7 +151,9 @@ function showNotice(type, msg) {
   </div>`;
 
     let toastEl = document.querySelector('#liveToast');
-    let toast = new bootstrap.Toast(toastEl);
+    let toast = new bootstrap.Toast(toastEl, {
+        delay: 1000,
+    });
     toast.show();
 }
 
@@ -175,7 +186,6 @@ function getDateNow() {
 }
 
 // Random ID user
-
 function randomUserID() {
     let ID = '';
     let characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
@@ -211,9 +221,7 @@ function validateTelephoneNumber(telephone) {
 // Hiển thị dữ liệu người dùng ở menu
 function setDataMenu() {
     let userAva = document.querySelector('.account__ava a img');
-    let userMenu = document.querySelector(
-        '.navigation__account .dropdown-menu '
-    );
+    let userMenu = document.querySelector('.navigation__account .dropdown-menu ');
 
     if (isLogin()) {
         userAva.src = uploadFolderUserUrl + getUserDataLogged().avatar;
@@ -277,28 +285,18 @@ function changeColorTemplate() {
         let color = getUserDataLogged().settings.colorTemplate;
         switch (color) {
             case 1:
-                document.documentElement.style.setProperty(
-                    '--primary-color',
-                    '#eaeaea'
-                );
+                document.documentElement.style.setProperty('--primary-color', '#eaeaea');
                 break;
             case 2:
-                document.documentElement.style.setProperty(
-                    '--primary-color',
-                    '#000000'
-                );
+                document.documentElement.style.setProperty('--primary-color', '#000000');
                 break;
             default:
-                document.documentElement.style.setProperty(
-                    '--primary-color',
-                    '#21386e'
-                );
+                document.documentElement.style.setProperty('--primary-color', '#21386e');
         }
     }
 }
 
 // Upload file
-
 async function upload(url, file) {
     let response = await fetch(url, {
         method: 'POST',
@@ -309,26 +307,8 @@ async function upload(url, file) {
 
 // CRUD pokemons =============================
 // Lấy dữ liệu nhiều pokemon
-async function getPokemonsById(
-    ids,
-    sortby = 'id',
-    order = 'asc',
-    page = '1',
-    limit = '10'
-) {
-    let responses = await fetch(
-        pokeApiUrl +
-            '?id=' +
-            ids.join('&id=') +
-            '&_sort=' +
-            sortby +
-            '&_order=' +
-            order +
-            '&_page=' +
-            page +
-            '&_limit=' +
-            limit
-    );
+async function getPokemonsById(ids, sortby = 'id', order = 'asc', page = '1', limit = '10') {
+    let responses = await fetch(pokeApiUrl + '?id=' + ids.join('&id=') + '&_sort=' + sortby + '&_order=' + order + '&_page=' + page + '&_limit=' + limit);
     let data = await responses.json();
     return data;
 }
@@ -342,26 +322,8 @@ async function getPokemonById(id) {
 
 // CRUD pokemon cards =============================
 // Lấy dữ liệu nhiều pokemon card
-async function getPokemonCardsById(
-    ids,
-    sortby = 'id',
-    order = 'asc',
-    page = '1',
-    limit = '10'
-) {
-    let responses = await fetch(
-        pokeCardApiUrl +
-            '?id=' +
-            ids.join('&id=') +
-            '&_sort=' +
-            sortby +
-            '&_order=' +
-            order +
-            '&_page=' +
-            page +
-            '&_limit=' +
-            limit
-    );
+async function getPokemonCardsById(ids, sortby = 'id', order = 'asc', page = '1', limit = '10') {
+    let responses = await fetch(pokeCardApiUrl + '?id=' + ids.join('&id=') + '&_sort=' + sortby + '&_order=' + order + '&_page=' + page + '&_limit=' + limit);
     let data = await responses.json();
     return data;
 }
@@ -371,6 +333,42 @@ async function getPokemonCardById(id) {
     let response = await fetch(pokeCardApiUrl + '?id=' + id);
     let data = await response.json();
     return data;
+}
+
+//Set all card to local storage
+
+fetch('http://localhost:3005/cards')
+    .then((response) => {
+        return response.json();
+    })
+    .then((data) => {
+        if (!localStorage.getItem('cacheCard')) {
+            localStorage.setItem(
+                'cacheCard',
+                JSON.stringify(
+                    data.map((card) => {
+                        return card.id;
+                    })
+                )
+            );
+        }
+    });
+
+function getRandomInt(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+function getRandomCardId() {
+    let ids = [];
+    let cacheCard = JSON.parse(localStorage.getItem('cacheCard'));
+
+    while (ids.length < 10) {
+        let indexCacheCard = getRandomInt(0, cacheCard.length - 1);
+        if (!ids.includes(cacheCard[indexCacheCard])) {
+            ids.push(cacheCard[indexCacheCard]);
+        }
+    }
+    return ids;
 }
 
 // CRUD chat =============================

@@ -25,6 +25,8 @@
     <link rel="stylesheet" href="../../../fonts/fontawesome-free-5.15.3-web/css/all.min.css">
     <!-- Main CSS -->
     <link rel="stylesheet" href="../../../css/style.css">
+    <!-- Const -->
+    <script src="../../../js/common/constant.js"></script>
 </head>
 
 <body>
@@ -33,7 +35,7 @@
         <div class="container">
             <div class="navigation__wrap">
                 <div class="row align-items-center">
-                    <div class="col-md-1">
+                    <div class="col-lg-1">
                         <div class="navigation__brand">
                             <div class="logo">
                                 <a href="../../../">
@@ -44,9 +46,9 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-9">
+                    <div class="col-md-8 col-lg-8">
                         <form action="" class="form-search">
-                            <input type="text" class="form-control navigation__search"
+                            <input type="text" name="name" class="form-control navigation__search"
                                 placeholder="Enter name or id pokemon...">
                             <select name="search_type" id="search_type" class="form__select">
                                 <option value="pkm">Pokemon</option>
@@ -54,7 +56,7 @@
                             </select>
                         </form>
                     </div>
-                    <div class="col-md-2">
+                    <div class="col-md-4 col-lg-3">
                         <div class="navigation__action">
                             <div class="navigation_menu">
                                 <ul class="navigation__list">
@@ -63,6 +65,9 @@
                                     </li>
                                     <li class="navigation__link">
                                         <a href="../../../views/news/"><i class="fas fa-newspaper"></i></a>
+                                    </li>
+                                    <li class="navigation__link">
+                                        <a href="../../../views/video/"><i class="fas fa-video"></i></a>
                                     </li>
                                     <li class="navigation__link">
                                         <a class="toggle__chat" href="javascript:void(0)">
@@ -116,12 +121,12 @@
                         <div class="col-md-5">
                             <div class="poketcg__wrap">
                                 <div class="poketcg__set">
-                                    <img src="../../../img/set_logo.png" alt="set">
+                                    <img src="../../../img/set_logo.png" alt="set" id="imgLogo">
                                 </div>
                                 <div class="poketcg__card" id="scene">
-                                    <img src="../../../img/tcg_card_2.png" alt="card" data-depth="0.9">
+                                    <img src="../../../img/tcg_card_2.png" alt="card" data-depth="0.9" id="imgCard">
                                 </div>
-                                <div class="poketcg__quote">
+                                <div class="poketcg__quote" id="flavorText">
                                     "It has the power to predict the future. Its power peaks when it is protecting its
                                     Trainer."
                                 </div>
@@ -135,15 +140,16 @@
                                 <div class="tabletcg__content">
                                     <div class="tabletcg__row">
                                         <div class="tabletcg__col">
-                                            <div class="tabletcg__name">
+                                            <div class="tabletcg__name" id="cardName">
                                                 Celebi & Venusaur-GX
                                             </div>
                                             <div class="tabletcg__type">
-                                                Pokémon - Basic, TAG TEAM, GX
+                                                <span id="supertype">Pokémon</span>
+                                                <span id="subtype">Basic, TAG TEAM, GX</span>
                                             </div>
                                         </div>
                                         <div class="tabletcg__col">
-                                            <div class="tabletcg__hp">
+                                            <div class="tabletcg__hp" id="hp">
                                                 HP 100 <img src="../../../img/tcg-i-1.png" alt="tcg-1">
                                             </div>
                                         </div>
@@ -154,61 +160,31 @@
                                     <div class="tabletcg__row">
                                         <div class="tcgprice__wrap">
                                             <div class="tabletcg__pricelabel">Prices</div>
-                                            <div class="tabletcg__update">Last Updated 2021/04/22</div>
+                                            <div class="tabletcg__update" id="lastUpdate">Last Updated 2021/04/22</div>
                                         </div>
                                     </div>
 
                                     <div class="tabletcg__row tabletcg__row--price">
-                                        <div class="tabletcg__priceitem">
-                                            <div class="priceitem__label">
-                                                HOLOFOIL MARKET
-                                            </div>
-                                            <div class="priceitem__value priceitem__value--market">
-                                                $49.99
-                                            </div>
-                                        </div>
-                                        <div class="tabletcg__priceitem">
-                                            <div class="priceitem__label">
-                                                HOLOFOIL LOW
-                                            </div>
-                                            <div class="priceitem__value priceitem__value--low">
-                                                $30.50
-                                            </div>
-                                        </div>
-                                        <div class="tabletcg__priceitem">
-                                            <div class="priceitem__label">
-                                                HOLOFOIL MID
-                                            </div>
-                                            <div class="priceitem__value priceitem__value--mid">
-                                                $39.51
-                                            </div>
-                                        </div>
-                                        <div class="tabletcg__priceitem">
-                                            <div class="priceitem__label">
-                                                HOLOFOIL HIGH
-                                            </div>
-                                            <div class="priceitem__value priceitem__value--high">
-                                                $145.00
-                                            </div>
-                                        </div>
+
                                     </div>
 
                                     <div class="tabletcg__row">
-                                        <a href="#" class="tabletcg__button">
+                                        <a href="" target="_blank" class="tabletcg__button" id="buyCard">
                                             Buy Now From TCGplayer
                                         </a>
                                     </div>
 
                                     <div class="tabletcg__line"></div>
 
-                                    <div class="tabletcg__row flex-column align-items-start">
+                                    <div class="tabletcg__row flex-column align-items-start tabletcg__row--abilities"
+                                        id="abilitiesContent">
                                         <div class="tcginfo__label">Abilities</div>
                                         <div class="tcginfo__content">
                                             <div class="tcgabili__item">
                                                 <img src="../../../img/abili.png" alt="abili">
-                                                <span>Cursed Eyes</span>
+                                                <span id="nameAbilities">Cursed Eyes</span>
                                             </div>
-                                            <div class="tcgabili__value">
+                                            <div class="tcgabili__value" id="textAbilities">
                                                 Once during your turn, when you put Absol ex from your hand onto your
                                                 Bench,
                                                 you may move 3 damage counters from 1 of your opponent's Pokémon to
@@ -218,7 +194,8 @@
                                         </div>
                                     </div>
 
-                                    <div class="tabletcg__row flex-column align-items-start">
+                                    <div class="tabletcg__row flex-column align-items-start tabletcg__row--attacks"
+                                        id="attacksContent">
                                         <div class="tcginfo__label">Attacks</div>
                                         <div class="tcginfo__content">
                                             <div class="tcgatk__item">
@@ -226,9 +203,9 @@
                                                     <img src="../../../img/tcg-i-1.png" alt="atk">
                                                     <img src="../../../img/tcg-i-2.png" alt="atk">
                                                 </span>
-                                                <span>Psychic Pulse</span>
+                                                <span id="nameAttacks">Psychic Pulse</span>
                                             </div>
-                                            <div class="tcgatk__value">
+                                            <div class="tcgatk__value" id="textAttacks">
                                                 Does 10 damage to each of your opponent's Benched Pokémon that has any
                                                 damage counters on it. (Don't apply Weakness and Resistance for Benched
                                                 Pokémon.)
@@ -236,14 +213,13 @@
                                         </div>
                                     </div>
 
-                                    <div class="tabletcg__row flex-column align-items-start">
+                                    <div class="tabletcg__row flex-column align-items-start" id="rulesContent">
                                         <div
                                             class="tcginfo__label d-flex justify-content-between align-items-center w-100">
                                             Rules
-                                            <span class="rule__value">30</span>
                                         </div>
                                         <div class="tcginfo__content">
-                                            <div class="tcgrule__value">
+                                            <div class="tcgrule__value" id="textRules">
                                                 When Pokémon-ex has been Knocked Out, your opponent takes 2 Prize cards.
                                             </div>
                                         </div>
@@ -253,46 +229,56 @@
 
                                     <div class="tabletcg__row">
                                         <div class="metatable">
-                                            <div class="meta__item">
+                                            <div class="meta__item tabletcg__row--weak">
                                                 <div class="meta__label">WEAKNESS</div>
                                                 <div class="meta__content">
-                                                    <img src="../../../img/tcg-i-2.png" alt="meta"> <span
-                                                        class="meta__operator">x <span
-                                                            class="weak__value">2</span></span>
+                                                    <div class="weakItem">
+                                                        <img src="../../../img/tcg-i-2.png" alt="meta"> <span
+                                                            class="meta__operator">x <span
+                                                                class="weak__value">2</span></span>
+                                                    </div>
                                                 </div>
                                             </div>
-                                            <div class="meta__item">
+
+                                            <div class="meta__item tabletcg__row--resitance">
                                                 <div class="meta__label">RESISTANCE</div>
                                                 <div class="meta__content">
-                                                    <img src="../../../img/tcg-i-2.png" alt="meta"> <span
-                                                        class="meta__operator">- <span
-                                                            class="weak__value">20</span></span>
+                                                    <div class="weakItem">
+                                                        <img src="../../../img/tcg-i-2.png" alt="meta"> <span
+                                                            class="meta__operator">- <span
+                                                                class="weak__value">20</span></span>
+                                                    </div>
                                                 </div>
                                             </div>
-                                            <div class="meta__item">
+
+                                            <div class="meta__item tabletcg__row--retreat">
                                                 <div class="meta__label">RETREAT COST</div>
                                                 <div class="meta__content">
                                                     <img src="../../../img/tcg-i-2.png" alt="meta">
                                                     <img src="../../../img/tcg-i-2.png" alt="meta">
                                                 </div>
                                             </div>
+
                                             <div class="meta__item">
                                                 <div class="meta__label">ARTIST</div>
-                                                <div class="meta__content">
+                                                <div class="meta__content" id="artist">
                                                     TOKIYA
                                                 </div>
                                             </div>
+
                                             <div class="meta__item">
                                                 <div class="meta__label">RARITY</div>
-                                                <div class="meta__content">
+                                                <div class="meta__content" id="rarity">
                                                     Rare Holo
                                                 </div>
                                             </div>
+
                                             <div class="meta__item">
                                                 <div class="meta__label">SET</div>
                                                 <div class="meta__content">
-                                                    Ancient Origins
-                                                    <img src="../../../img/tcg-i-2.png" class="img-set" alt="meta">
+                                                    <span id="set-name">Ancient Origins</span>
+                                                    <img src="../../../img/tcg-i-2.png" class="img-set" id="set-icon"
+                                                        alt="meta">
                                                 </div>
                                             </div>
                                         </div>
@@ -516,8 +502,7 @@
         </div>
     </div>
 
-    <div class="chatbox__list">
-    </div>
+    <div class="chatbox__list"></div>
 
     <!-- Jquery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
@@ -540,7 +525,10 @@
         crossorigin="anonymous"></script>
     <!-- Common -->
     <script src="../../../js/common/slide.js"></script>
+    <script src="../../../js/common/helpers.js"></script>
     <script src="../../../js/common/script.js"></script>
+    <!-- Single -->
+    <script src="../../../js/card/detail.js"></script>
 </body>
 
 </html>

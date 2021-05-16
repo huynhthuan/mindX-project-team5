@@ -25,8 +25,7 @@ formsSignUp.onsubmit = async (event) => {
         userData = await getUserByEmail(email.value);
 
         if (userData) {
-            email.nextElementSibling.innerText =
-                'Email has exist, please try again with other email.';
+            email.nextElementSibling.innerText = 'Email has exist, please try again with other email.';
             email.classList.add('is-invalid');
         } else {
             email.classList.remove('is-invalid');
@@ -40,21 +39,18 @@ formsSignUp.onsubmit = async (event) => {
         username.classList.add('is-invalid');
     } else if (username.value.length < 4) {
         // Kiểm tra username độ dài lớn hơn 4 kí tự
-        username.nextElementSibling.innerText =
-            'Username length has minium length of 4 characters.';
+        username.nextElementSibling.innerText = 'Username length has minium length of 4 characters.';
         username.classList.add('is-invalid');
     } else if (username.value.length > 20) {
         // Kiểm tra username độ dài nhỏ hơn 20 kí tự
-        username.nextElementSibling.innerText =
-            'Username length has maximum length of 20 characters.';
+        username.nextElementSibling.innerText = 'Username length has maximum length of 20 characters.';
         username.classList.add('is-invalid');
     } else {
         // Kiểm tra username đã tồn tại chưa
         userData = await getUserByUserName(username.value);
 
         if (userData) {
-            username.nextElementSibling.innerText =
-                'Username already exists. Try again with other username.';
+            username.nextElementSibling.innerText = 'Username already exists. Try again with other username.';
             username.classList.add('is-invalid');
         } else {
             username.classList.remove('is-invalid');
@@ -68,8 +64,7 @@ formsSignUp.onsubmit = async (event) => {
         password.classList.add('is-invalid');
     } else if (password.value.length < 4) {
         // Kiểm tra password
-        password.nextElementSibling.innerText =
-            'Password length has minium length of 4 characters.';
+        password.nextElementSibling.innerText = 'Password length has minium length of 4 characters.';
         password.classList.add('is-invalid');
     } else {
         password.classList.remove('is-invalid');
@@ -82,8 +77,7 @@ formsSignUp.onsubmit = async (event) => {
         repassword.classList.add('is-invalid');
     } else if (repassword.value !== password.value) {
         // Kiểm tra repassword có trùng với password không
-        repassword.nextElementSibling.innerText =
-            'Re password not match password.';
+        repassword.nextElementSibling.innerText = 'Re password not match password.';
         repassword.classList.add('is-invalid');
     } else {
         repassword.classList.remove('is-invalid');
@@ -94,9 +88,7 @@ formsSignUp.onsubmit = async (event) => {
     // Lưu dữ liệu người dùng đăng ký
     if (flag) {
         // Hash password người dùng nhập
-        let hashPassword = CryptoJS.MD5(password.value).toString(
-            CryptoJS.enc.Base64
-        );
+        let hashPassword = CryptoJS.MD5(password.value).toString(CryptoJS.enc.Base64);
 
         let newUserData = {
             id: randomUserID(),
@@ -114,16 +106,13 @@ formsSignUp.onsubmit = async (event) => {
             },
             bookmark: {
                 pokedex: [],
-                card: [],
+                cards: [],
             },
         };
 
         let result = await addUser(newUserData);
         if (result) {
-            redirectTo(
-                homeUrl +
-                    '/views/auth/login/?toast=true&type=Success&msg=Welcom to Pokebook! Login to explore everything.'
-            );
+            redirectTo(homeUrl + '/views/auth/login/?toast=true&type=Success&msg=Welcom to Pokebook! Login to explore everything.');
         }
     }
 };

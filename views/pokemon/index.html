@@ -27,6 +27,8 @@
     <link rel="stylesheet" href="../../fonts/fontawesome-free-5.15.3-web/css/all.min.css">
     <!-- Main CSS -->
     <link rel="stylesheet" href="../../css/style.css">
+    <!-- Constant -->
+    <script src="../../js/common/constant.js"></script>
 </head>
 
 <body>
@@ -35,7 +37,7 @@
         <div class="container">
             <div class="navigation__wrap">
                 <div class="row align-items-center">
-                    <div class="col-md-1">
+                    <div class="col-lg-1">
                         <div class="navigation__brand">
                             <div class="logo">
                                 <a href="../../">
@@ -46,9 +48,9 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-9">
+                    <div class="col-md-8">
                         <form action="" class="form-search">
-                            <input type="text" class="form-control navigation__search"
+                            <input type="text" name="name" class="form-control navigation__search"
                                 placeholder="Enter name or id pokemon...">
                             <select name="search_type" id="search_type" class="form__select">
                                 <option value="pkm">Pokemon</option>
@@ -56,7 +58,7 @@
                             </select>
                         </form>
                     </div>
-                    <div class="col-md-2">
+                    <div class="col-md-4 col-lg-3">
                         <div class="navigation__action">
                             <div class="navigation_menu">
                                 <ul class="navigation__list">
@@ -65,6 +67,9 @@
                                     </li>
                                     <li class="navigation__link">
                                         <a href="../../views/news/"><i class="fas fa-newspaper"></i></a>
+                                    </li>
+                                    <li class="navigation__link">
+                                        <a href="../../views/video/"><i class="fas fa-video"></i></a>
                                     </li>
                                     <li class="navigation__link">
                                         <a href="javascript:void(0)" class="toggle__chat"><i
@@ -674,11 +679,11 @@
                                             </div>
                                             <div class="fillter__value">
                                                 <button class="btn btnFillterHeight"
-                                                    data-value="height_lte=6">Small</button>
+                                                    data-value="&height_gte=0&height_lte=10">Small</button>
                                                 <button class="btn btnFillterHeight"
-                                                    data-value="height_gte=6">Medium</button>
+                                                    data-value="&height_gte=11&height_lte=100">Medium</button>
                                                 <button class="btn btnFillterHeight"
-                                                    data-value="height_gte=10">Large</button>
+                                                    data-value="&height_gte=101&height_lte=1000">Large</button>
                                             </div>
                                         </div>
                                         <div class="fillter fillter__weight">
@@ -687,11 +692,11 @@
                                             </div>
                                             <div class="fillter__value">
                                                 <button class="btn btnFillterWeight"
-                                                    data-value="weight_lte=200">Small</button>
+                                                    data-value="&weight_gte=0&weight_lte=100">Small</button>
                                                 <button class="btn btnFillterWeight"
-                                                    data-value="weight_gte=200">Medium</button>
+                                                    data-value="&weight_gte=101&weight_lte=1000">Medium</button>
                                                 <button class="btn btnFillterWeight"
-                                                    data-value="weight_gte=500">Large</button>
+                                                    data-value="&weight_gte=1001&weight_lte=10000">Large</button>
                                             </div>
                                         </div>
                                     </div>
@@ -716,23 +721,14 @@
                     <div class="archivePoke__action">
                         <div class="row">
                             <div class="col-md-6">
-                                <button class="btn btn__randomPoke">
-                                    <i class="fas fa-sync-alt"></i> Suprise me !
-                                </button>
+                                <h4 class="fw-bold">Pokedex</h4>
                             </div>
-                            <div class="col-md-6 text-end">
-                                <div class="dropdown">
-                                    <button class="btn btn-secondary dropdown-toggle" type="button"
-                                        id="dropdownPokeSort" data-bs-toggle="dropdown" aria-expanded="false">
-                                        Sort results by
-                                    </button>
-                                    <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end"
-                                        aria-labelledby="dropdownPokemonFillter">
-                                        <li><a class="dropdown-item" href="#">Action</a></li>
-                                        <li><a class="dropdown-item" href="#">Another action</a></li>
-                                        <li><a class="dropdown-item" href="#">Something else here</a></li>
-                                    </ul>
-                                </div>
+                            <div class="col-md-6 col-lg-2 ms-auto text-end">
+                                <select class="form-select" id="sortPoke">
+                                    <option value="">Sort result by</option>
+                                    <option value="&_sort=name&_order=asc">By Name A - Z</option>
+                                    <option value="&_sort=name&_order=desc">By Name Z - A</option>
+                                </select>
                             </div>
                         </div>
                     </div>
@@ -974,8 +970,7 @@
         </div>
     </div>
 
-    <div class="chatbox__list">
-    </div>
+    <div class="chatbox__list"></div>
 
     <!-- Modal Compare -->
     <div class="modal fade" id="compareModal" tabindex="-1" aria-labelledby="compareModalLabel" aria-hidden="true">
@@ -1132,6 +1127,8 @@
         </div>
     </div>
 
+    <div class="toast__wrap"></div>
+
     <!-- Jquery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
@@ -1152,11 +1149,12 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/shortcuts/sticky.min.js"
         integrity="sha512-O5YCLUxCY2OBc4rfpnKUIgE4LGuCiW8CrJ7ty4hvkBAAKUOnlbomEFWd3a6ruRnFvO3LG2wiaGiJ1heOvdppvA=="
         crossorigin="anonymous"></script>
-    <!-- Single -->
-    <script src="../../js/pokemon/index.js"></script>
     <!-- Common -->
     <script src="../../js/common/slide.js"></script>
+    <script src="../../js/common/helpers.js"></script>
     <script src="../../js/common/script.js"></script>
+    <!-- Single -->
+    <script src="../../js/pokemon/index.js"></script>
 </body>
 
 </html>

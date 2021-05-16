@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<!--
+This is a starter template page. Use this page to start your new project from
+scratch. This page gets rid of all links and provides the needed markup only.
+-->
+<html lang="en">
+
+<head>
+    <base href="../../">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Edit posts</title>
+    <link rel="shortcut icon" href="../../img/favicon.ico" type="image/x-icon">
+    <!-- Google Font: Source Sans Pro -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
+    <!-- SweetAlert2 -->
+    <link rel="stylesheet" href="plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css">
+    <!-- Toastr -->
+    <link rel="stylesheet" href="plugins/toastr/toastr.min.css">
+    <!-- dropzonejs -->
+    <link rel="stylesheet" href="plugins/dropzone/min/dropzone.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="dist/css/adminlte.min.css">
+    <script src="../../js/common/constant.js"></script>
+    <script src="../../js/middleware/redirectIfNotAdmin.js"></script>
+</head>
+
+<body class="hold-transition sidebar-mini">
+    <div class="wrapper">
+
+        <!-- Navbar -->
+        <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+            <!-- Left navbar links -->
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+                </li>
+            </ul>
+        </nav>
+        <!-- /.navbar -->
+
+        <!-- Main Sidebar Container -->
+        <aside class="main-sidebar sidebar-dark-primary elevation-4">
+            <!-- Brand Logo -->
+            <a href="" class="brand-link">
+                <img src="dist/img/AdminLTELogo.png" alt="Dashboard" class="brand-image img-circle elevation-3"
+                    style="opacity: .8">
+                <span class="brand-text font-weight-light">Admin PokeBook</span>
+            </a>
+
+            <!-- Sidebar -->
+            <div class="sidebar">
+                <!-- Sidebar user panel (optional) -->
+                <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+                    <div class="image">
+                        <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+                    </div>
+                    <div class="info">
+                        <a href="#" class="d-block">Alexander Pierce</a>
+                    </div>
+                </div>
+
+                <!-- SidebarSearch Form -->
+                <div class="form-inline">
+                    <div class="input-group" data-widget="sidebar-search">
+                        <input class="form-control form-control-sidebar" type="search" placeholder="Search"
+                            aria-label="Search">
+                        <div class="input-group-append">
+                            <button class="btn btn-sidebar">
+                                <i class="fas fa-search fa-fw"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sidebar Menu -->
+                <nav class="mt-2">
+                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
+                        data-accordion="false">
+                        <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+                        <li class="nav-item">
+                            <a href="" class="nav-link">
+                                <i class="nav-icon fas fa-th"></i>
+                                <p>
+                                    Dashboard
+                                </p>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fas fa-tachometer-alt"></i>
+                                <p>
+                                    Users
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="./users/" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>All users</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="./users/add" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Add users</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item menu-open">
+                            <a href="#" class="nav-link active">
+                                <i class="nav-icon fas fa-tachometer-alt"></i>
+                                <p>
+                                    Posts
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="./posts/" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>All post</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="./posts/add" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Add post</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fas fa-tachometer-alt"></i>
+                                <p>
+                                    Videos
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="./videos/" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>All video</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="./videos/add/" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Add video</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a href="javascript:void(0)" id="adminLogout" class="nav-link">
+                                <i class="nav-icon fas fa-th"></i>
+                                <p>
+                                    Logout
+                                </p>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                <!-- /.sidebar-menu -->
+            </div>
+            <!-- /.sidebar -->
+        </aside>
+
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper">
+            <!-- Content Header (Page header) -->
+            <div class="content-header">
+                <div class="container-fluid">
+                    <div class="row mb-2">
+                        <div class="col-sm-6">
+                            <h1 class="m-0">Edit post</h1>
+                        </div><!-- /.col -->
+                        <div class="col-sm-6">
+                            <ol class="breadcrumb float-sm-right">
+                                <li class="breadcrumb-item"><a href="">Home</a></li>
+                                <li class="breadcrumb-item active">Edit post</li>
+                            </ol>
+                        </div><!-- /.col -->
+                    </div><!-- /.row -->
+                </div><!-- /.container-fluid -->
+            </div>
+            <!-- /.content-header -->
+
+            <!-- Main content -->
+            <div class="content">
+                <div class="container-fluid">
+
+                    <div class="row">
+                        <div class="col-md-9">
+                            <div class="card card-primary">
+                                <div class="card-header">
+                                    <h3 class="card-title">
+                                        Post feature image
+                                    </h3>
+                                </div>
+                                <div class="card-body">
+                                    <div id="actions" class="row">
+                                        <div class="col-lg-6">
+                                            <div class="btn-group w-100">
+                                                <span class="btn btn-success col fileinput-button">
+                                                    <i class="fas fa-plus"></i>
+                                                    <span>Add files</span>
+                                                </span>
+                                                <button type="submit" class="btn btn-primary col start">
+                                                    <i class="fas fa-upload"></i>
+                                                    <span>Start upload</span>
+                                                </button>
+                                                <button type="reset" class="btn btn-warning col cancel">
+                                                    <i class="fas fa-times-circle"></i>
+                                                    <span>Cancel upload</span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 d-flex align-items-center">
+                                            <div class="fileupload-process w-100">
+                                                <div id="total-progress" class="progress progress-striped active"
+                                                    role="progressbar" aria-valuemin="0" aria-valuemax="100"
+                                                    aria-valuenow="0">
+                                                    <div class="progress-bar progress-bar-success" style="width:0%;"
+                                                        data-dz-uploadprogress></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="table table-striped files" id="previews">
+                                        <div id="template" class="row mt-2">
+                                            <div class="col-auto">
+                                                <span class="preview"><img src="data:," alt=""
+                                                        data-dz-thumbnail /></span>
+                                            </div>
+                                            <div class="col d-flex align-items-center">
+                                                <p class="mb-0">
+                                                    <span class="lead" data-dz-name></span>
+                                                    (<span data-dz-size></span>)
+                                                </p>
+                                                <strong class="error text-danger" data-dz-errormessage></strong>
+                                            </div>
+                                            <div class="col-4 d-flex align-items-center">
+                                                <div class="progress progress-striped active w-100" role="progressbar"
+                                                    aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+                                                    <div class="progress-bar progress-bar-success" style="width:0%;"
+                                                        data-dz-uploadprogress></div>
+                                                </div>
+                                            </div>
+                                            <div class="col-auto d-flex align-items-center">
+                                                <div class="btn-group">
+                                                    <button class="btn btn-primary start">
+                                                        <i class="fas fa-upload"></i>
+                                                        <span>Start</span>
+                                                    </button>
+                                                    <button data-dz-remove class="btn btn-warning cancel">
+                                                        <i class="fas fa-times-circle"></i>
+                                                        <span>Cancel</span>
+                                                    </button>
+                                                    <button data-dz-remove class="btn btn-danger delete">
+                                                        <i class="fas fa-trash"></i>
+                                                        <span>Delete</span>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <form id="editForm" novalidate="novalidate">
+                                <div class="card card-primary">
+                                    <div class="card-header">
+                                        <h3 class="card-title">Edit post information</h3>
+                                    </div>
+                                    <!-- /.card-header -->
+                                    <!-- form start -->
+
+                                    <div class="card-body">
+                                        <div class="form-group">
+                                            <label for="title">Title</label>
+                                            <input type="text" name="title" class="form-control" id="title"
+                                                placeholder="Enter title">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="content">Content</label>
+                                            <textarea type="text" name="content" class="form-control" id="content"
+                                                placeholder="Enter content">
+                                            </textarea>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="desc">Excerpt</label>
+                                            <textarea type="text" name="desc" class="form-control" id="desc"
+                                                placeholder="Enter excerpt"></textarea>
+                                        </div>
+                                    </div>
+                                    <!-- /.card-body -->
+
+                                    <div class="card-footer text-right">
+                                        <a href="/pokebook/views/admin/posts/" class="btn btn-secondary">Back</a>
+                                        <button type="submit" class="btn btn-success">Update</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="card card-primary">
+                                <div class="card-header">
+                                    <h3 class="card-title">Feature image</h3>
+                                </div>
+
+                                <div class="card-body">
+                                    <img src="../../img/ava_preview.png" id="image" class="img-fluid w-100"
+                                        alt="feature-img">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- /.row -->
+                </div><!-- /.container-fluid -->
+            </div>
+            <!-- /.content -->
+        </div>
+        <!-- /.content-wrapper -->
+
+        <!-- Main Footer -->
+        <footer class="main-footer">
+            <!-- To the right -->
+            <div class="float-right d-none d-sm-inline">
+                Pokebook
+            </div>
+            <!-- Default to the left -->
+            <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights
+            reserved.
+        </footer>
+    </div>
+    <!-- ./wrapper -->
+
+    <!-- REQUIRED SCRIPTS -->
+
+    <!-- jQuery -->
+    <script src="plugins/jquery/jquery.min.js"></script>
+    <!-- Bootstrap 4 -->
+    <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- SweetAlert2 -->
+    <script src="plugins/sweetalert2/sweetalert2.min.js"></script>
+    <!-- jquery-validation -->
+    <script src="plugins/jquery-validation/jquery.validate.min.js"></script>
+    <script src="plugins/jquery-validation/additional-methods.min.js"></script>
+    <!-- Toastr -->
+    <script src="plugins/toastr/toastr.min.js"></script>
+    <!-- dropzonejs -->
+    <script src="plugins/dropzone/min/dropzone.min.js"></script>
+    <!-- CK Editor -->
+    <script src="plugins/ckeditor/ckeditor-classic.bundle.js"></script>
+    <!-- CK Finder -->
+    <script src="plugins/ckfinder/ckfinder.js"></script>
+    <!-- AdminLTE App -->
+    <script src="dist/js/adminlte.min.js"></script>
+    <!-- Page specific script -->
+    <script src="../../js/common/helpers.js"></script>
+    <script src="../../js/admin/posts/edit.js"></script>
+    <script src="../../js/admin/common.js"></script>
+</body>
+
+</html>

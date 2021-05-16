@@ -11,9 +11,7 @@ let btnSaveColor = document.querySelector('#btn__saveColor');
 
 // Form tab information
 let formInfo = document.querySelector('#form-tabinformation');
-let formInfoInput = document.querySelectorAll(
-    '#form-tabinformation input, #form-tabinformation textarea'
-);
+let formInfoInput = document.querySelectorAll('#form-tabinformation input, #form-tabinformation textarea');
 
 // Lấy element ở sidebar
 let profileAva = document.querySelector('.profile__image img');
@@ -52,16 +50,13 @@ formInfo.onsubmit = async (e) => {
     e.stopPropagation();
     // Kiểm tra input username
     if (!profileTabUsername.value) {
-        profileTabUsername.nextElementSibling.innerText =
-            'Please enter your username.';
+        profileTabUsername.nextElementSibling.innerText = 'Please enter your username.';
         profileTabUsername.classList.add('is-invalid');
     } else if (profileTabUsername.value.length < 4) {
-        profileTabUsername.nextElementSibling.innerText =
-            'Username has minium length of 4 characters.';
+        profileTabUsername.nextElementSibling.innerText = 'Username has minium length of 4 characters.';
         profileTabUsername.classList.add('is-invalid');
     } else if (profileTabUsername.value.length > 15) {
-        profileTabUsername.nextElementSibling.innerText =
-            'Username has maximum length of 15 characters.';
+        profileTabUsername.nextElementSibling.innerText = 'Username has maximum length of 15 characters.';
         profileTabUsername.classList.add('is-invalid');
     } else {
         profileTabUsername.classList.remove('is-invalid');
@@ -70,16 +65,13 @@ formInfo.onsubmit = async (e) => {
 
     // Kiểm tra input address
     if (!profileTabAddress.value) {
-        profileTabAddress.nextElementSibling.innerText =
-            'Please enter your address.';
+        profileTabAddress.nextElementSibling.innerText = 'Please enter your address.';
         profileTabAddress.classList.add('is-invalid');
     } else if (profileTabAddress.value.length < 4) {
-        profileTabAddress.nextElementSibling.innerText =
-            'Address has minium length of 4 characters.';
+        profileTabAddress.nextElementSibling.innerText = 'Address has minium length of 4 characters.';
         profileTabAddress.classList.add('is-invalid');
     } else if (profileTabAddress.value.length > 65) {
-        profileTabAddress.nextElementSibling.innerText =
-            'Address has maximum length of 65 characters.';
+        profileTabAddress.nextElementSibling.innerText = 'Address has maximum length of 65 characters.';
         profileTabAddress.classList.add('is-invalid');
     } else {
         profileTabAddress.classList.remove('is-invalid');
@@ -88,12 +80,10 @@ formInfo.onsubmit = async (e) => {
 
     // Kiểm tra input date
     if (!profileTabBod.value) {
-        profileTabBod.nextElementSibling.innerText =
-            'Please enter your birth of day.';
+        profileTabBod.nextElementSibling.innerText = 'Please enter your birth of day.';
         profileTabBod.classList.add('is-invalid');
     } else if (profileTabBod.value > getDateNow()) {
-        profileTabBod.nextElementSibling.innerText =
-            'Birth of day not larger than date now.';
+        profileTabBod.nextElementSibling.innerText = 'Birth of day not larger than date now.';
         profileTabBod.classList.add('is-invalid');
     } else {
         profileTabBod.classList.remove('is-invalid');
@@ -102,12 +92,10 @@ formInfo.onsubmit = async (e) => {
 
     // Kiểm tra input telephone
     if (!profileTabTelephone.value) {
-        profileTabTelephone.nextElementSibling.innerText =
-            'Please enter your telephone';
+        profileTabTelephone.nextElementSibling.innerText = 'Please enter your telephone';
         profileTabTelephone.classList.add('is-invalid');
     } else if (!validateTelephoneNumber(profileTabTelephone.value)) {
-        profileTabTelephone.nextElementSibling.innerText =
-            'Telephone format not valid.';
+        profileTabTelephone.nextElementSibling.innerText = 'Telephone format not valid.';
         profileTabTelephone.classList.add('is-invalid');
     } else {
         profileTabTelephone.classList.remove('is-invalid');
@@ -116,12 +104,10 @@ formInfo.onsubmit = async (e) => {
 
     // Kiểm tra input about
     if (!profileTabAbout.value) {
-        profileTabAbout.nextElementSibling.innerText =
-            'Please enter your about';
+        profileTabAbout.nextElementSibling.innerText = 'Please enter your about';
         profileTabAbout.classList.add('is-invalid');
     } else if (profileTabAbout.value.length > 255) {
-        profileTabAbout.nextElementSibling.innerText =
-            'About has maximum length of 255 characters.';
+        profileTabAbout.nextElementSibling.innerText = 'About has maximum length of 255 characters.';
         profileTabAbout.classList.add('is-invalid');
     } else {
         profileTabAbout.classList.remove('is-invalid');
@@ -180,10 +166,7 @@ btnUpload.onclick = async () => {
         const formData = new FormData();
         formData.append('file_upload', file);
 
-        let response = await upload(
-            'http://localhost/pokebook/server/upload.php',
-            formData
-        );
+        let response = await upload(domain + 'server/upload.php', formData);
 
         newAvaUrl = await response.json();
 

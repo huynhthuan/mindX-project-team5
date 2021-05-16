@@ -25,6 +25,8 @@
     <link rel="stylesheet" href="../../../fonts/fontawesome-free-5.15.3-web/css/all.min.css">
     <!-- Main CSS -->
     <link rel="stylesheet" href="../../../css/style.css">
+    <!-- Constant -->
+    <script src="../../../js/common/constant.js"></script>
 </head>
 
 <body>
@@ -33,7 +35,7 @@
         <div class="container">
             <div class="navigation__wrap">
                 <div class="row align-items-center">
-                    <div class="col-md-1">
+                    <div class="col-lg-1">
                         <div class="navigation__brand">
                             <div class="logo">
                                 <a href="../../../">
@@ -44,9 +46,9 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-9">
+                    <div class="col-md-8">
                         <form action="" class="form-search">
-                            <input type="text" class="form-control navigation__search"
+                            <input type="text" name="name" class="form-control navigation__search"
                                 placeholder="Enter name or id pokemon...">
                             <select name="search_type" id="search_type" class="form__select">
                                 <option value="pkm">Pokemon</option>
@@ -54,7 +56,7 @@
                             </select>
                         </form>
                     </div>
-                    <div class="col-md-2">
+                    <div class="col-md-4 col-lg-3">
                         <div class="navigation__action">
                             <div class="navigation_menu">
                                 <ul class="navigation__list">
@@ -63,6 +65,9 @@
                                     </li>
                                     <li class="navigation__link">
                                         <a href="../../../views/news/"><i class="fas fa-newspaper"></i></a>
+                                    </li>
+                                    <li class="navigation__link">
+                                        <a href="../../../views/video/"><i class="fas fa-video"></i></a>
                                     </li>
                                     <li class="navigation__link">
                                         <a class="toggle__chat" href="javascript:void(0)">
@@ -308,7 +313,7 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="row">
-                                            <div class="col-md-6">
+                                            <div class="col-12">
                                                 <div class="information__type">
                                                     <div class="infomain__title">
                                                         Type
@@ -318,7 +323,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col-md-6">
+                                            <div class="col-12">
                                                 <div class="information__weak">
                                                     <div class="infomain__title">
                                                         Weaknesses
@@ -332,72 +337,64 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="row">
-                                                <div class="col-12">
-                                                    <div class="infomain__listbox">
-                                                        <div class="infomain__box">
-                                                            <div class="infomain__title">
-                                                                Color
-                                                            </div>
-                                                            <div class="infomain__value">
-                                                                Black
-                                                            </div>
+                                            <div class="col-12">
+                                                <div class="information__abilities">
+                                                    <div class="infomain__title">
+                                                        Abilities
+                                                    </div>
+                                                    <div class="abilities__list">
+                                                        Torrent, Torrent, Torrent
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="infomain__listbox">
+                                                    <div class="infomain__box">
+                                                        <div class="infomain__title">
+                                                            Color
                                                         </div>
-                                                        <div class="infomain__box">
-                                                            <div class="infomain__title">
-                                                                Weight
-                                                            </div>
-                                                            <div class="infomain__value">
-                                                                5' 03"
-                                                            </div>
+                                                        <div class="infomain__value">
+                                                            Black
                                                         </div>
-                                                        <div class="infomain__box">
-                                                            <div class="infomain__title">
-                                                                Height
-                                                            </div>
-                                                            <div class="infomain__value">
-                                                                188.5 lbs
-                                                            </div>
+                                                    </div>
+                                                    <div class="infomain__box">
+                                                        <div class="infomain__title">
+                                                            Weight
                                                         </div>
-                                                        <div class="infomain__box">
-                                                            <div class="infomain__title">
-                                                                Abilities
-                                                            </div>
-                                                            <div class="infomain__value">
-                                                                Torrent
-                                                            </div>
+                                                        <div class="infomain__value">
+                                                            5' 03"
                                                         </div>
-                                                        <div class="infomain__box">
-                                                            <div class="infomain__title">
-                                                                Gender
-                                                            </div>
-                                                            <div class="infomain__value">
-                                                                Male
-                                                            </div>
+                                                    </div>
+                                                    <div class="infomain__box">
+                                                        <div class="infomain__title">
+                                                            Height
                                                         </div>
-                                                        <div class="infomain__box">
-                                                            <div class="infomain__title">
-                                                                Category
-                                                            </div>
-                                                            <div class="infomain__value">
-                                                                Flame
-                                                            </div>
+                                                        <div class="infomain__value">
+                                                            188.5 lbs
                                                         </div>
-                                                        <div class="infomain__box">
-                                                            <div class="infomain__title">
-                                                                Egg Group
-                                                            </div>
-                                                            <div class="infomain__value">
-                                                                Black
-                                                            </div>
+                                                    </div>
+                                                    <div class="infomain__box">
+                                                        <div class="infomain__title">
+                                                            Gender
                                                         </div>
-                                                        <div class="infomain__box">
-                                                            <div class="infomain__title">
-                                                                Base Experience
-                                                            </div>
-                                                            <div class="infomain__value">
-                                                                101
-                                                            </div>
+                                                        <div class="infomain__value">
+                                                            Male
+                                                        </div>
+                                                    </div>
+                                                    <div class="infomain__box">
+                                                        <div class="infomain__title">
+                                                            Egg Group
+                                                        </div>
+                                                        <div class="infomain__value">
+                                                            Black
+                                                        </div>
+                                                    </div>
+                                                    <div class="infomain__box">
+                                                        <div class="infomain__title">
+                                                            Base Experience
+                                                        </div>
+                                                        <div class="infomain__value">
+                                                            101
                                                         </div>
                                                     </div>
                                                 </div>
@@ -965,8 +962,7 @@
         </div>
     </div>
 
-    <div class="chatbox__list">
-    </div>
+    <div class="chatbox__list"></div>
 
     <!-- Modal Compare -->
     <div class="modal fade" id="compareModal" tabindex="-1" aria-labelledby="compareModalLabel" aria-hidden="true">
@@ -1126,6 +1122,8 @@
         </div>
     </div>
 
+    <div class="toast__wrap"></div>
+
     <!-- Jquery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
@@ -1146,11 +1144,12 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/shortcuts/sticky.min.js"
         integrity="sha512-O5YCLUxCY2OBc4rfpnKUIgE4LGuCiW8CrJ7ty4hvkBAAKUOnlbomEFWd3a6ruRnFvO3LG2wiaGiJ1heOvdppvA=="
         crossorigin="anonymous"></script>
-    <!-- Single -->
-    <script src="../../../js/pokemon/detail.js"></script>
     <!-- Common -->
     <script src="../../../js/common/slide.js"></script>
+    <script src="../../../js/common/helpers.js"></script>
     <script src="../../../js/common/script.js"></script>
+    <!-- Single -->
+    <script src="../../../js/pokemon/detail.js"></script>
 </body>
 
 </html>

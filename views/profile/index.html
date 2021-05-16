@@ -28,7 +28,7 @@
         <div class="container">
             <div class="navigation__wrap">
                 <div class="row align-items-center">
-                    <div class="col-md-1">
+                    <div class="col-lg-1">
                         <div class="navigation__brand">
                             <div class="logo">
                                 <a href="../../">
@@ -39,9 +39,9 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-9">
+                    <div class="col-md-8">
                         <form action="" class="form-search">
-                            <input type="text" class="form-control navigation__search"
+                            <input type="text" name="name" class="form-control navigation__search"
                                 placeholder="Enter name or id pokemon...">
                             <select name="search_type" id="search_type" class="form__select">
                                 <option value="pkm">Pokemon</option>
@@ -49,7 +49,7 @@
                             </select>
                         </form>
                     </div>
-                    <div class="col-md-2">
+                    <div class="col-md-4 col-lg-3">
                         <div class="navigation__action">
                             <div class="navigation_menu">
                                 <ul class="navigation__list">
@@ -58,6 +58,9 @@
                                     </li>
                                     <li class="navigation__link">
                                         <a href="../../views/news/"><i class="fas fa-newspaper"></i></a>
+                                    </li>
+                                    <li class="navigation__link">
+                                        <a href="../../views/video/"><i class="fas fa-video"></i></a>
                                     </li>
                                     <li class="navigation__link">
                                         <a href="javascript:void(0)" class="toggle__chat"><i
@@ -126,7 +129,7 @@
                                         class="fas fa-bookmark"></i>
                                     Bookmark</button>
 
-                                <button class="nav-link tab__btn" type="button">
+                                <button class="nav-link tab__btn" type="button" onclick="logOut(getUserDataLogged())">
                                     <i class="fas fa-sign-out-alt"></i> Logout
                                 </button>
                             </div>
@@ -138,59 +141,59 @@
                                         <div class="info__value">
                                             <form action="" id="form-tabinformation">
                                                 <div class="row info__input align-items-start">
-                                                    <div class="col-md-2">
+                                                    <div class="col-md-5">
                                                         <label for="email" class="col-form-label">Email</label>
                                                     </div>
-                                                    <div class="col-md-10">
+                                                    <div class="col-md-7">
                                                         <input type="text" name="email" id="email" readonly
                                                             class="form-control" aria-describedby="email">
                                                     </div>
                                                 </div>
                                                 <div class="row info__input align-items-start">
-                                                    <div class="col-md-2">
+                                                    <div class="col-md-5">
                                                         <label for="username" class="col-form-label">Username</label>
                                                     </div>
-                                                    <div class="col-md-10">
+                                                    <div class="col-md-7">
                                                         <input type="text" name="username" id="username"
                                                             class="form-control" aria-describedby="Username">
                                                         <div class="invalid-feedback"></div>
                                                     </div>
                                                 </div>
                                                 <div class="row info__input align-items-start">
-                                                    <div class="col-md-2">
+                                                    <div class="col-md-5">
                                                         <label for="address" class="col-form-label">Address</label>
                                                     </div>
-                                                    <div class="col-md-10">
+                                                    <div class="col-md-7">
                                                         <textarea name="address" id="address" cols="30" rows="4"
                                                             class="form-control"></textarea>
                                                         <div class="invalid-feedback"></div>
                                                     </div>
                                                 </div>
                                                 <div class="row info__input align-items-start">
-                                                    <div class="col-md-2">
+                                                    <div class="col-md-5">
                                                         <label for="bod" class="col-form-label">Birth of day</label>
                                                     </div>
-                                                    <div class="col-md-10">
+                                                    <div class="col-md-7">
                                                         <input type="date" id="bod" name="bod" class="form-control"
                                                             aria-describedby="bod">
                                                         <div class="invalid-feedback"></div>
                                                     </div>
                                                 </div>
                                                 <div class="row info__input align-items-start">
-                                                    <div class="col-md-2">
+                                                    <div class="col-md-5">
                                                         <label for="telephone" class="col-form-label">Telephone</label>
                                                     </div>
-                                                    <div class="col-md-10">
+                                                    <div class="col-md-7">
                                                         <input type="text" id="telephone" name="telephone"
                                                             class="form-control" aria-describedby="telephone">
                                                         <div class="invalid-feedback"></div>
                                                     </div>
                                                 </div>
                                                 <div class="row info__input align-items-start">
-                                                    <div class="col-md-2">
+                                                    <div class="col-md-5">
                                                         <label for="about" class="col-form-label">About me</label>
                                                     </div>
-                                                    <div class="col-md-10">
+                                                    <div class="col-md-7">
                                                         <textarea name="about" id="about" cols="30" rows="8"
                                                             class="form-control"></textarea>
                                                         <div class="invalid-feedback"></div>
@@ -211,10 +214,10 @@
                                         <div class="info__title"><span>Settings</span></div>
                                         <div class="info__value">
                                             <div class="row info__input align-items-start">
-                                                <div class="col-md-2">
+                                                <div class="col-md-5">
                                                     <label for="color" class="col-form-label">Color template</label>
                                                 </div>
-                                                <div class="col-md-10">
+                                                <div class="col-md-7">
                                                     <select name="color" class="form-select" id="colorTemplate">
                                                         <option value="0">Default</option>
                                                         <option value="1">Light</option>
@@ -237,13 +240,13 @@
                                         <div class="info__value">
                                             <div class="row">
                                                 <div class="col-md-6">
-                                                    <a href="./bookmark/" class="bookmark__item">
+                                                    <a href="./bookmark/?tab=nav-pokemon-tab" class="bookmark__item">
                                                         <img src="../../img/ptv-app-2732x940.jpg" alt="pokemon">
                                                         <div class="bookmark__overlay">Pokemon</div>
                                                     </a>
                                                 </div>
                                                 <div class="col-md-6">
-                                                    <a href="./bookmark/" class="bookmark__item">
+                                                    <a href="./bookmark/?tab=nav-card-tab" class="bookmark__item">
                                                         <img src="../../img/2021-players-cup-iv-qualifier-11.jpg"
                                                             alt="pokemon">
                                                         <div class="bookmark__overlay">Pokemon TCG</div>
@@ -280,7 +283,7 @@
                                     </p>
                                 </div>
                             </div>
-                            <div class="col-md-2">
+                            <div class="col-md-5">
                                 <div class="footer__menu">
                                     <div class="footer__menutitle">
                                         Navigation
@@ -294,7 +297,7 @@
                                     </ul>
                                 </div>
                             </div>
-                            <div class="col-md-2">
+                            <div class="col-md-5">
                                 <div class="footer__menu">
                                     <div class="footer__menutitle">
                                         Abouts us
@@ -309,7 +312,7 @@
                                     </ul>
                                 </div>
                             </div>
-                            <div class="col-md-2">
+                            <div class="col-md-5">
                                 <div class="footer__menu">
                                     <div class="footer__menutitle">
                                         Resources
@@ -378,8 +381,7 @@
         </div>
     </div>
 
-    <div class="chatbox__list">
-    </div>
+    <div class="chatbox__list"></div>
 
     <div class="toast__wrap"></div>
 

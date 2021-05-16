@@ -16,6 +16,8 @@
     <link rel="stylesheet" href="../../fonts/fontawesome-free-5.15.3-web/css/all.min.css">
     <!-- Main CSS -->
     <link rel="stylesheet" href="../../css/style.css">
+    <!-- Const -->
+    <script src="../../js/common/constant.js"></script>
 </head>
 
 <body>
@@ -24,7 +26,7 @@
         <div class="container">
             <div class="navigation__wrap">
                 <div class="row align-items-center">
-                    <div class="col-md-1">
+                    <div class="col-lg-1">
                         <div class="navigation__brand">
                             <div class="logo">
                                 <a href="../../">
@@ -35,9 +37,9 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-9">
+                    <div class="col-md-8">
                         <form action="" class="form-search">
-                            <input type="text" class="form-control navigation__search"
+                            <input type="text" name="name" class="form-control navigation__search"
                                 placeholder="Enter name or id pokemon...">
                             <select name="search_type" id="search_type" class="form__select">
                                 <option value="pkm">Pokemon</option>
@@ -45,7 +47,7 @@
                             </select>
                         </form>
                     </div>
-                    <div class="col-md-2">
+                    <div class="col-md-4 col-lg-3">
                         <div class="navigation__action">
                             <div class="navigation_menu">
                                 <ul class="navigation__list">
@@ -54,6 +56,9 @@
                                     </li>
                                     <li class="navigation__link">
                                         <a href="../../views/news/"><i class="fas fa-newspaper"></i></a>
+                                    </li>
+                                    <li class="navigation__link">
+                                        <a href="../../views/video/"><i class="fas fa-video"></i></a>
                                     </li>
                                     <li class="navigation__link">
                                         <a href="javascript:void(0)" class="toggle__chat"><i
@@ -248,12 +253,10 @@
                                 </div>
                             </div>
 
-                            <nav aria-label="Page navigation example">
-                                <ul class="pagination">
-                                    <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-                                    <li class="page-item"><a class="page-link" href="#">Next</a></li>
-                                </ul>
-                            </nav>
+                            <div class="pagination mb-5">
+                                <button class="video-pagination btn btn-primary btn-load-more" onclick="loadMore()">Load
+                                    more video</button>
+                            </div>
                         </div>
                         <div class="col-md-4">
                             <div class="sidebar">
@@ -263,101 +266,9 @@
                                     </a>
                                 </div>
 
-                                <div class="widget widget__rank">
-                                    <div class="widget__header">
-                                        <span>MOST VIEW POKEMON</span>
-                                    </div>
-                                    <div class="widget__content">
-                                        <div class="rank__item">
-                                            <div class="rank__count">1</div>
-                                            <div class="rank__content">
-                                                <div class="rank__img">
-                                                    <img src="../../img/1.png" alt="pokemon">
-                                                </div>
-                                                <div class="rank__meta">
-                                                    <a href="../pokemon/detail.html" class="rank__name">MeoTwo</a>
-                                                    <div class="rank__views">
-                                                        <i class="fas fa-eye"></i> <span>152.256
-                                                            views</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
                                 <div class="widget widget__popular">
                                     <div class="widget__header">
-                                        <span>MOST POPULAR</span>
-                                    </div>
-
-                                    <div class="widget__content">
-                                        <div class="news__short">
-                                            <div class="short__img">
-                                                <a href="./detail.html">
-                                                    <img src="../../img/2021-players-cup-iv-qualifier-11.jpg" alt="img">
-                                                </a>
-                                            </div>
-                                            <div class="short__meta">
-                                                <a href="./detail.html" class="short__title">
-                                                    Battle Tornadus and Scout N & Zekrom in Pokémon Masters EX
-                                                </a>
-                                                <div class="short__date">
-                                                    August 7, 2019
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="news__short">
-                                            <div class="short__img">
-                                                <a href="./detail.html">
-                                                    <img src="../../img/2021-players-cup-iv-qualifier-11.jpg" alt="img">
-                                                </a>
-                                            </div>
-                                            <div class="short__meta">
-                                                <a href="./detail.html" class="short__title">
-                                                    Battle Tornadus and Scout N & Zekrom in Pokémon Masters EX
-                                                </a>
-                                                <div class="short__date">
-                                                    August 7, 2019
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="news__short">
-                                            <div class="short__img">
-                                                <a href="./detail.html">
-                                                    <img src="../../img/2021-players-cup-iv-qualifier-11.jpg" alt="img">
-                                                </a>
-                                            </div>
-                                            <div class="short__meta">
-                                                <a href="./detail.html" class="short__title">
-                                                    Battle Tornadus and Scout N & Zekrom in Pokémon Masters EX
-                                                </a>
-                                                <div class="short__date">
-                                                    August 7, 2019
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="news__short">
-                                            <div class="short__img">
-                                                <a href="./detail.html">
-                                                    <img src="../../img/2021-players-cup-iv-qualifier-11.jpg" alt="img">
-                                                </a>
-                                            </div>
-                                            <div class="short__meta">
-                                                <a href="./detail.html" class="short__title">
-                                                    Battle Tornadus and Scout N & Zekrom in Pokémon Masters EX
-                                                </a>
-                                                <div class="short__date">
-                                                    August 7, 2019
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="widget widget__popular">
-                                    <div class="widget__header">
-                                        <span>NEWS TTG</span>
+                                        <span>MOST POPULAR Post</span>
                                     </div>
 
                                     <div class="widget__content">
@@ -548,8 +459,7 @@
         </div>
     </div>
 
-    <div class="chatbox__list">
-    </div>
+    <div class="chatbox__list"></div>
 
     <!-- Jquery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
@@ -565,10 +475,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/shortcuts/sticky.min.js"
         integrity="sha512-O5YCLUxCY2OBc4rfpnKUIgE4LGuCiW8CrJ7ty4hvkBAAKUOnlbomEFWd3a6ruRnFvO3LG2wiaGiJ1heOvdppvA=="
         crossorigin="anonymous"></script>
+    <!-- Common -->
+    <script src="../../js/common/helpers.js"></script>
+    <script src="../../js/common/script.js"></script>
     <!-- Single -->
     <script src="../../js/video/index.js"></script>
-    <!-- Common -->
-    <script src="../../js/common/script.js"></script>
 </body>
 
 </html>

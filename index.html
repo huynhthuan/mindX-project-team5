@@ -35,7 +35,7 @@
         <div class="container">
             <div class="navigation__wrap">
                 <div class="row align-items-center">
-                    <div class="col-md-1">
+                    <div class="col-lg-1">
                         <div class="navigation__brand">
                             <div class="logo">
                                 <a href="./">
@@ -46,7 +46,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-9">
+                    <div class="col-md-8 col-lg-8">
                         <form action="" class="form-search">
                             <input type="text" name="name" class="form-control navigation__search"
                                 placeholder="Enter name or id pokemon...">
@@ -56,7 +56,7 @@
                             </select>
                         </form>
                     </div>
-                    <div class="col-md-2">
+                    <div class="col-md-4 col-lg-3">
                         <div class="navigation__action">
                             <div class="navigation_menu">
                                 <ul class="navigation__list">
@@ -64,7 +64,10 @@
                                         <a href="./views/profile/bookmark/"><i class="fas fa-bookmark"></i></a>
                                     </li>
                                     <li class="navigation__link">
-                                        <a href="./views/profile/news/"><i class="fas fa-newspaper"></i></a>
+                                        <a href="./views/news/"><i class="fas fa-newspaper"></i></a>
+                                    </li>
+                                    <li class="navigation__link">
+                                        <a href="./views/video/"><i class="fas fa-video"></i></a>
                                     </li>
                                     <li class="navigation__link">
                                         <a class="toggle__chat" href="javascript:void(0)">
@@ -114,84 +117,16 @@
 
                 <div class="block block__slider">
                     <div class="row">
-                        <div class="col-md-9">
+                        <div class="col-lg-9">
                             <div class="slider__wrap owl-carousel owl-carousel-slider owl-theme">
-                                <div class="slider__item">
-                                    <div class="slider__inner">
-                                        <img src="./img/slide.jpg" alt="slide">
-                                        <div class="slider__overlay">
-                                            <h2 class="slider__title">
-                                                <a href="#">
-                                                    2022 Pokémon TCG Championship Series Season Format Rotation
-                                                </a>
-                                            </h2>
-                                            <p class="slider__desc">
-                                                Find out which cards will be permitted in the 2022 Pokémon TCG
-                                                Championship
-                                                Series season.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="slider__item">
-                                    <div class="slider__inner">
-                                        <img src="./img/slide.jpg" alt="slide">
-                                        <div class="slider__overlay">
-                                            <h2 class="slider__title">
-                                                <a href="#">
-                                                    2022 Pokémon TCG Championship Series Season Format Rotation
-                                                </a>
-                                            </h2>
-                                            <p class="slider__desc">
-                                                Find out which cards will be permitted in the 2022 Pokémon TCG
-                                                Championship
-                                                Series season.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="slider__item">
-                                    <div class="slider__inner">
-                                        <img src="./img/slide.jpg" alt="slide">
-                                        <div class="slider__overlay">
-                                            <h2 class="slider__title">
-                                                <a href="#">
-                                                    2022 Pokémon TCG Championship Series Season Format Rotation
-                                                </a>
-                                            </h2>
-                                            <p class="slider__desc">
-                                                Find out which cards will be permitted in the 2022 Pokémon TCG
-                                                Championship
-                                                Series season.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="slider__item">
-                                    <div class="slider__inner">
-                                        <img src="./img/slide.jpg" alt="slide">
-                                        <div class="slider__overlay">
-                                            <h2 class="slider__title">
-                                                <a href="#">
-                                                    2022 Pokémon TCG Championship Series Season Format Rotation
-                                                </a>
-                                            </h2>
-                                            <p class="slider__desc">
-                                                Find out which cards will be permitted in the 2022 Pokémon TCG
-                                                Championship
-                                                Series season.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
 
                             </div>
                         </div>
 
-                        <div class="col-md-3">
+                        <div class="col-md-3 d-none d-lg-block">
                             <div class="links">
                                 <div class="link__item">
-                                    <a href="#">
+                                    <a href="./views/pokemon">
                                         <div class="link__img">
                                             <img src="./img/link1.png" alt="link">
                                         </div>
@@ -201,12 +136,12 @@
                                     </a>
                                 </div>
                                 <div class="link__item">
-                                    <a href="#">
+                                    <a href="./views/card">
                                         <div class="link__img">
                                             <img src="./img/link2.jpg" alt="link">
                                         </div>
                                         <div class="link__title">
-                                            Items
+                                            Pokemon TCG
                                         </div>
                                     </a>
                                 </div>
@@ -237,127 +172,26 @@
 
                 <div class="block block__pokedex">
                     <div class="block__title">
-                        <a href="#">
+                        <a href="./views/pokemon/">
                             POKEDEX
                         </a>
                     </div>
 
                     <div class="block__content">
                         <div class="row">
-                            <div class="col-md-3">
-                                <div class="pokedex__item">
-                                    <img src="./img/pokedex-bg.png" alt="pokedex__bg" class="pokedex__bg">
-                                    <div class="pokedex__content">
-                                        <div class="pokedex__id">#007</div>
-                                        <div class="pokedex__info">
-                                            <div class="pokedex__media">
-                                                <div class="pokedex__ava">
-                                                    <img src="./img/pokemon.png" alt="pokedex_ava">
-                                                </div>
-                                                <div class="pokedex__stats">
-                                                    <div class="stats">
-                                                        <div class="stat__item">
-                                                            <img src="./img/stat_hp.png" alt="hp" class="stat__icon">
-                                                            <div class="stat__value">
-                                                                <div class="stat__percent"></div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="stat__item">
-                                                            <img src="./img/stat_atk.png" alt="atk" class="stat__icon">
-                                                            <div class="stat__value">
-                                                                <div class="stat__percent"></div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="stat__item">
-                                                            <img src="./img/stat_def.png" alt="def" class="stat__icon">
-                                                            <div class="stat__value">
-                                                                <div class="stat__percent"></div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="pokedex__meta">
-                                                <div class="pokedex__header">
-                                                    <h3 class="pokedex__name">
-                                                        Pikachu
-                                                    </h3>
-                                                    <h3 class="pokedex__ids">
-                                                        #007
-                                                    </h3>
-                                                </div>
-                                                <div class="pokedex__body">
-                                                    <div class="pokedex__text">
-                                                        <div class="pokedex__label">
-                                                            Type
-                                                        </div>
-                                                        <div class="pokedex__value">
-                                                            <span class="pokedex__type pokedex__type--bug">Bug</span>
-                                                            <span
-                                                                class="pokedex__type pokedex__type--steel">Steel</span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="pokedex__text">
-                                                        <div class="pokedex__label">
-                                                            Abilities
-                                                        </div>
-                                                        <div class="pokedex__value">
-                                                            Swarm / Technician
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="pokedex__bg2"></div>
-                                        </div>
-                                        <div class="pokedex__overlay">
-                                            <button class="btn pokedex__btn pokedex__view">
-                                                <i class="fas fa-eye"></i> Viewmore
-                                            </button>
-                                            <button class="btn pokedex__btn pokedex__bookmark">
-                                                <i class="fas fa-bookmark"></i> Bookmark
-                                            </button>
-                                            <button class="btn pokedex__btn pokedex__compare" data-bs-toggle="modal"
-                                                data-bs-target="#compareModal">
-                                                <i class="fas fa-table"></i> Add compare
-                                            </button>
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="block block__pokedextcg">
                     <div class="block__title">
-                        <a href="#">
+                        <a href="./views/card/">
                             Pokémon TCG
                         </a>
                     </div>
 
                     <div class="block__content">
                         <div class="row">
-                            <div class="col-md-3">
-                                <div class="poketcg__item">
-                                    <div class="poketcg__img">
-                                        <img src="./img/tcg_card.png" alt="tcg">
-                                    </div>
-                                    <div class="poketcg_title">
-                                        Flapple G-Max
-                                    </div>
-                                    <div class="poketcg__overlay">
-                                        <button class="btn pokedextcg__btn pokedextcg__view">
-                                            <i class="fas fa-eye"></i> Viewmore
-                                        </button>
-                                        <button class="btn pokedextcg__btn pokedextcg__bookmark">
-                                            <i class="fas fa-bookmark"></i> Bookmark
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -671,8 +505,7 @@
         </div>
     </div>
 
-    <div class="chatbox__list">
-    </div>
+    <div class="chatbox__list"></div>
 
     <!-- Modal Compare -->
     <div class="modal fade" id="compareModal" tabindex="-1" aria-labelledby="compareModalLabel" aria-hidden="true">
@@ -848,7 +681,10 @@
     <script src="./js/common/helpers.js"></script>
     <script src="./js/common/script.js"></script>
     <!-- Single Card-->
+    <script src="./js/index/pokemon.js"></script>
     <script src="./js/index/card.js"></script>
+    <script src="./js/index/post.js"></script>
+    <script src="./js/index/slide.js"></script>
 </body>
 
 </html>
