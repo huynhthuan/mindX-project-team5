@@ -19,7 +19,26 @@
       "name": "World 3",
       "count": 0,
       "ava": "ava-default.png",
-      "chats": []
+      "chats": [
+        {
+          "userId": "K10GQU7SZURZ",
+          "userAva": "60a0d06715284-1611377179-censtay-17.jpg",
+          "userName": "thuan9",
+          "msg": "hi"
+        },
+        {
+          "userId": "K10GQU7SZURZ",
+          "userAva": "60a0d06715284-1611377179-censtay-17.jpg",
+          "userName": "thuan9",
+          "msg": "alồ"
+        },
+        {
+          "userId": "K10GQU7SZURZ",
+          "userAva": "60a0d06715284-1611377179-censtay-17.jpg",
+          "userName": "thuan9",
+          "msg": "aló"
+        }
+      ]
     },
     {
       "id": "world-4",
@@ -33,7 +52,14 @@
       "name": "World 5",
       "count": 0,
       "ava": "ava-default.png",
-      "chats": []
+      "chats": [
+        {
+          "userId": "K10GQU7SZURZ",
+          "userAva": "60a0d06715284-1611377179-censtay-17.jpg",
+          "userName": "thuan9",
+          "msg": "helluu"
+        }
+      ]
     }
   ],
   "users": [
@@ -89,7 +115,7 @@
       "avatar": "60a0d06715284-1611377179-censtay-17.jpg",
       "settings": {
         "colorTemplate": 0,
-        "status": 0
+        "status": 1
       },
       "bookmark": {
         "pokedex": [
@@ -202,7 +228,7 @@
       "authorava": "60a0d06715284-1611377179-censtay-17.jpg",
       "content": "\n<h2>The Galar region sync pair can help players earn useful items by completing battles quickly in the Eternal Rivals time trial event.</h2>\n\n\n\n<p><strong>A</strong>s you&#8217;ve played&nbsp;<a target=\"_blank\" rel=\"noreferrer noopener\">Pokémon Masters EX</a>, you&#8217;ve undoubtedly worked on developing your sync pairs&#8217; power and on choosing the most effective attacks during battle, but have you been focusing on your reaction time? The game&#8217;s latest time trial event has just begun, and fortunately, a new Galar region sync pair has arrived to help.</p>\n\n\n\n<p>You can now scout Raihan &amp; Duraludon in the sync pair scout until&nbsp;<strong>May 30, 2021, at 10:59 p.m. PDT</strong>. As the featured sync pair for the Eternal Rivals time trial event, they get a valuable boost if you take them into an event battle. Raihan &amp; Duraludon&#8217;s stats will be doubled (except for HP), and you&#8217;ll earn twice as many points when you complete a battle with them.</p>\n\n\n\n<p>The time trial event Eternal Rivals runs from&nbsp;<strong>April 27, 2021, at 11:00 p.m. PDT to May 15, 2021, at 10:59 p.m. PDT</strong>. As you play the event, you&#8217;ll receive points based on how quickly you complete the event battles. You can then obtain a variety of different items depending on your total points, such as 5★ Power-Ups, 5★ Scout Tickets, strike move candy coins, tech move candy coins, and more.</p>\n\n\n\n<p>Just make sure you&#8217;re prepared before heading into battle. You can attempt this event only three times each day, but any unused attempts will carry over to the next day. You can also hone your skills in a practice match, which lets you refine your strategies without using up stamina or your limited number of attempts.</p>\n\n\n\n<p>To give yourself a little edge in battle, lower the battle speed to make it easier to queue up attacks with all your sync pairs. Remember, every second counts in time trial events, so don&#8217;t waste a moment!</p>\n\n\n\n<p>Pokémon Masters EX is available to download now, so don&#8217;t miss out on all the fun! For more details, be sure to visit the&nbsp;<a target=\"_blank\" rel=\"noreferrer noopener\">Pokémon Masters EX official site</a>.</p>\n",
       "date": "August 7, 2021",
-      "views": 4153845,
+      "views": 4153846,
       "img": "60a16142ea013-pokemon-go-169.jpg",
       "comments": [
         {
@@ -460,7 +486,7 @@
       "author": "thuan9",
       "authorava": "60a0d06715284-1611377179-censtay-17.jpg",
       "date": "August 7, 2021",
-      "views": 382821,
+      "views": 382823,
       "img": "60a17e61484ea-misty-169-en.png",
       "type": "normal",
       "url": "https://www.youtube.com/watch?v=DNwDWXTDukY",

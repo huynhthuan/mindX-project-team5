@@ -97,6 +97,7 @@ formsSignUp.onsubmit = async (event) => {
             password: hashPassword,
             address: '',
             bod: '',
+            role: 100,
             telephone: '',
             about: '',
             avatar: defaultAvatar,

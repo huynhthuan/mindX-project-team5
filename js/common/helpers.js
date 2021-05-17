@@ -226,7 +226,9 @@ function setDataMenu() {
     if (isLogin()) {
         userAva.src = uploadFolderUserUrl + getUserDataLogged().avatar;
         userMenu.innerHTML = `
-        <li><a class="dropdown-item" href="${profileUrl}"><i class="fas fa-user"></i> Profile</a></li>
+        <li><a class="dropdown-item" href="${profileUrl}"><i class="fas fa-user"></i> Profile</a></li>${
+            getUserDataLogged().role > 100 ? `<li><a class="dropdown-item" href="${view + 'admin'}"><i class="fas fa-user-shield"></i> Admin panel</a></li>` : ''
+        }
         <li><a class="dropdown-item" href="javascript:void(0)" onclick="logOut(getUserDataLogged())" id="logOut"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
     `;
     }
@@ -337,7 +339,7 @@ async function getPokemonCardById(id) {
 
 //Set all card to local storage
 
-fetch('http://localhost:3005/cards')
+fetch(pokeCardApiUrl)
     .then((response) => {
         return response.json();
     })

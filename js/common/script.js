@@ -8,9 +8,9 @@ if (isLogin()) {
 }
 
 // Tạo fixed menu
-let sticky = new Waypoint.Sticky({
-    element: $('.navigation')[0],
-});
+// let sticky = new Waypoint.Sticky({
+//     element: $('.navigation')[0],
+// });
 
 //=============================================
 
